@@ -111,7 +111,31 @@
         },false);
 
         $wrapper.addEventListener('click',function (e) {
-            
-        })
+            var $target = e.target;
+            if($target.tagName.toLocaleLowerCase() !== 'td') return;
+
+            var date = new Date(monthDate.year,monthDate.month -1,$target.dataset.date);
+
+            $input.value = format(date);
+        },false);
     };
+
+    function format(date) {
+        ret ='';
+
+        var  padding =function (num) {
+            if(num <= 9){
+                return '0' + num;
+            }
+            return num;
+        }
+
+        ret += date.getFullYear() + '-';
+
+        ret += padding(date.getMonth() + 1) + '-';
+
+        ret += padding(date.getDate());
+
+        return ret;
+    }
 })();

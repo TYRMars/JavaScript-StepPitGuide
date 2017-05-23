@@ -36,11 +36,10 @@
         var lastDate = lastDay.getDate();
 
         /*获取六周日期*/
-        for (var i=0;i<7*6;i++){
+        for (var i=0;i<7*5;i++){
             var date = i + 1 - preMonthDayCount;
             var showDate = date;
             var thisMonth = month;
-
             if(date<=0){
                 //上一月
                 thisMonth = month - 1;
