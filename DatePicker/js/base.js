@@ -20,6 +20,9 @@
         /*周日赋值为7*/
         if(firstDayWeekDay === 0) firstDayWeekDay = 7;
 
+        year =firstDay.getFullYear();
+        month =firstDay.getMonth() + 1;
+
         /*上个月的最后一天*/
         var lastDayOfLastMonth = new Date(year,month -1,0);
         /*存储上个月的最后一天*/
@@ -58,7 +61,11 @@
             })
         }
 
-        return ret;
+        return {
+            year: year,
+            month: month,
+            days: ret
+        };
 
     };
     window.datepicker = datepicker;
