@@ -5,6 +5,12 @@
     -webkit-box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, .3);
     -moz-box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, .3);
     box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, .3);
+    display: none;
+    position: absolute;
+}
+
+.ui-datepicker-wrapper-show{
+    display: block;
 }
 
 .ui-datepicker-wrapper .ui-datepicker-header{
