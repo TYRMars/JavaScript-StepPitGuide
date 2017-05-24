@@ -3,6 +3,7 @@
 * JSDemo JS小程序
 * JDMenu 京东无延迟菜单
 * DatePicker组件开发
+* 手风琴效果开发
 ## 知识点学习
 ### JSDemo JS小程序
 #### 
