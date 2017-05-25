@@ -2,21 +2,76 @@ body,ul,li,p,h3{margin: 0;padding: 0;}
 ul,ol {list-style: none;}
 
 .wrapper{
-    width: 938px;
-    height: 128px;
-    border:1px solid #444;
+    width: 1920px;
+    height: 240px;
 }
 
 .wrapper li{
-    width: 156px;
-    height: 128px;
+    width: 384px;
+    height: 240px;
     float: left;
     overflow: hidden;
 }
 
 .wrapper li a{
     display: block;
-    height: 128px;
-    width: 156px;
+    width: 384px;
+    height: 240px;
     position: relative;
+    text-decoration: none;
+}
+
+.wrapper img {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    width: 384px;
+    height: 240px;
+}
+
+.wrapper .info{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 120px;
+    padding: 5px 15px;
+}
+
+.wrapper .info h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.wrapper .info p{
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 22px;
+}
+
+.wrapper .line{
+    position: absolute;
+    right:0;
+    width:0;
+    height: 240px;
+    border: 1px dashed #cacaca;
+}
+
+.wrapper .mask{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 384px;
+    height: 240px;
+    opacity: 0.15;
+    background: #444;
+}
+
+.wrapper li.big, li.big a{
+    width: 424px;
+}
+
+.wrapper li.big img{
+    width: 424px;
+    height: 264px;
 }
