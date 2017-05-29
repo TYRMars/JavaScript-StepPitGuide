@@ -96,14 +96,14 @@ $(document).ready(function () {
                 var prevActiveRow = activeRow;
                 var prevActiveMenu = activeMenu;
 
-                activeRow = $(e.target)
-                activeMenu = $('#' + activeRow.data('id'))
+                activeRow = $(e.target);
+                activeMenu = $('#' + activeRow.data('id'));
 
-                prevActiveRow.removeClass('active')
-                prevActiveMenu.addClass('none')
+                prevActiveRow.removeClass('active');
+                prevActiveMenu.addClass('none');
 
-                activeRow.addClass('active')
-                activeMenu.removeClass('none')
+                activeRow.addClass('active');
+                activeMenu.removeClass('none');
             }
         })
 });
