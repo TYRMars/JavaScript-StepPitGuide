@@ -1,0 +1,50 @@
+body{
+    background-color: #333;
+}
+.bg-div{
+    background-image: url(../image/353893-106.jpg);
+    position: relative;
+    width: 1600px;
+    height: 900px;
+    margin: 0 auto;
+    background-repeat:no-repeat;
+    background-position:center 0;
+}
+.search-logo{
+    width: 150px;
+    heigth:150px;
+    margin: -60px 2px;
+    float: left;
+}
+form{
+    float: left;
+    height: inherit;
+    background: #ffffff;
+}
+.search-input-button{
+    margin: 2px 2px 2px 0px;
+    border: 0px;
+    background: url(../image/bing-logo.svg);
+    background-repeat:no-repeat;
+    background-position:center 0;
+    width: 32px;
+    height: 32px;
+    float: left;
+    outline:none;
+    cursor: pointer;
+}
+.search-input-text{
+    margin: 2px 0px 2px 2px;
+    padding: 0;
+    border: 0px;
+    height: 32px;
+    line-height:120%;
+    font-size: 25px;
+    float: left;
+    outline:none;
+}
+.search-box{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
