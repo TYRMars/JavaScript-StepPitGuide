@@ -1,4 +1,6 @@
-# JavaScript学习
+<h1 align="center">JavaScript学习</h1>
+<p align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498542774866&di=ed28b6b90c4be001acda441377113f2e&imgtype=0&src=http%3A%2F%2F7xkvof.com2.z0.glb.qiniucdn.com%2Farticle%2F79tvzE5PHyLClhki4Gbv.jpg" /></p>
+
 ## JavaScript基础知识剖析
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
 * [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
@@ -82,6 +84,61 @@ console.log(!window.acb); //true
 //判断一个变量会被当做true还是false
 var a = 100;
 console.log(!!a);
+```
+## 01-02
+### 变量类型和计算（2）
+#### JS中使用typeof能得到的类型
+```JavaScript
+//问题：JS中使用typeof能得到哪些类型
+typeof undefined //undefined
+typeof 'abc' // String
+typeof 123 //number
+typeof true //boolean
+typeof {} //object
+typeof [] //object
+typeof null //object
+typeof console.log //funciton
+```
+* 总结来说typeof可以得到`undefined、String、number、boolean`可以区分值类型，但对于引用类型无法很细的区分，只能区分函数。
+* 尤其是`typeof null //object`它是一个引用类型
+#### 何时使用 === 和 ==
+```JavaScript
+//问题：何时使用===何时使用==
+
+if (obj.a == null) {
+  //这里相当于 obj.a === null || obj.a === undefined,简写形式
+  //这是jquery源码中推荐的写法
+}
+```
+#### JS中的内置函数
+```JavaScript
+//问题：JS中有哪些内置函数----数据封装类对象
+//作为构造函数的作用
+Object
+Array
+Boolean
+Number
+String
+Function
+Date
+RegExp
+Error
+```
+#### JS按照存储方式区分变量类型
+```JavaScript
+//JS 变量按照存储方式区分为哪些类型，并描述其特点
+
+//值类型
+var a = 10;
+var b = a;
+a = 11;
+console.log(b);  // 10
+
+//引用类型
+var obj1 = {x:100}
+var obj2 = obj1;
+obj1.x = 200;
+console.log(obj2.x); // 200
 ```
 
 ---
