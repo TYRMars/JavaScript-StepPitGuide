@@ -4,6 +4,7 @@
 ## JavaScript基础知识剖析
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
 * [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
+* [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
 ## JS小练习
 * JSDemo JS小程序
 * JDMenu 京东无延迟菜单
@@ -140,7 +141,15 @@ var obj2 = obj1;
 obj1.x = 200;
 console.log(obj2.x); // 200
 ```
-
+## 01-03
+### 变量类型和计算（3）-理解JSON
+```JavaScript
+//问题：如何理解JSON
+//JSON只不过是一个JS对象
+//JSON也是一个数据格式
+JSON.stringify({a:10,b:20});
+JSON.parse('{"a":10."b":20}')
+```
 ---
 
 ### JSDemo JS小程序
