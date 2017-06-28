@@ -166,6 +166,9 @@ JSON.parse('{"a":10."b":20}')
 * 原型链
 * instanceof
 #### 构造函数
+* 普通的函数就像是按步骤执行的动作，而构造函数更像是可更改零件的木偶，普通函数可以直接调用，但是构造函数需要new
+* 因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefine，此时构造函数里面的this对象等于全局this对象
+* 扩展`实例和对象的区别，从定义上来讲：1、实例是类的具象化产品，2、而对象是一个具有多种属性的内容结构。`
 ```JavaScript
 funciton Foo(name,age){
   this.name = name;
@@ -173,7 +176,7 @@ funciton Foo(name,age){
   this.class = 'class-1';
   // return this //默认有这一行
 }
-var f = new Foo('zhangsan',20);
+var f = new Foo('zhangsan',20); //实例化对象
 // var f1 = new Foo('lisi',22) //创建多个对象
 ```
 #### 构造函数-扩展
@@ -185,6 +188,7 @@ var f = new Foo('zhangsan',20);
 
 ## 01-05
 ### 原型规则和示例
+*
 * 5条原型规则
 * 原型规则是学习原型链的基础
 * 所有的引用类型(数组、对象、函数)，都具有对象特质、即可自由扩展属性(除了“NULL”以外)
@@ -202,6 +206,21 @@ console.log(obj.__proto__);
 console.log(arr.__proto__);
 console.log(fn.__proto__);
 ```
+#### `prototype`
+* `prototype`解释为JavaScript开发函式库及框架
+* 所有的函数，都有一个`prototype`（显示原型）属性，属性值也是一个普通对象。
+```JavaScript
+console.log(fn.prototype);
+```
+#### `__proto__`与`prototype`
+* 所有引用类型（数组、对象、函数），`__proto__`属性值指向它的构造函数的`prototype`属性值
+```JavaScript
+console.log(obj.__proto__ === Object.prototype);
+```
+* 当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的`__proto__`(即它的构造函数`prototype`)中寻找
+
+
+
 ---
 
 ### JSDemo JS小程序
