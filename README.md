@@ -166,9 +166,11 @@ JSON.parse('{"a":10."b":20}')
 * 原型链
 * instanceof
 #### 构造函数
-* 普通的函数就像是按步骤执行的动作，而构造函数更像是可更改零件的木偶，普通函数可以直接调用，但是构造函数需要new
-* 因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefine，此时构造函数里面的this对象等于全局this对象
+* 自己的想法
+* `普通的函数就像是按步骤执行的动作，而构造函数更像是可更改零件的木偶，普通函数可以直接调用，但是构造函数需要new`
+* `因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefine，此时构造函数里面的this对象等于全局this对象`
 * 扩展`实例和对象的区别，从定义上来讲：1、实例是类的具象化产品，2、而对象是一个具有多种属性的内容结构。`
+
 ```JavaScript
 funciton Foo(name,age){
   this.name = name;
@@ -179,18 +181,19 @@ funciton Foo(name,age){
 var f = new Foo('zhangsan',20); //实例化对象
 // var f1 = new Foo('lisi',22) //创建多个对象
 ```
+
 #### 构造函数-扩展
 * `var a = {}` 其实是 `var a = new Object()`的语法糖
 * `var a = []` 其实是 `var a = new Array()`的语法糖
 * `function Foo(){...}`其实是 `var Foo = new Function(...)`
 * 使用 `instanceof` 判断一个函数是否是一个变量的构造函数
-  * 如果想判断一个变量是否为“数组”：变量 instanceof Array
+  * 如果想判断一个变量是否为“数组”：变量 `instanceof Array`
 
 ## 01-05
 ### 原型规则和示例
-*
 * 5条原型规则
 * 原型规则是学习原型链的基础
+#### 第1条
 * 所有的引用类型(数组、对象、函数)，都具有对象特质、即可自由扩展属性(除了“NULL”以外)
 ```JavaScript
 var obj = {}; obj.a = 100;
@@ -199,25 +202,55 @@ function fn(){
   fn.a=100;
 }
 ```
-#### `__proto__`
+#### 第2条
 * 所有的引用类型(数组、对象、函数)，都有一个`__proto__`(隐式原型)属性，属性值是一个普通的对象
 ```JavaScript
 console.log(obj.__proto__);
 console.log(arr.__proto__);
 console.log(fn.__proto__);
 ```
-#### `prototype`
+#### 第3条
 * `prototype`解释为JavaScript开发函式库及框架
 * 所有的函数，都有一个`prototype`（显示原型）属性，属性值也是一个普通对象。
 ```JavaScript
 console.log(fn.prototype);
 ```
-#### `__proto__`与`prototype`
+#### 第4条
 * 所有引用类型（数组、对象、函数），`__proto__`属性值指向它的构造函数的`prototype`属性值
 ```JavaScript
 console.log(obj.__proto__ === Object.prototype);
 ```
+#### 第5条
 * 当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的`__proto__`(即它的构造函数`prototype`)中寻找
+```JavaScript
+//构造函数
+function Foo(name,age){
+  this.name = name;
+}
+Foo.prototype.alertName = function () {
+  alert(this.name);
+}
+//创建示例
+var f = new Foo('zhangsan')
+f.printName = function () {
+  console.log(this.name);
+}
+//测试
+f.printName();
+f.alertName();
+```
+* this
+#### 循环对象自身属性
+```JavaScript
+var item;
+for (item in f) {
+  //高级浏览器已经在for in 中屏蔽了来自原型的属性
+  //但是这里建议大家还是加上这个判断，保证程序的健壮性
+  if(f.hasOwnProperty(item)) {
+    console.log(item);
+  }
+}
+```
 
 
 
