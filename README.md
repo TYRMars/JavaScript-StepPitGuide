@@ -5,6 +5,8 @@
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
 * [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
 * [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
+* [01-04](https://github.com/TYRMars/JSlearn#01-04) `原型与原型链-构造函数`
+* [01-05](https://github.com/TYRMars/JSlearn#01-05) `原型规则和示例`
 ## JS小练习
 * JSDemo JS小程序
 * JDMenu 京东无延迟菜单
@@ -149,6 +151,56 @@ console.log(obj2.x); // 200
 //JSON也是一个数据格式
 JSON.stringify({a:10,b:20});
 JSON.parse('{"a":10."b":20}')
+```
+
+## 01-04
+### 原型与原型链-构造函数
+* 如何准确判断一个变量数组类型
+* 写一个原型链继承的例子
+* 描述new一个对象的过程
+* zepto(或其他框架)源码中如何使用原型链
+#### 知识点
+* 构造函数
+* 构造函数-扩展
+* 原型规则和示例
+* 原型链
+* instanceof
+#### 构造函数
+```JavaScript
+funciton Foo(name,age){
+  this.name = name;
+  this.age = age;
+  this.class = 'class-1';
+  // return this //默认有这一行
+}
+var f = new Foo('zhangsan',20);
+// var f1 = new Foo('lisi',22) //创建多个对象
+```
+#### 构造函数-扩展
+* `var a = {}` 其实是 `var a = new Object()`的语法糖
+* `var a = []` 其实是 `var a = new Array()`的语法糖
+* `function Foo(){...}`其实是 `var Foo = new Function(...)`
+* 使用 `instanceof` 判断一个函数是否是一个变量的构造函数
+  * 如果想判断一个变量是否为“数组”：变量 instanceof Array
+
+## 01-05
+### 原型规则和示例
+* 5条原型规则
+* 原型规则是学习原型链的基础
+* 所有的引用类型(数组、对象、函数)，都具有对象特质、即可自由扩展属性(除了“NULL”以外)
+```JavaScript
+var obj = {}; obj.a = 100;
+var arr = []; arr.a = 100;
+function fn(){
+  fn.a=100;
+}
+```
+#### `__proto__`
+* 所有的引用类型(数组、对象、函数)，都有一个`__proto__`(隐式原型)属性，属性值是一个普通的对象
+```JavaScript
+console.log(obj.__proto__);
+console.log(arr.__proto__);
+console.log(fn.__proto__);
 ```
 ---
 
