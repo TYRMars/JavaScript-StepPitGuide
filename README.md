@@ -7,6 +7,7 @@
 * [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
 * [01-04](https://github.com/TYRMars/JSlearn#01-04) `原型与原型链-构造函数`
 * [01-05](https://github.com/TYRMars/JSlearn#01-05) `原型规则和示例`
+* [01-06](https://github.com/TYRMars/JSlearn#01-06) `原型链`
 ## JS小练习
 * JSDemo JS小程序
 * JDMenu 京东无延迟菜单
@@ -143,6 +144,7 @@ var obj2 = obj1;
 obj1.x = 200;
 console.log(obj2.x); // 200
 ```
+* ES中，引用类型是一种数据结构，用于将数据和功能组织在一起
 ## 01-03
 ### 变量类型和计算（3）-理解JSON
 ```JavaScript
@@ -251,7 +253,28 @@ for (item in f) {
   }
 }
 ```
-
+## 01-06
+### 原型链
+```JavaScript
+//构造函数
+function Foo(name,age){
+  this.name = name;
+}
+Foo.prototype.alertName = function (){
+  alert(this.name);
+}
+//创建示例
+var f = new Foo('zhangsan');
+f.printName = function () {
+  console.log(this.name);
+}
+//测试
+f.printName();
+f.alertName();
+f.toString(); // 要去f.__proto__.__proto__中查找
+```
+#### 原型链视图
+![原型链图](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
 
 
 ---
