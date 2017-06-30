@@ -8,11 +8,16 @@
 * [01-04](https://github.com/TYRMars/JSlearn#01-04) `原型与原型链-构造函数`
 * [01-05](https://github.com/TYRMars/JSlearn#01-05) `原型规则和示例`
 * [01-06](https://github.com/TYRMars/JSlearn#01-06) `原型链`
+* [01-07](https://github.com/TYRMars/JSlearn#01-07) `instanceof`
+* [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
+
+
 ## JS小练习
 * JSDemo JS小程序
 * JDMenu 京东无延迟菜单
 * DatePicker组件开发
 * 手风琴效果开发
+
 ## 知识点学习
 ## 01-01
 ### 变量类型和计算（1）
@@ -275,6 +280,45 @@ f.toString(); // 要去f.__proto__.__proto__中查找
 ```
 #### 原型链视图
 ![原型链图](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
+
+## 01-07
+### instanceof
+* 用于判断`引用类型`属于哪个`构造函数`的方法
+* `f instanceof Foo` 的判断逻辑是：
+* `f`的`__proto__`一层一层往上走，是否能对应到`Foo.prototype`
+* 再试着判断f instanceof Object
+
+## 01-08
+### 知识点小结 & 解决问题
+* 如何准确判断一个变量是数组类型
+```JavaScript
+var arr = [];
+arr instanceof Array; //true
+typeof arr //object  typeof是无法判断是否是数组
+```
+* 写一个原型链继承的例子
+```JavaScript
+//动物
+function Animal(){
+  this.eat = function () {
+    console.log('animal eat');
+  }
+}
+//狗🐶
+function Dog(){
+  this.bark = function () {
+    console.log('dog bark');
+  }
+}
+Dog.prototype = new Animal();
+//哈士奇
+var hashiqi = new Dog();
+//如果要真正写，就要写更贴近实战的原型链
+```
+  * 推荐 阮一峰老师👨‍🏫的两篇文章：[Javascript 面向对象编程（一）：封装](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)、[Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
+
+* 描述new一个对象的过程
+* zepto(或其他框架)源码中如何使用原型链
 
 
 ---
