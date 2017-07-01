@@ -392,6 +392,38 @@ function fn(name) {
 * 范围：一段<script>或者一个函数
 * 全局：变量定义、函数声明
 * 函数：变量定义、函数声明、this、arguments
+* 注意⚠️“函数声明”和“函数表达式”的区别
+```JavaScript
+fn()
+function fn() {
+  //声明
+}
+
+fn1()
+var fn1 = function () {
+  //表示
+}
+var a = 100; //类似于这个
+
+//全局声明
+
+console.log(a);
+var a = 100;
+
+fn('zhangsan')
+function fn(name) {
+  console.log(this);
+  age = 20;
+  console.log(name,age);
+  var age;
+
+  bar(100);
+
+  function bar(num) {
+    console.log(num);
+  }
+}
+```
 
 ---
 
