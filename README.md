@@ -10,6 +10,7 @@
 * [01-06](https://github.com/TYRMars/JSlearn#01-06) `原型链`
 * [01-07](https://github.com/TYRMars/JSlearn#01-07) `instanceof`
 * [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
+* [02-01](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-执行上下文`
 
 
 ## JS小练习
@@ -290,13 +291,13 @@ f.toString(); // 要去f.__proto__.__proto__中查找
 
 ## 01-08
 ### 知识点小结 & 解决问题
-* 如何准确判断一个变量是数组类型
+#### 如何准确判断一个变量是数组类型
 ```JavaScript
 var arr = [];
 arr instanceof Array; //true
 typeof arr //object  typeof是无法判断是否是数组
 ```
-* 写一个原型链继承的例子
+#### 写一个原型链继承的例子
 ```JavaScript
 //动物
 function Animal(){
@@ -317,9 +318,80 @@ var hashiqi = new Dog();
 ```
   * 推荐 阮一峰老师👨‍🏫的两篇文章：[Javascript 面向对象编程（一）：封装](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)、[Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
 
-* 描述new一个对象的过程
-* zepto(或其他框架)源码中如何使用原型链
+#### 描述new一个对象的过程
+* 创建一个新对象
+* this指向这个新对象
+* 执行代码，即对this赋值
+* 返回this 🔙
+```JavaScript
+function Foo(name,age){
+  this.name = name ;
+  this.age = age ;
+  //return this //默认有这一行
+}
+var f = new Foo('zhangsan',20);
+//var f1 = new Foo('list',22) //创建多个对象
+```
 
+#### zepto(或其他框架)源码中如何使用原型链
+* 。。。。。。
+
+#### 贴近实际开发原型链继承的例子
+```JavaScript
+function Elem(id) {
+  this.elem = document.getElementById(id);
+}
+
+Elem.prototype.html = function (val) {
+  var elem = this.elem;
+  if (val) {
+    elem.innerHTML = val;
+    return this; // 链式操作
+  }else {
+    return elem.innerHTML;
+  }
+}
+
+Elem.prototype.on = function (type, fn) {
+  var elem = this.elem ;
+  elem.addEventListener(type, fn) ;
+}
+
+var div1 = new Elem('div1');
+//console.log(div1.html());
+div1.html('<p>hello imooc</p>')
+div1.on('click',function () {
+  alert('click')
+})
+```
+## 02-01
+### 作用域和闭包-执行上下文
+* 说一下对变量提升的理解
+* 说明`this`几种不同的使用场景
+* 创建10个`<a>`标签，点击的时候弹出来对应的序号
+* 如何理解作用域
+* 实际开发中闭包的应用
+#### 知识点梳理
+* 执行上下文
+* this
+* 作用域
+* 作用域链
+* 闭包
+#### 执行上下文
+```JavaScript
+console.log(a);  // undefined
+var a = 100;
+
+fn('zhangsan')  // 'zhangsan' 20
+function fn(name) {
+  age = 20;
+  console.log(name, age);
+  var age;
+}
+```
+* 范围：一段<script>或者一个函数
+* 全局：变量定义、函数声明
+* 函数：变量定义、函数声明、this、arguments
 
 ---
 
