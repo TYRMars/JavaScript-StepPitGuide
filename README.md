@@ -11,6 +11,7 @@
 * [01-07](https://github.com/TYRMars/JSlearn#01-07) `instanceof`
 * [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
 * [02-01](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-执行上下文`
+* [02-02](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-this`
 
 
 ## JS小练习
@@ -425,6 +426,25 @@ function fn(name) {
 }
 ```
 
+## 02-01
+### 作用域和闭包-this
+* this 要在执行时才能确认值，定义时无法确认值
+```JavaScript
+var a = {
+  name:'A',
+  fn:function(){
+    console.log(this.name);
+  }
+}
+a.fn() //this === A
+a.fn.call({name:'B'}) //this === {name:'B'}
+var fn1 = a.fn;
+fn1() //this === window
+```
+* 作为构造函数执行
+* 作为对象属性执行
+* 作为普通函数执行
+* call apply bind
 ---
 
 ### JSDemo JS小程序
