@@ -445,6 +445,38 @@ fn1() //this === window
 * 作为对象属性执行
 * 作为普通函数执行
 * call apply bind
+```JavaScript
+function Foo(name){
+  this.name = name;
+}
+var f = new Foo('zhangsan');
+
+var obj = {
+  name:'A',
+  printName:function(){
+    console.log(this.name);
+  }
+}
+obj.printName()
+
+function fn(){
+  console.log(this);
+}
+fn()
+
+// call apply bind
+function fn1(name) {
+  alert(name);
+  console.log(this);
+}
+fn1.call({x:100},'zhangsan',20);
+// bind
+var fn2 = function fn2(name) {
+  alert(name);
+  console.log(this);
+}.bind({y:200});
+fn2('zhangsan',20);
+```
 ---
 
 ### JSDemo JS小程序
