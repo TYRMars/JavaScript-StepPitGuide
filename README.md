@@ -12,6 +12,8 @@
 * [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
 * [02-01](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-执行上下文`
 * [02-02](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-this`
+* [02-03](https://github.com/TYRMars/JSlearn#02-03) `作用域和闭包-作用域`
+* [02-04](https://github.com/TYRMars/JSlearn#02-04) `作用域和闭包-闭包`
 
 
 ## JS小练习
@@ -477,6 +479,70 @@ var fn2 = function fn2(name) {
 }.bind({y:200});
 fn2('zhangsan',20);
 ```
+
+## 02-03
+### 作用域和闭包-作用域
+#### 作用域
+* 没有块级作用域
+* 只有函数和全局作用域
+```JavaScript
+//无块级作用域
+if(true){
+  var name = 'zhangsan';
+}
+console.log(name);
+
+//函数和全局作用域
+var a = 100;
+function fn() {
+  var a = 200;
+  console.log('fn',a);
+}
+console.log('global',a);
+fn();
+```
+* 作用域链
+```JavaScript
+var a = 100;
+function fn() {
+  var b = 200;
+
+  //但钱作用域没有定义变量，即“自由变量”
+  console.log(a);
+  console.log(b);
+}
+fn();
+
+var a = 100;
+function F1() {
+  var b = 200;
+  function F2() {
+    var c = 300;
+    console.log(a);//a是自由变量。形成一个链式结构，向父级去查找
+    console.log(b);//b是自由变量
+    console.log(c);//
+  }
+}
+```
+
+## 02-04
+### 作用域和闭包-闭包
+```JavaScript
+function F1() {
+  var a = 100;
+  //返回一个函数（函数作为返回值）
+  return function () {
+    console.log(a);//自由变量，父作用域中查找
+  }
+}
+//f1得到一个函数
+var f1 = F1();
+var a = 200;
+f1();
+```
+* 函数作为返回值
+* 函数作为参数传递
+
 ---
 
 ### JSDemo JS小程序
