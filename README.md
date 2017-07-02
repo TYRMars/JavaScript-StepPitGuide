@@ -2,6 +2,7 @@
 <p align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498542774866&di=ed28b6b90c4be001acda441377113f2e&imgtype=0&src=http%3A%2F%2F7xkvof.com2.z0.glb.qiniucdn.com%2Farticle%2F79tvzE5PHyLClhki4Gbv.jpg" /></p>
 
 ## JavaScript基础知识剖析
+#### 01
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
 * [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
 * [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
@@ -10,10 +11,12 @@
 * [01-06](https://github.com/TYRMars/JSlearn#01-06) `原型链`
 * [01-07](https://github.com/TYRMars/JSlearn#01-07) `instanceof`
 * [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
+#### 02
 * [02-01](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-执行上下文`
-* [02-02](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-this`
+* [02-02](https://github.com/TYRMars/JSlearn#02-02) `作用域和闭包-this`
 * [02-03](https://github.com/TYRMars/JSlearn#02-03) `作用域和闭包-作用域`
 * [02-04](https://github.com/TYRMars/JSlearn#02-04) `作用域和闭包-闭包`
+* [02-05](https://github.com/TYRMars/JSlearn#02-05) `知识点小结 & 解决问题`
 
 
 ## JS小练习
@@ -527,6 +530,7 @@ function F1() {
 
 ## 02-04
 ### 作用域和闭包-闭包
+* 函数作为返回值
 ```JavaScript
 function F1() {
   var a = 100;
@@ -540,9 +544,121 @@ var f1 = F1();
 var a = 200;
 f1();
 ```
-* 函数作为返回值
 * 函数作为参数传递
+```JavaScript
+function F1() {
+  var a = 100;
+  return function () {
+    console.log(a);  //自由变量，父作用域中查找
+  }
+}
+var f1 = F1();
+function F2(fn) {
+  var a = 200;
+  fn();
+}
+F2(f1);
+```
+## 02-05
+### 知识点小结 & 解决问题
+#### 对变量提升的理解
+* 变量定义
+* 函数声明（注意和函数表达式的区别）
+#### this几种不停的使用场景
+* 作为构造函数执行
+* 作为对象属性执行
+* 作为普通函数执行
+* call apply bind
+```JavaScript
+function Foo(name){
+  this.name = name;
+}
+var f = new Foo('zhangsan');
 
+var obj = {
+  name:'A',
+  printName:function(){
+    console.log(this.name);
+  }
+}
+obj.printName()
+
+function fn(){
+  console.log(this);
+}
+fn()
+
+// call apply bind
+function fn1(name) {
+  alert(name);
+  console.log(this);
+}
+fn1.call({x:100},'zhangsan',20);
+// bind
+var fn2 = function fn2(name) {
+  alert(name);
+  console.log(this);
+}.bind({y:200});
+fn2('zhangsan',20);
+```
+#### 创建10个<a>标签 点击的时候弹出来对应的序号
+* 错误写法
+```JavaScript
+//这是一个错误的写法！！！
+var i,a;
+for (var i = 0; i < 10; i++) {
+  a = document.createElement('a');
+  a.innerHTML = i + '<br>';
+  a.addEventListener('click',function (e) {
+    e.preventDefault();
+    alert(i)
+  })
+  document.body.appendChild(a);
+}
+//输出为如下： <a>"9"<br></a>
+```
+* 正确写法
+```JavaScript
+//这是一个正确写法！！！
+var i;
+for (i = 0; i < 10; i++) {
+  (function(i){
+    var a = document.createElement('a');
+    a.innerHTML = i + '<br>';
+    a.addEventListener('click',function (e) {
+      e.preventDefault();
+      alert(i);
+    })
+    document.body.appendChild(a);
+  })(i)
+}
+```
+#### 如何理解作用域
+* 自由变量
+* 作用域链，即自由变量的查找
+* 闭包的两个场景
+
+#### 实际开发中闭包的应用
+```JavaScript
+//闭包实际应用中主要作用于封装变量，收取权限
+function isFirstLoad() {
+  var _list = [];
+  return function (id) {
+    if(_list.indexOf(id) >= 0){
+      return false;
+    }else {
+      _list.push(id);
+        return true;  
+    }
+  }
+}
+
+// 应用
+var firstLoad = isFirstLoad()
+firstLoad(10) // true
+firstLoad(10) // false;
+firstLoad(20) // true
+```
 ---
 
 ### JSDemo JS小程序
