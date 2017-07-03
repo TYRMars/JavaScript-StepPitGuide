@@ -17,6 +17,12 @@
 * [02-03](https://github.com/TYRMars/JSlearn#02-03) `作用域和闭包-作用域`
 * [02-04](https://github.com/TYRMars/JSlearn#02-04) `作用域和闭包-闭包`
 * [02-05](https://github.com/TYRMars/JSlearn#02-05) `知识点小结 & 解决问题`
+#### 03
+* [03-01](https://github.com/TYRMars/JSlearn#03-01) `异步和单线程-什么是异步`
+* [03-02](https://github.com/TYRMars/JSlearn#03-02) `异步和单线程-单线程`
+* [03-03](https://github.com/TYRMars/JSlearn#03-03) `其他知识点-日期和Math`
+* [03-04](https://github.com/TYRMars/JSlearn#03-04) `其他知识点-数组和对象的API`
+
 
 
 ## JS小练习
@@ -659,6 +665,69 @@ firstLoad(10) // true
 firstLoad(10) // false;
 firstLoad(20) // true
 ```
+## 03-01
+### 异步和单线程-什么是异步
+* 同步和异步的区别是什么？分别举一个同步和异步的例子
+* 一个关于setTimeout的笔试题
+* 前端使用异步的场景有哪些
+#### 异步知识点
+* 什么是异步（对比同步）
+* 前端使用异步的场景
+* 异步与单线程
+#### 什么是异步
+```JavaScript
+console.log(100); // step1
+setTimeout(function () {
+  console.log(200); // step3
+},1000);
+console.log(300); // step2
+```
+#### 对比同步
+```JavaScript
+console.log(100);
+alert(200) // 1秒钟后点击确认
+console.log(300);
+```
+#### 何时需要异步
+* 在可能发生等待的情况
+* 等待过程中不能像alert一样阻塞程序运行
+* 因此，所有的`所有的等待情况`都需要异步
+#### 前端使用异步的场景
+* 定时任务：`setTimeout,setInverval`
+* 网络请求：`ajax请求`,`动态<img>加载`
+```JavaScript
+//ajax请求
+console.log('start');
+$.get('./data1.json',function (data1) {
+  console.log(data1);
+})
+console.log('end');
+//<img>加载示例
+console.log('start');
+var img = document.createElement('img');
+img.onload = function () {
+  console.log('loaded');
+}
+img.src = '/xxx.png';
+console.log('end');
+```
+* 事件绑定
+
+## 03-02
+### 异步和单线程-单线程
+```JavaScript
+console.log(100); // step1
+setTimeout(function () {
+  console.log(200); // step3
+});
+console.log(300); // step2
+```
+* 从上面代码中理解单线程
+    * 执行第一行，打印100
+    * 执行setTimeout后，传入setTimeout的函数会被暂存起来，不会立即执行（单线程的特点，不能同时干两件事）
+    * 执行最后一行打印300
+    * 待所有程序执行完，处于空闲状态时，会立马看有没有暂存起来的要执行
+    * 发现暂存起来的`setTimeout`中的函数无需等待时间，就立即来过来执行
 ---
 
 ### JSDemo JS小程序
