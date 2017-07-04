@@ -728,6 +728,27 @@ console.log(300); // step2
     * 执行最后一行打印300
     * 待所有程序执行完，处于空闲状态时，会立马看有没有暂存起来的要执行
     * 发现暂存起来的`setTimeout`中的函数无需等待时间，就立即来过来执行
+#### 解答：异步与单线程
+* 同步和异步的区别是什么？分别举一个同步和异步的例子
+    * 同步会阻塞代码执行，而异步不会
+    * `alert`是同步，`setTimeout`是异步
+* 一个关于setTimeout的笔试题
+* 可以说`setTimeout`是等待页面加载完毕后，在进行加载
+```JavaScript
+console.log(1);
+setTimeout(function () {
+  console.log(2);
+},0)
+console.log(3);
+setTimeout(function () {
+  console.log(4);
+},1000)
+console.log(5);
+```
+* 前端使用异步的场景有哪些
+    * 定时任务:`setTimeout,setInverval`
+    * 网络任务:`ajax`请求，动态`<img>`加载
+    * 事件绑定
 ---
 
 ### JSDemo JS小程序
