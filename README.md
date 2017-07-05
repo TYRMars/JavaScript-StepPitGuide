@@ -749,6 +749,104 @@ console.log(5);
     * 定时任务:`setTimeout,setInverval`
     * 网络任务:`ajax`请求，动态`<img>`加载
     * 事件绑定
+
+## 03-03
+### 其他知识点-日期和Math
+#### 获取 2017-06-10 格式的日期
+```JavaScript
+Date.now(); // 获取当前时间毫秒数
+var dt = new Date();
+dt.getTime() // 获取毫秒数
+dt.getFullYear() // 年
+dt.getMonth() // 月（0-11）
+dt.getDate() // 日（0-31）
+dt.getHours() // 小时（0-23）
+dt.getMinutes() // 分钟（0-59）
+dt.getSeconds() // 秒 （0-59）
+```
+#### 获取随机数，要求时长度一致的字符串格式
+* `Math` 获取随机数 `Math.random()`
+
+## 03-04
+### 其他知识点-数组和对象的API
+#### 写一个能遍历对象和数组的通用forEach函数
+##### 数组API
+* `forEach` 便利所有元素
+```JavaScript
+var arr = [1,2,3];
+arr.forEach(function (item,index) {
+  //遍历数组所有元素
+  console.log(index,item);
+})
+```
+* `every` 判断所有元素是否都符合条件
+```JavaScript
+var arr = [1,2,3];
+var result = arr.every(function (item,index) {
+  if (item<4) {
+    //用于判断所有的数组元素，都满足一个条件
+    return true;
+  }
+})
+console.log(result);
+```
+* `some` 判断是否有至少一个元素符合条件
+```JavaScript
+var arr = [1,2,3];
+var result = arr.some(function (item,index) {
+  // 用来判断所有的数组元素，只要有一个满足条件即可
+  if (item<2) {
+    return true;
+  }
+})
+console.log(result);
+```
+* `sort` 排序
+```JavaScript
+var arr = [1,4,2,3,5]
+var arr2 = arr.sor(function (a,b) {
+  //从小到大排序
+  return a - b;
+  //从大到小排序
+  //return b - a
+})
+console.log(arr2);
+```
+* `map` 对元素重新组装，生成新数组
+```JavaScript
+var arr = [1,2,3,4]
+var arr2 = arr.map(function functionName(item,index) {
+  //将元素重新组装，并返回
+  return '<b>' + item + '</b>';
+})
+console.log(arr2);
+```
+* `filter` 过滤符合条件的元素
+```JavaScript
+var arr = [1,2,3];
+var arr2 = arr.filter(function (item,index) {
+  //通过某一个条件过滤数组
+  if(item >= 2){
+    return true;
+  }
+})
+console.log(arr2);
+```
+##### 对象API
+```JavaScript
+var obj = {
+  x: 100,
+  y: 200,
+  z: 300
+}
+var key
+for (key in obj) {
+  // 注意这里的hasOwnProperty，请查看原型链
+  if (obj.hasOwnProperty(key)) {
+    console.log(key,obj[key]);
+  }
+}
+```
 ---
 
 ### JSDemo JS小程序
