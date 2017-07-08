@@ -804,7 +804,7 @@ console.log(result);
 * `sort` 排序
 ```JavaScript
 var arr = [1,4,2,3,5]
-var arr2 = arr.sor(function (a,b) {
+var arr2 = arr.sort(function (a,b) {
   //从小到大排序
   return a - b;
   //从大到小排序
@@ -847,6 +847,55 @@ for (key in obj) {
   }
 }
 ```
+* 举个例子
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8" />
+		<title>Register</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  </head>
+<body>
+  <script type="text/javascript">
+    console.log(Date.now());
+    var dt = new Date();
+    console.log(dt);
+    console.log(dt.getTime());
+    console.log(dt.getFullYear());
+    console.log(dt.getDate());
+
+    var arr = [1,2,3,4]
+
+    arr.forEach(function (item,index) {
+      console.log(index,item);
+    })
+  </script>
+</body>
+</html>
+```
+#### 问题解答
+* 获取2017-06-10格式的日期
+```JavaScript
+function formatDate(dt) {
+  if (!dt) {
+    dt = new Date();
+  }
+  var year = dt.getFullYear();
+  var month = dt.getMonth() + 1;
+  var date = dt.getDate();
+  if (month = 10) {
+    //强制转换类型
+    month = '0' + month;
+  }
+  if (date < 10) {
+    //强制转换类型
+  }
+
+}
+```
+* 获取随机数，要求是长度一致的字符串格式
+* 写一个能遍历对象和数组的通用forEach函数
 ---
 
 ### JSDemo JS小程序
