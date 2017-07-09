@@ -22,6 +22,8 @@
 * [03-02](https://github.com/TYRMars/JSlearn#03-02) `异步和单线程-单线程`
 * [03-03](https://github.com/TYRMars/JSlearn#03-03) `其他知识点-日期和Math`
 * [03-04](https://github.com/TYRMars/JSlearn#03-04) `其他知识点-数组和对象的API`
+#### 04
+* [04-01](https://github.com/TYRMars/JSlearn#04-01) `从基础知识到JS-Web-API`
 
 
 
@@ -884,18 +886,98 @@ function formatDate(dt) {
   var year = dt.getFullYear();
   var month = dt.getMonth() + 1;
   var date = dt.getDate();
-  if (month = 10) {
+  if (month < 10) {
     //强制转换类型
     month = '0' + month;
   }
   if (date < 10) {
     //强制转换类型
+    date = '0' + date;
   }
-
+  //强制转换类型
+  return year + '-' + month + '-' + date;
 }
+var dt = new Date();
+var formatDate = formatDate(dt);
+console.log(formatDate);
 ```
 * 获取随机数，要求是长度一致的字符串格式
+```JavaScript
+var random = Math.random();
+var random = random + '0000000000'; //后面加上10个0
+var random = random.slice(0,10);
+console.log(random);
+```
 * 写一个能遍历对象和数组的通用forEach函数
+```JavaScript
+//do
+var arr = [1,2,3];
+//注意，这里的参数的顺序换了，为了和对象的遍历格式一致
+forEach(arr,function (index,item) {
+  console.log(index.item);
+})
+
+var obj = {x:100,y:200};
+forEach(obj,function (key,value) {
+  console.log(key,value);
+})
+
+//init
+function forEach(obj,fn) {
+  var key;
+  if (obj instanceof Array) {
+    //准确判断是不是一个数组
+    obj.forEach(function (index.item) {
+      fn(index,item);
+    })
+  }else {
+    //不是数组就是对象
+    for (key in obj){
+      fn(key,obj[key]);
+    }
+  }
+}
+```
+
+## 04-01
+### 从基础知识到JS-Web-API
+* 变量类型和计算
+* 原型和原型链
+* 闭包和作用域
+* 异步和单线程
+* 其他（如日期、Math、各种常用API）
+#### 特点
+* 特点：表面上来看不能用于工作中开发代码
+* 内置函数：`Object Array Boolean String ......`
+* 内置对象：`Math JSON ...`
+* 我们连在网页弹出一句`Hello World`都不能实现
+#### JS-Web-API
+* JS基础知识：ECMA 262标准
+* JS-Web-API：W3C标准
+* W3C标准中关于JS的规定有：
+    * DOM操作
+    * BOM操作
+    * 事件绑定
+    * ajax请求(包含http协议)
+    * 存储
+#### 基本操作
+* 页面弹框是`windows.alert(123)`，浏览器需要做：
+    * 定义一个`windows`全局变量，对象类型；
+    * 给它定义一个`alert`属性，属性值是一个函数；
+* 获取元素document.getElementById(id),浏览器需要：
+    * 定义一个document全局变量，对象属性；
+    * 给它定义一个getElementById的属性，属性值是一个函数；
+* W3C标准没有规定任何JS基础相关的东西；
+* 不管什么变量类型、原型、作用域和异步
+* 只管定义用于浏览器中JS操作页面的API和全局变量
+* 全面考虑，JS内置的全局函数和对象有哪些？
+* 之前ECMA的
+* 比如 window document
+* 所有未定义的全局变量，如`navigator.userAgent`
+#### 总结
+* 常说的JS(浏览器执行的JS)包含两个部分：
+* JS基础知识(ECMA262标准)；
+* JS-Web-API(W3C标准)；
 ---
 
 ### JSDemo JS小程序
