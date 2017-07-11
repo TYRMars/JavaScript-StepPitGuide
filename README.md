@@ -24,6 +24,9 @@
 * [03-04](https://github.com/TYRMars/JSlearn#03-04) `其他知识点-数组和对象的API`
 #### 04
 * [04-01](https://github.com/TYRMars/JSlearn#04-01) `从基础知识到JS-Web-API`
+* [04-02](https://github.com/TYRMars/JSlearn#04-02) `DOM本质`
+* [04-03](https://github.com/TYRMars/JSlearn#04-03) `DOM节点操作`
+
 
 
 
@@ -978,6 +981,82 @@ function forEach(obj,fn) {
 * 常说的JS(浏览器执行的JS)包含两个部分：
 * JS基础知识(ECMA262标准)；
 * JS-Web-API(W3C标准)；
+
+## 04-02
+### DOM操作
+* Document Object Model
+* DOM是哪种基本的数据结构
+* DOM操作的常用API有哪些
+* DOM节点的attr和property有和区别
+#### DOM的本质
+* XML
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Dont forget me this weekend</body>
+<other>
+<a></a>
+<b></b>
+</other>
+</note>
+```
+* XML
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <p>this is p</p>
+  </div>
+</body>
+</html>
+```
+
+## 04-03
+### DOM节点操作
+* 获取DOM节点
+* prototype,获取JS对象上的属性
+* Attribute,获取DOM标签上的属性
+#### 获取DOM节点
+```JavaScript
+var div1 = document.getElementById('div1'); //元素
+var divList = document.getElementByTagName('div'); //集合
+console.log(divList.length);
+console.log(divList[0]);
+
+var containerList = document.getElementByClassName('.container'); //集合
+var pList = document.querySelectorAll('p'); //集合
+```
+#### property
+```JavaScript
+var pList = document.querySelectorAll('p');
+var p = pList[0];
+console.log(p.style.width); // 获取样式
+p.style.width = '100px' // 修改样式
+console.log(p.className);//获取class
+p.className = 'p1' //修改class
+
+// 获取 nodeName 和 ndoeType
+console.log(p.nodeName);
+console.log(p.nodeType);
+```
+#### Attribute
+```JavaScript
+var pList = document.querySelectorAll('p');
+var p = pList[0];
+p.getAttribute('data-name');
+p.getAttribute('data-name','imooc');
+p.getAttribute('style');
+p.setAttribute('style','font-size:30px;');
+```
+
 ---
 
 ### JSDemo JS小程序
