@@ -12,10 +12,20 @@
     <p id="p4">this is p4</p>
   </div>
   <script type="text/javascript">
-  var p = document.createElement('p');
-  p.innerHTML = 'new p';
+  // 1.
+  // var p = document.createElement('p');
+  // p.innerHTML = 'new p';
+  // var div1 = document.getElementById('div1');
+  // div1.appendChild(p);
+  // 2.移动P4到div1中
+  var p4 = document.getElementById('p4');
   var div1 = document.getElementById('div1');
-  adiv1.appendChild(p);
+  div1.appendChild(p4);
+  console.log(p4.parentElement);
+  console.log(div1.parentElement);
+  console.log(div1.childNodes);
+  console.log(div1.childNodes[0].nodeType); //text 3
+  console.log(div1.childNodes[1].nodeType); //p    1
   </script>
 </body>
 </html>
