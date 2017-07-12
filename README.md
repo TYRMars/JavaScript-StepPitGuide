@@ -26,6 +26,7 @@
 * [04-01](https://github.com/TYRMars/JSlearn#04-01) `从基础知识到JS-Web-API`
 * [04-02](https://github.com/TYRMars/JSlearn#04-02) `DOM本质`
 * [04-03](https://github.com/TYRMars/JSlearn#04-03) `DOM节点操作`
+* [04-04](https://github.com/TYRMars/JSlearn#04-04) `DOM结构操作`
 
 
 
@@ -1055,6 +1056,53 @@ p.getAttribute('data-name');
 p.getAttribute('data-name','imooc');
 p.getAttribute('style');
 p.setAttribute('style','font-size:30px;');
+```
+
+## 04-04
+### DOM结构操作
+* 新增节点
+```JavaScript
+var div1 = document.getElementById('div1');
+//添加新节点
+var p1 = document.createElement('p');
+p1.innerHTML = 'this is p1';
+div1.appendChild(p1); //添加新创建的元素
+//移除已有节点
+var p2 = document.getElementById('p2');
+div1.appendChild(p2);
+```
+* 获取父元素-获取子节点
+```JavaScript
+var div1 = document.getElementById('div1');
+var parent = div1.parentElement;
+```
+* 删除节点
+```JavaScript
+var div1 = document.getElementById('div1');
+var child = div1.childNodes;
+div1.removeChild(child[0]);
+```
+#### 举个栗子(例子：example)！！！
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div id="div1">
+    <p id="p1">this is p1</p>
+    <p id="p2">this is p2</p>
+  </div>
+  <div id="div2">
+    <p id="p3">this is p3</p>
+    <p id="p4">this is p4</p>
+  </div>
+  <script type="text/javascript">
+  var p = document.createElement('p');
+  p.innerHTML = '';
+  </script>
+</body>
+</html>
 ```
 
 ---
