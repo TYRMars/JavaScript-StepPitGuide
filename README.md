@@ -27,6 +27,7 @@
 * [04-02](https://github.com/TYRMars/JSlearn#04-02) `DOM本质`
 * [04-03](https://github.com/TYRMars/JSlearn#04-03) `DOM节点操作`
 * [04-04](https://github.com/TYRMars/JSlearn#04-04) `DOM结构操作`
+* [04-05](https://github.com/TYRMars/JSlearn#04-05) `DOM知识总结`
 
 
 
@@ -1104,6 +1105,21 @@ div1.removeChild(child[0]);
 </body>
 </html>
 ```
+## 04-05
+### DOM知识解答
+* DOM是哪种基本的数据结构?
+    * 树
+* DOM操作的常用API有哪些
+    * 获取DOM节点，以及节点的`property`和`Attribute`
+    * 获取父节点，获取子节点
+    * 新增节点，删除节点
+* `DOM节点`的`Attribute`和`property`有何区别
+    * `property`只是一个`JS对象`的属性的修改
+    * `Attribute`是对`html标签`属性的修改
+* 重点总结
+    * DOM本质
+    * DOM节点的操作
+    * DOM结构操作
 
 ---
 
