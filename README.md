@@ -1120,6 +1120,38 @@ div1.removeChild(child[0]);
     * DOM节点的操作
     * DOM结构操作
 
+## 04-06
+### BOM操作
+* Browser Object Model
+#### 如何监测浏览器的类型
+#### 拆解url的各部分
+#### 知识点
+* `navigator & screen`
+
+```JavaScript
+//navigator
+var ua = navigator.userAgent;
+var isChrome = ua.indexOf('Chrome');
+console.log(isChrome);
+//screen
+console.log(screen.width);
+console.log(screen.height);
+```
+
+* `location & history`
+```JavaScript
+//location
+console.log(location.href);
+console.log(location.protocel);
+console.log(location.pathname);
+console.log(location.search);
+console.log(location.hash);
+//history
+history.back();
+history.forward();
+```
+
+
 ---
 
 ### JSDemo JS小程序
