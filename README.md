@@ -28,6 +28,9 @@
 * [04-03](https://github.com/TYRMars/JSlearn#04-03) `DOM节点操作`
 * [04-04](https://github.com/TYRMars/JSlearn#04-04) `DOM结构操作`
 * [04-05](https://github.com/TYRMars/JSlearn#04-05) `DOM知识总结`
+* [04-06](https://github.com/TYRMars/JSlearn#04-06) `BOM知识点`
+#### 05
+* [05-01](https://github.com/TYRMars/JSlearn#05-01) `事件-知识点`
 
 ---
 
@@ -1151,7 +1154,15 @@ history.back();
 history.forward();
 ```
 
-
+## 05-01
+### 事件-知识点
+* 编写一个通用的事件监听函数
+* 描述事件冒泡流程
+* 对于一个无线下拉加载图片的页面，如何给每个图片绑定事件
+#### 知识点
+* 通用事件绑定
+* 事件冒泡
+* 代理
 ---
 
 ### JSDemo JS小程序
