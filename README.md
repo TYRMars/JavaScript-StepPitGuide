@@ -1161,6 +1161,10 @@ history.forward();
 * 对于一个无线下拉加载图片的页面，如何给每个图片绑定事件
 #### 知识点
 * 通用事件绑定
+```JavaScript
+var btn = document.getElementById('btn1');
+btn.
+```
 * 事件冒泡
 * 代理
 ---
