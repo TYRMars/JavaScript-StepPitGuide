@@ -1428,7 +1428,92 @@ console.log(aGetFormatDate(dt));
 <!-- 1.这些代码中的函数必须是全局变量，才能暴露给使用方。全局变量污染 -->
 <!-- 2. a.js 知道要引用 a-util.js ,但是他知道还需要依赖于util.js吗？ -->
 ```
+#### 使用模块化
 
+```JavaScript
+//util.js
+export{
+  getFormatDate:function (data,type) {
+    //type === 1 返回 2017-06-15
+    //type === 2 返回 2017年6月15日 格式
+  }
+}
+//a-util.js
+var getFormatDate = require('util.js');
+export{
+  aGetFormatDate:function (date) {
+    //要求返回 2017年6月15日 格式
+    return getFormatDate(date,2);
+  }
+}
+// a.js
+var aGetFormatDate = require('a-util.js')
+var dt = new Date();
+console.log(aGetFormatDate(dt));
+
+//直接‘<script src="a.js"></script>’,其他的根据依赖关系自动引用
+//那两个函数，没必要做成全局变量，不会带来污染和覆盖
+```
+#### AMD
+* require.js `requirejs.org/`
+* 全局define函数
+* 全局require函数
+* 依赖JS会自动、异步加载
+
+```JavaScript
+//util.js
+define(function () {
+  return{
+    getFormatDate: function (date,type) {
+      if (type === 1) {
+        return '2017-06-15'
+      }
+      if (type === 2) {
+        return '2017年6月15日'
+      }
+    }
+  }
+});
+
+//a-util.js
+define(['./util.js'],function (util) {
+  return{
+    aGetFormatDate: function (date) {
+      return util.getFormatDate(date,2);
+    }
+  }
+});
+
+// a.js
+define('[./a-util.js]',function (aUtil) {
+  return{
+    printDate:function (date) {
+      console.log(aUtil.aGetFormatDate);
+    }
+  }
+});
+
+//main.js
+require('[./a.js]',function (a) {
+  var date = new Date();
+  a.printDate(date);
+});
+```
+* 使用
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+</head>
+<body>
+  <p>AMD test</p>
+  <script src="/require.min.js" data-main="./main.js"></script>
+</body>
+</html>
+```
 ---
 
 ### JSDemo JS小程序
