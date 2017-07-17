@@ -32,6 +32,9 @@
 #### 05
 * [05-01](https://github.com/TYRMars/JSlearn#05-01) `事件-知识点`
 * [05-02](https://github.com/TYRMars/JSlearn#05-02) `Ajax-XMLHttpRequest`
+* [05-03](https://github.com/TYRMars/JSlearn#05-03) `存储`
+#### 06
+* [06-01](https://github.com/TYRMars/JSlearn#06-01) `模块化`
 
 ---
 
@@ -1389,6 +1392,42 @@ response.setHeader("Access-Control-Allow-Credentials","true");
 * 是否会携带到ajax中
 * API易用性
 
+## 06-01
+### 模块化
+* 不使用模块化
+* 使用模块化
+* AMD
+* CommonJS
+#### 不使用模块化
+* `util getFormatDate函数`
+* `a-util.js aGetFormatDate函数 使用getFormatDate`
+* `a.js aGetFormatDate`
+* 定义
+```JavaScript
+//util.js
+function getFormatDate(date,type) {
+  //type === 1返回 2017-06-15
+  //type === 2返回 2017年6月15日 格式
+  //...
+}
+//a-util.js
+function aGetFormatDate(data) {
+  //返回
+  return getFormatDate(date,2);
+}
+// a.js
+var dt = new Date()
+console.log(aGetFormatDate(dt));
+```
+* 使用
+
+```html
+<script src="util.js"></script>
+<script src="a-util.js"></script>
+<script src="a.js"></script>
+<!-- 1.这些代码中的函数必须是全局变量，才能暴露给使用方。全局变量污染 -->
+<!-- 2. a.js 知道要引用 a-util.js ,但是他知道还需要依赖于util.js吗？ -->
+```
 
 ---
 
