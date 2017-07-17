@@ -35,6 +35,11 @@
 * [05-03](https://github.com/TYRMars/JSlearn#05-03) `存储`
 #### 06
 * [06-01](https://github.com/TYRMars/JSlearn#06-01) `模块化`
+* [06-02](https://github.com/TYRMars/JSlearn#06-02) `模块化-AMD`
+* [06-03](https://github.com/TYRMars/JSlearn#06-03) `模块化-CommonJS`
+#### 07
+* [07-01](https://github.com/TYRMars/JSlearn#07-01) `上线回滚-上线回滚流程`
+
 
 ---
 
@@ -1454,7 +1459,8 @@ console.log(aGetFormatDate(dt));
 //直接‘<script src="a.js"></script>’,其他的根据依赖关系自动引用
 //那两个函数，没必要做成全局变量，不会带来污染和覆盖
 ```
-#### AMD
+## 06-02
+### AMD
 * require.js `requirejs.org/`
 * 全局define函数
 * 全局require函数
@@ -1514,6 +1520,57 @@ require('[./a.js]',function (a) {
 </body>
 </html>
 ```
+
+## 06-03
+### CommonJS
+* nodejs模块化规范，现在被大量用于前端，原因：
+    * 前端开发依赖的插件和库，都可以从npm中获取
+    * 构建工具的高度自动化，是的使用npm的成本非常低
+    * CommonJS不会异步加载JS，而是同步一次性加载出来
+
+```JavaScript
+module.exports = {
+  getFormatDate:function (data,type) {
+    if (type === 1) {
+      return '2017-06-15';
+    }
+    if (type === 2) {
+      return '2017年6月15日';
+    }
+  }
+}
+
+// a-util.js
+var util = require('util.js')
+module.exports = {
+  aGetFormatDate:function (data) {
+    return util.getFormatDate(data,2);
+  }
+}
+```
+
+#### AMD和CommonJS的使用场景
+* 需要异步加载JS，使用AMD
+* 使用了npm之后建议使用CommonJS
+
+## 07-01
+### 上线回滚-上线回滚流程
+* 上线和回滚的基本流程
+* linux基本命令
+#### 上线回滚流程
+* 重要的开发环节
+#### 上线流程要点
+* 将测试完的代码提交到git版本库的master分支
+* 将当前服务器的代码全部打包并记录版本号，备份
+* 将master分支的代码提交覆盖到线上服务器，生成新的版本号
+#### 回滚流程要点
+* 将当前服务器的代码打包并记录版本号，备份
+* 将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号
+#### Linux基本命令
+* 服务器使用Linux居多，server版，只有命令行
+* 测试环境要匹配线上环境，因此也是Linux
+* 经常需要登陆测试机来自己配置、获取数据
+
 ---
 
 ### JSDemo JS小程序
