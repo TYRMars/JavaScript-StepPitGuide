@@ -1,6 +1,11 @@
 <h1 align="center">JavaScript学习</h1>
 <p align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498542774866&di=ed28b6b90c4be001acda441377113f2e&imgtype=0&src=http%3A%2F%2F7xkvof.com2.z0.glb.qiniucdn.com%2Farticle%2F79tvzE5PHyLClhki4Gbv.jpg" /></p>
 
+---
+
+* [JSLearn-ES6](https://github.com/TYRMars/JSLearn-ES6) 'ES6语法学习'
+
+---
 ## JavaScript基础知识剖析
 #### 01
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
