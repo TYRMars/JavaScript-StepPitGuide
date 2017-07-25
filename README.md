@@ -44,7 +44,8 @@
 * [06-03](https://github.com/TYRMars/JSlearn#06-03) `模块化-CommonJS`
 #### 07
 * [07-01](https://github.com/TYRMars/JSlearn#07-01) `上线回滚-上线回滚流程`
-
+#### 08 JS算法
+* [08-01](https://github.com/TYRMars/JSlearn#08-01) `排序算法`
 
 ---
 
@@ -1575,6 +1576,34 @@ module.exports = {
 * 服务器使用Linux居多，server版，只有命令行
 * 测试环境要匹配线上环境，因此也是Linux
 * 经常需要登陆测试机来自己配置、获取数据
+
+## 08-01
+### 排序算法
+1. 冒泡排序
+
+```JavaScript
+function bubbleSort(arr){
+  var i = 0,
+  j = 0;
+  for (var i = 0; i < array.length; i++) {
+    var temp = 0;
+    //">"从小到大
+    //"<"从大到小
+    if (arr[i] > arr[j+1]) {
+      temp = arr[j];
+      arr[j] = arr[j+1];
+      arr[j+1] = temp;
+    }
+  }
+  return arr;
+}
+```
+
+2. 快速排序
+
+```JavaScript
+
+```
 
 ---
 
