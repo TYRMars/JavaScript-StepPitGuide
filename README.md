@@ -1578,8 +1578,67 @@ module.exports = {
 * 经常需要登陆测试机来自己配置、获取数据
 
 ## 08-01
-### 排序算法
+### 算法测试函数
+* SetData()函数生成了存储在数组中的随机数字。Math类的random()函数会生成[0,1)区间内的随机数字。换句话说，random()函数生成的随机数字大于等于0，但不会等于1。最后在用Math类的floor()函数确定最终结果。
+* 如下这个公式可以成功生成1~100的随机数字集合。
+
+```JavaScript
+
+function CArray(numElements) {
+  this.dataStore = [];
+  this.pos = 0;
+  this.numElements = numElements;
+  this.insert = insert;
+  this.toString = toString;
+  this.clear = clear;
+  this.setData = setData;
+  this.swap = swap;
+  for (var i = 0; i < numElements; ++i) {
+    this.dataStore[i] = i;
+  }
+}
+//数据输出
+function setData() {
+  for (var i = 0; i < this.numElements; ++i) {
+    this.dataStore[i] = Math.floor(Math.random() * (this.numElements + 1));//生成随机数组
+  }
+}
+
+function clear() {
+  for (var i = 0; i < this.dataStore.length; ++i) {
+    this.dataStore[i] = 0;
+  }
+}
+
+function insert(element) {
+  this.dataStore[this.pos++] = element;
+}
+
+function toString() {
+  var restr = "";
+  for (var i = 0; i < this.dataStore.length; ++i) {
+    restr += this.dataStore[i] + " ";
+    if (i > 0 & i % 10 == 0) {
+      restr += "\n";
+    }
+  }
+  return restr;
+}
+
+function swap(arr,index1,index2) {
+  var temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+}
+
+var numElements = 100;
+var myNums = new CArray(numElements);
+myNums.setData();
+console.log(myNums.toString());
+```
+
 1. 冒泡排序
+* 冒泡排序，之所以这么叫是因为使用这种排序算法时
 
 ```JavaScript
 function bubbleSort(arr){
