@@ -1631,6 +1631,7 @@ function swap(arr,index1,index2) {
   arr[index2] = temp;
 }
 
+//测试
 var numElements = 100;
 var myNums = new CArray(numElements);
 myNums.setData();
@@ -1638,24 +1639,33 @@ console.log(myNums.toString());
 ```
 
 1. 冒泡排序
-* 冒泡排序，之所以这么叫是因为使用这种排序算法时
+* 最慢的排序算法之一
+* 冒泡排序，之所以这么叫是因为使用这种排序算法排序时，数据值就会像气泡一样从数组的一端漂浮到另一端。假设正在将一组数字按照升序排列，较大的值会浮动到数组的右侧，而较小的值会浮动到数组的左侧。之所以会产生这种现象是因为算法会多次在数组中移动，比较相邻的数据，当左侧值大于右侧值时将它们进行互换。
 
 ```JavaScript
-function bubbleSort(arr){
-  var i = 0,
-  j = 0;
-  for (var i = 0; i < array.length; i++) {
-    var temp = 0;
-    //">"从小到大
-    //"<"从大到小
-    if (arr[i] > arr[j+1]) {
-      temp = arr[j];
-      arr[j] = arr[j+1];
-      arr[j+1] = temp;
+
+function bubbleSort() {
+  var numElements = this.dataStore.length;
+  var temp;
+  for (var outer = numElements; outer >= 2; --outer) {
+    for (var inner = 0; inner <= outer - 1; ++inner ) {
+      if (this.dataStore[inner] > this.dataStore[inner + 1]) {
+        swap(this.dataStore,inner,inner + 1);
+      }
     }
   }
-  return arr;
 }
+```
+
+* 使用bubbleSort()对10个数字排序
+
+```JavaScript
+var numElements = 10;
+var mynums = new CArray(numElements);
+mynums.setData();
+console.log(mynums.toString());
+mynums.bubbleSort();
+console.log(mynums.toString);
 ```
 
 2. 快速排序
