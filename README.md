@@ -7,7 +7,7 @@
 
 ---
 ## JavaScript基础知识剖析
-#### 01
+#### 01 变量与原型
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
 * [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
 * [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
@@ -45,7 +45,11 @@
 #### 07
 * [07-01](https://github.com/TYRMars/JSlearn#07-01) `上线回滚-上线回滚流程`
 #### 08 JS算法
-* [08-01](https://github.com/TYRMars/JSlearn#08-01) `排序算法`
+* [08-01](https://github.com/TYRMars/JSlearn#08-01) `JavaScript算法测试函数`
+* [08-02](https://github.com/TYRMars/JSlearn#08-02) `JavaScript算法-冒泡排序`
+* [08-03](https://github.com/TYRMars/JSlearn#08-03) `JavaScript算法-选择排序`
+#### 09 函数应用
+* [09-01](https://github.com/TYRMars/JSlearn#09-01) `JavaScript算法测试函数`
 
 ---
 
@@ -129,7 +133,7 @@ console.log(!window.acb); //true
 
 //判断一个变量会被当做true还是false
 var a = 100;
-console.log(!!a);
+console.log(!!a);//true
 ```
 ## 01-02
 ### 变量类型和计算（2）
@@ -146,7 +150,7 @@ typeof null //object
 typeof console.log //funciton
 ```
 * 总结来说typeof可以得到`undefined、String、number、boolean`可以区分值类型，但对于引用类型无法很细的区分，只能区分函数。
-* 尤其是`typeof null //object`它是一个引用类型
+* 尤其是`typeof null object`它是一个引用类型
 #### 何时使用 === 和 ==
 ```JavaScript
 //问题：何时使用===何时使用==
@@ -1578,7 +1582,7 @@ module.exports = {
 * 经常需要登陆测试机来自己配置、获取数据
 
 ## 08-01
-### 算法测试函数
+### JavaScript算法测试函数
 * SetData()函数生成了存储在数组中的随机数字。Math类的random()函数会生成[0,1)区间内的随机数字。换句话说，random()函数生成的随机数字大于等于0，但不会等于1。最后在用Math类的floor()函数确定最终结果。
 * 如下这个公式可以成功生成1~100的随机数字集合。
 
@@ -1639,7 +1643,7 @@ console.log(myNums.toString());
 ```
 
 ## 08-02
-### 算法测试-冒泡排序
+### JavaScript算法-冒泡排序
 
 * 冒泡排序
 * 最慢的排序算法之一
@@ -1753,7 +1757,7 @@ console.log(mynums.toString);
  var audi = new Car("audi", "silver");
  var benz = new Car("benz", "black");
  var ferrari = new Car("ferrari", "yellow");
- ```
+```
  
 5. 函数调用模式
 
@@ -1770,7 +1774,7 @@ console.log(mynums.toString);
      helper();
    }
  }
- ```
+```
 
 6. arguments转数组
 
@@ -1826,11 +1830,8 @@ console.log(mynums.toString);
  for(var i=0;i<=10;i++){
    console.log(factorial(i)); 
  }
-```
- 
-10. 记忆函数
 
-```JavaScript
+//记忆函数
  var factorial = (function(){
    var memo = [1];
    var count = 0;
@@ -1852,7 +1853,8 @@ console.log(mynums.toString);
  }
 ```
  
-11. curry函数柯里化
+10. curry 函数柯里化
+  * 把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术
 
 ```JavaScript
  function add(value){
