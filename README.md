@@ -1120,8 +1120,20 @@ div1.removeChild(child[0]);
     <p id="p4">this is p4</p>
   </div>
   <script type="text/javascript">
-  var p = document.createElement('p');
-  p.innerHTML = '';
+  // 1.
+  // var p = document.createElement('p');
+  // p.innerHTML = 'new p';
+  // var div1 = document.getElementById('div1');
+  // div1.appendChild(p);
+  // 2.移动P4到div1中
+  var p4 = document.getElementById('p4');
+  var div1 = document.getElementById('div1');
+  div1.appendChild(p4);
+  console.log(p4.parentElement);
+  console.log(div1.parentElement);
+  console.log(div1.childNodes);
+  console.log(div1.childNodes[0].nodeType); //text 3
+  console.log(div1.childNodes[1].nodeType); //p    1
   </script>
 </body>
 </html>
@@ -1642,12 +1654,24 @@ myNums.setData();
 console.log(myNums.toString());
 ```
 
+<p align="center"><img src="http://oe51jhwvd.bkt.clouddn.com/1.png" /></p>
+
+#### 名词解释：
+
+* n: 数据规模
+* k:“桶”的个数
+* In-place: 占用常数内存，不占用额外内存
+* Out-place: 占用额外内存
+* 稳定性：排序后2个相等键值的顺序和排序之前它们的顺序相同
+
 ## 08-02
 ### JavaScript算法-冒泡排序
 
 * 冒泡排序
 * 最慢的排序算法之一
 * 冒泡排序，之所以这么叫是因为使用这种排序算法排序时，数据值就会像气泡一样从数组的一端漂浮到另一端。假设正在将一组数字按照升序排列，较大的值会浮动到数组的右侧，而较小的值会浮动到数组的左侧。之所以会产生这种现象是因为算法会多次在数组中移动，比较相邻的数据，当左侧值大于右侧值时将它们进行互换。
+
+<p align="center"><img src="http://oe51jhwvd.bkt.clouddn.com/2.gif" /></p>
 
 ```JavaScript
 
@@ -1675,7 +1699,16 @@ mynums.bubbleSort();
 console.log(mynums.toString);
 ```
 
-2. 快速排序
+## 08-03
+### JavaScript算法-选择排序
+
+* 选择排序
+
+* 选择排序从数组的开头开始，将第一个元素和其他元素进行比较。检查完所有元素后，最小的元素会被放到数组的第一个位置，然后算法会从第二个位置继续。这个过程一直进行，当进行到数组的倒数第二个位置时，所有的数据便完成了排序。
+
+* 选择排序会用到嵌套循环。外循环从数组的第一个元素一定到倒数第二个元素；内循环从第二个数组元素移动到最后一个元素，查找比当前外循环
+
+<p align="center"><img src="http://oe51jhwvd.bkt.clouddn.com/3.gif" /></p>
 
 ```JavaScript
 
@@ -1697,7 +1730,7 @@ console.log(mynums.toString);
    console.log(i+j);
  }
  var add3 = new Function("i", "j", "console.log(i+j);");
- ```
+```
  
 2. 对象实例化与函数声明与函数表达式的区别
 
