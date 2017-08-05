@@ -1676,16 +1676,16 @@ console.log(myNums.toString());
 ```JavaScript
 
 function bubbleSort() {
-  var numElements = this.dataStore.length;
-  var temp;
-  for (var outer = numElements; outer >= 2; --outer) {
-    for (var inner = 0; inner <= outer - 1; ++inner ) {
-      if (this.dataStore[inner] > this.dataStore[inner + 1]) {
-        swap(this.dataStore,inner,inner + 1);
+  var numElements = this.dataStore.length; //获取数组长度
+  var temp;// 定义临时对象
+  for (var outer = numElements; outer >= 2; --outer) {//对元素遍历，直到最后剩2个数字
+    for (var inner = 0; inner <= outer - 1; ++inner ) {//从第零个开始，直到不满足
+      if (this.dataStore[inner] > this.dataStore[inner + 1]) {//如果,前一个大于后一个，
+        swap(this.dataStore,inner,inner + 1);//进行交换
       }
     }
   }
-}
+}//通过比较把最大的放到最右面
 ```
 
 * 使用bubbleSort()对10个数字排序
@@ -1708,10 +1708,46 @@ console.log(mynums.toString);
 
 * 选择排序会用到嵌套循环。外循环从数组的第一个元素一定到倒数第二个元素；内循环从第二个数组元素移动到最后一个元素，查找比当前外循环
 
-<p align="center"><img src="http://oe51jhwvd.bkt.clouddn.com/3.gif" /></p>
+<p align="center"><img src="http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144584.gif" /></p>
 
 ```JavaScript
+function selectionSort() {
+  var min,temp;
+  for (var outer = 0; outer <= this.dataStore.length-2; ++outer)//循环
+    min = outer;//定义第一个为最小
+    for (var inner = outer + 1; i < this.dataStore.length-1; ++inner) {//查找下一个中
+      if (this.dataStore[inner]<this.dataStore[min]) {//如果数组内的第inner项小于最小项
+        min = inner;//最小项设置为inner
+      }
+      swap(this.dataStore,outer,min);//交换最小值和outer
+    }
+  }  
+}
+//找到数组中剩余的最小值，如果更小outer进行交换
+```
 
+## 08-04
+### JavaScript算法-插入排序
+
+* 插入排序
+
+* 插入排序有两个循环，外循环将数组元素挨个移动，而内循环则对外循环中选中的元素及它后面的那个元素进行比较。如果外循环中选中的元素比内循环中选中的元素小，那么数组会向右移动，为内循环中的这个元素腾出位置。
+
+<p align="center"><img src="http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144589.gif" /></p>
+
+```JavaScript
+function insertionSort() {
+  var temp,inner;
+  for (var outer = 1; outer <= this.dataStore.length - 1 ; ++outer) {
+    temp = this.dataStore[outer];
+    inner = outer;
+    while (inner>0 && (this.dataStore[inner-1] >= temp)) {
+      this.dataStore[inner] = this.dataStore[inner - 1];
+      --inner;
+    }
+    this.dataStore[inner] = temp;
+  }
+}
 ```
 
 ## 09-01
