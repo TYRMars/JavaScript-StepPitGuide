@@ -49,7 +49,7 @@
 * [08-02](https://github.com/TYRMars/JSlearn#08-02) `JavaScript算法-冒泡排序`
 * [08-03](https://github.com/TYRMars/JSlearn#08-03) `JavaScript算法-选择排序`
 #### 09 函数应用
-* [09-01](https://github.com/TYRMars/JSlearn#09-01) `JavaScript算法测试函数`
+* [09-01](https://github.com/TYRMars/JSlearn#09-01) `函数应用`
 
 ---
 
@@ -1574,6 +1574,20 @@ module.exports = {
 #### AMD和CommonJS的使用场景
 * 需要异步加载JS，使用AMD
 * 使用了npm之后建议使用CommonJS
+
+## 06-04
+### Git
+#### 常用命令
+* `git init`git初始化
+* `git add .`文件新增
+* `git checkout XXX`出错还原
+* `git commit -m "XXX"`commit提交到本地仓库 后面为注释
+* `git push origin master` 代码上传
+* `git pull origin master` 代码下载
+##### 多人开发
+* `git branch`看当前分支
+* `git checkout -b xxx/git checkout xxx`创建一个分支/切换分支
+* `git merge xxx`分支更改的东西提交到master或者分支
 
 ## 07-01
 ### 上线回滚-上线回滚流程
