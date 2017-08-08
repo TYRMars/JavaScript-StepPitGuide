@@ -1026,7 +1026,9 @@ function forEach(obj,fn) {
 </other>
 </note>
 ```
-* XML
+
+* HTML
+
 ```HTML
 <!DOCTYPE html>
 <html>
