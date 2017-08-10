@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>面向对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //类的声明
+    function Animal() {
+      this.name = 'name';
+    }
+    //ES6中class的声明
+    class Animal2 {
+      constructor() {//构造函数
+        this.name = 'name';
+      }
+    }
+    //通过类实例化生成对象
+    console.log(new Animal(),new Animal2());
+    //借助构造函数实现继承
+    function Parent1() {
+      this.name = 'parent1';
+    }
+    //Parent1
+    function Child1() {
+      Parent1.call(this);//apply
+      this.type = 'child1';
+    }
+
+    console.log(new Child1);
+    //借助原型链继承方式
+    function Parent2() {
+      this.name = 'parent2';
+      this.play = [1,2,3];
+    }
+    function Child2() {
+      this.type = 'child2'
+    }
+
+    Child2.prototype = new Parent2();//理解为prototype属性指向Parent2
+
+    console.log(new Child2());
+
+    var s1 = new Child2();
+    var s2 = new Child2();
+    console.log(s1.play,s2.play);
+    s1.play.push(4);
+    //组合方式
+    function Parent3() {
+      this.name = 'Parent3';
+      this.play = [1,2,3];
+    }
+    function Child3() {
+      Parent3.call(this);
+      this.type = 'Child3';
+    }
+    //子类化原型链 执行了两次实例化
+    Child3.prototype = new Parent3();
+    var s3 = new Child3();
+    var s4 = new Child3();
+    s3.play.push(5);
+    console.log(s3.play,s4.play);
+    //面向对象通用继承
+
+    //组合继承的优化1
+    function Parent4() {
+      this.name = 'Parent4';
+      this.play = [1,2,3];
+    }
+    function Child4() {
+      Parent4.call(this);
+      this.type = 'Child4';
+    }
+    Child4.prototype = Parent4.prototype;
+    var s5 = new Child4();
+    var s6 = new Child4();
+    console.log(s5,s6);
+
+    console.log(s5 instanceof Child4, s5 instanceof Parent4);//true
+    console.log(s5.__proto__===Child4.prototype , s5.__proto__===Parent4.prototype);//true
+    console.log(s5.constructor);
+
+    //组合继承的优化2
+    function Parent5() {
+      this.name = 'Parent5';
+      this.play = [1,2,3];
+    }
+    function Child5() {
+      Parent4.call(this);
+      this.type = 'Child5';
+    }
+    Child5.prototype = Object.create(Parent5.prototype);
+    </script>
+  </body>
+</html>
