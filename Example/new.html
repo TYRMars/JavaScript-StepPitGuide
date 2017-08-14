@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>new</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      function MyFi(name) {
+        this.name = name
+      }
+      var list = new MyFi('123');
+      console.log('list', list);
+      //console.log(list('lucy'));
+      console.log(new MyFi('lily'));
+
+      var p = {
+        name: 'zhangsan'
+      };
+      var o4 = Object.create(p);
+      console.log(o4);
+
+      function Parent1() {
+        this.name = 'Parent1';
+      }
+      Parent1.prototype.say = function() {}
+
+      function Child1() {
+        Parent1.call(this); //apply
+        this.type = 'C';
+      }
+
+      console.log(new Child1, new Parent1);
+    </script>
+  </body>
+
+</html>
+</body>
+
+</html>

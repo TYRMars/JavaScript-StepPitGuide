@@ -243,6 +243,7 @@ var f = new Foo('zhangsan',20); //实例化对象
 * 原型规则是学习原型链的基础
 #### 第1条
 * 所有的引用类型(数组、对象、函数)，都具有对象特质、即可自由扩展属性(除了“NULL”以外)
+
 ```JavaScript
 var obj = {}; obj.a = 100;
 var arr = []; arr.a = 100;
@@ -250,21 +251,27 @@ function fn(){
   fn.a=100;
 }
 ```
+
 #### 第2条
 * 所有的引用类型(数组、对象、函数)，都有一个`__proto__`(隐式原型)属性，属性值是一个普通的对象
+
 ```JavaScript
 console.log(obj.__proto__);
 console.log(arr.__proto__);
 console.log(fn.__proto__);
 ```
+
 #### 第3条
 * `prototype`解释为JavaScript开发函式库及框架
 * 所有的函数，都有一个`prototype`（显示原型）属性，属性值也是一个普通对象。
+
 ```JavaScript
 console.log(fn.prototype);
 ```
+
 #### 第4条
 * 所有引用类型（数组、对象、函数），`__proto__`属性值指向它的构造函数的`prototype`属性值
+
 ```JavaScript
 console.log(obj.__proto__ === Object.prototype);
 ```
@@ -287,8 +294,11 @@ f.printName = function () {
 f.printName();
 f.alertName();
 ```
+
 * this
+
 #### 循环对象自身属性
+
 ```JavaScript
 var item;
 for (item in f) {
@@ -299,6 +309,7 @@ for (item in f) {
   }
 }
 ```
+
 ## 01-06
 ### 原型链
 ```JavaScript
@@ -781,6 +792,7 @@ console.log(5);
 ## 03-03
 ### 其他知识点-日期和Math
 #### 获取 2017-06-10 格式的日期
+
 ```JavaScript
 Date.now(); // 获取当前时间毫秒数
 var dt = new Date();
@@ -792,6 +804,7 @@ dt.getHours() // 小时（0-23）
 dt.getMinutes() // 分钟（0-59）
 dt.getSeconds() // 秒 （0-59）
 ```
+
 #### 获取随机数，要求时长度一致的字符串格式
 * `Math` 获取随机数 `Math.random()`
 
@@ -800,6 +813,7 @@ dt.getSeconds() // 秒 （0-59）
 #### 写一个能遍历对象和数组的通用forEach函数
 ##### 数组API
 * `forEach` 便利所有元素
+
 ```JavaScript
 var arr = [1,2,3];
 arr.forEach(function (item,index) {
@@ -807,7 +821,9 @@ arr.forEach(function (item,index) {
   console.log(index,item);
 })
 ```
+
 * `every` 判断所有元素是否都符合条件
+
 ```JavaScript
 var arr = [1,2,3];
 var result = arr.every(function (item,index) {
@@ -818,7 +834,9 @@ var result = arr.every(function (item,index) {
 })
 console.log(result);
 ```
+
 * `some` 判断是否有至少一个元素符合条件
+
 ```JavaScript
 var arr = [1,2,3];
 var result = arr.some(function (item,index) {
@@ -829,7 +847,9 @@ var result = arr.some(function (item,index) {
 })
 console.log(result);
 ```
+
 * `sort` 排序
+
 ```JavaScript
 var arr = [1,4,2,3,5]
 var arr2 = arr.sort(function (a,b) {
@@ -840,7 +860,9 @@ var arr2 = arr.sort(function (a,b) {
 })
 console.log(arr2);
 ```
+
 * `map` 对元素重新组装，生成新数组
+
 ```JavaScript
 var arr = [1,2,3,4]
 var arr2 = arr.map(function functionName(item,index) {
@@ -849,7 +871,9 @@ var arr2 = arr.map(function functionName(item,index) {
 })
 console.log(arr2);
 ```
+
 * `filter` 过滤符合条件的元素
+
 ```JavaScript
 var arr = [1,2,3];
 var arr2 = arr.filter(function (item,index) {
@@ -860,7 +884,9 @@ var arr2 = arr.filter(function (item,index) {
 })
 console.log(arr2);
 ```
+
 ##### 对象API
+
 ```JavaScript
 var obj = {
   x: 100,
@@ -875,7 +901,9 @@ for (key in obj) {
   }
 }
 ```
+
 * 举个例子
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -902,8 +930,10 @@ for (key in obj) {
 </body>
 </html>
 ```
+
 #### 问题解答
 * 获取2017-06-10格式的日期
+
 ```JavaScript
 function formatDate(dt) {
   if (!dt) {
@@ -927,14 +957,18 @@ var dt = new Date();
 var formatDate = formatDate(dt);
 console.log(formatDate);
 ```
+
 * 获取随机数，要求是长度一致的字符串格式
+
 ```JavaScript
 var random = Math.random();
 var random = random + '0000000000'; //后面加上10个0
 var random = random.slice(0,10);
 console.log(random);
 ```
+
 * 写一个能遍历对象和数组的通用forEach函数
+
 ```JavaScript
 //do
 var arr = [1,2,3];
@@ -1059,7 +1093,9 @@ console.log(divList[0]);
 var containerList = document.getElementByClassName('.container'); //集合
 var pList = document.querySelectorAll('p'); //集合
 ```
+
 #### property
+
 ```JavaScript
 var pList = document.querySelectorAll('p');
 var p = pList[0];
@@ -1072,7 +1108,9 @@ p.className = 'p1' //修改class
 console.log(p.nodeName);
 console.log(p.nodeType);
 ```
+
 #### Attribute
+
 ```JavaScript
 var pList = document.querySelectorAll('p');
 var p = pList[0];
@@ -1085,6 +1123,7 @@ p.setAttribute('style','font-size:30px;');
 ## 04-04
 ### DOM结构操作
 * 新增节点
+
 ```JavaScript
 var div1 = document.getElementById('div1');
 //添加新节点
@@ -1096,11 +1135,13 @@ var p2 = document.getElementById('p2');
 div1.appendChild(p2);
 ```
 * 获取父元素-获取子节点
+
 ```JavaScript
 var div1 = document.getElementById('div1');
 var parent = div1.parentElement;
 ```
 * 删除节点
+
 ```JavaScript
 var div1 = document.getElementById('div1');
 var child = div1.childNodes;
@@ -1142,6 +1183,7 @@ div1.removeChild(child[0]);
 ```
 ## 04-05
 ### DOM知识解答
+
 * DOM是哪种基本的数据结构?
     * 树
 * DOM操作的常用API有哪些
@@ -1954,7 +1996,7 @@ function insertionSort() {
  }
 ```
 
-## 
+##
 ### JS性能优化
 *
 ---
