@@ -2181,6 +2181,12 @@ function qSort(list) {
  }
 ```
 
+11. 定时器
+
+```JavaScript
+
+```
+
 ##
 ### JS性能优化
 *
