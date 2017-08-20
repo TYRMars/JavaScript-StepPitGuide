@@ -1838,6 +1838,13 @@ function setGap(arr) {
 }
 ```
 
+## 08-06
+### JavaScript算法-归并排序
+
+<p align="center"><img src="http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144591.gif"/></p>
+
+* 归并排序
+
 ## 09-01
 ### JS基本应用-函数
 
