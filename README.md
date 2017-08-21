@@ -7,7 +7,9 @@
 
 ---
 ## JavaScript基础知识剖析
-#### 01 变量与原型
+
+#### 01 JavaScrpit-变量与原型
+
 * [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
 * [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
 * [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
@@ -16,50 +18,67 @@
 * [01-06](https://github.com/TYRMars/JSlearn#01-06) `原型链`
 * [01-07](https://github.com/TYRMars/JSlearn#01-07) `instanceof`
 * [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
-#### 02
+
+#### 02 JavaScrpit-作用域与闭包
+
 * [02-01](https://github.com/TYRMars/JSlearn#02-01) `作用域和闭包-执行上下文`
 * [02-02](https://github.com/TYRMars/JSlearn#02-02) `作用域和闭包-this`
 * [02-03](https://github.com/TYRMars/JSlearn#02-03) `作用域和闭包-作用域`
 * [02-04](https://github.com/TYRMars/JSlearn#02-04) `作用域和闭包-闭包`
 * [02-05](https://github.com/TYRMars/JSlearn#02-05) `知识点小结 & 解决问题`
-#### 03
+
+#### 03 JavaScrpit-异步与单线程
+
 * [03-01](https://github.com/TYRMars/JSlearn#03-01) `异步和单线程-什么是异步`
 * [03-02](https://github.com/TYRMars/JSlearn#03-02) `异步和单线程-单线程`
 * [03-03](https://github.com/TYRMars/JSlearn#03-03) `其他知识点-日期和Math`
 * [03-04](https://github.com/TYRMars/JSlearn#03-04) `其他知识点-数组和对象的API`
-#### 04
+
+#### 04 JavaScrpit-WebAPI基础
+
 * [04-01](https://github.com/TYRMars/JSlearn#04-01) `从基础知识到JS-Web-API`
 * [04-02](https://github.com/TYRMars/JSlearn#04-02) `DOM本质`
 * [04-03](https://github.com/TYRMars/JSlearn#04-03) `DOM节点操作`
 * [04-04](https://github.com/TYRMars/JSlearn#04-04) `DOM结构操作`
 * [04-05](https://github.com/TYRMars/JSlearn#04-05) `DOM知识总结`
 * [04-06](https://github.com/TYRMars/JSlearn#04-06) `BOM知识点`
-#### 05
+
+#### 05 JavaScrpit-WebAPI扩展
+
 * [05-01](https://github.com/TYRMars/JSlearn#05-01) `事件-知识点`
 * [05-02](https://github.com/TYRMars/JSlearn#05-02) `Ajax-XMLHttpRequest`
 * [05-03](https://github.com/TYRMars/JSlearn#05-03) `存储`
-#### 06
+
+#### 06 JavaScrpit-模块化
+
 * [06-01](https://github.com/TYRMars/JSlearn#06-01) `模块化`
 * [06-02](https://github.com/TYRMars/JSlearn#06-02) `模块化-AMD`
 * [06-03](https://github.com/TYRMars/JSlearn#06-03) `模块化-CommonJS`
-#### 07
+
+#### 07 JavaScrpit-工程化
+
 * [07-01](https://github.com/TYRMars/JSlearn#07-01) `上线回滚-上线回滚流程`
-#### 08 JS算法
+
+#### 08 JavaScrpit-算法
+
 * [08-01](https://github.com/TYRMars/JSlearn#08-01) `JavaScript算法测试函数`
 * [08-02](https://github.com/TYRMars/JSlearn#08-02) `JavaScript算法-冒泡排序`
 * [08-03](https://github.com/TYRMars/JSlearn#08-03) `JavaScript算法-选择排序`
-#### 09 函数应用
+
+#### 09 JavaScrpit-函数应用
 * [09-01](https://github.com/TYRMars/JSlearn#09-01) `函数应用`
 
----
-
-## JS小练习
-* JSDemo JS小程序
+#### add JavaScrpit-JS插件
+* JSDemo 
 * JDMenu 京东无延迟菜单
 * DatePicker组件开发
 * 手风琴效果开发
 
-## 知识点学习
+---
+
+# 知识点学习
+
+
 ## 01-01
 ### 变量类型和计算（1）
 * JS中使用typeof能得到的哪些类型
@@ -1841,7 +1860,7 @@ function setGap(arr) {
 ## 08-06
 ### JavaScript算法-归并排序
 
-<p align="center"><img src="http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144591.gif"/></p>
+<p align="center"><img src="http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144591.gif" /></p>
 
 * 归并排序
 
@@ -2038,29 +2057,44 @@ function setGap(arr) {
 *
 ---
 
-### JSDemo JS小程序
+## add-01
+### JSDemo JS小插件
 ####
+
+
+## add-02
 ### JDMenu 京东无延迟菜单
 #### 1.开发普通二级菜单
+
 * 事件代理方式进行绑定
 * `mouseenter`和`mouseover`的区别：
 * 使用`mouseover/mouseout`时候，如果鼠标移动到子元素上，即便没有离开父元素，也会触发父元素的`mouseout`事件；
 * 使用`mouseenter/mouseleave`时，如果鼠标没有离开父元素，在其子元素上任意移动，也不会触发`mouseleave`事件；
+
 #### 2.加入延迟优化
 * 切换子菜单的时候，用`setTimeout`设置延迟
 * `debounce`去抖o((⊙﹏⊙))o.技术：
 * 在事件被频繁触发时买只执行一次
+
 #### 3.基于用户行为预测的切换技术
+
 * 跟踪鼠标的移动
 * 用鼠标当前位置，和鼠标上一次位置与子菜单上下边缘形成的三角区域进行比较
+
+## add-03
 ### DatePicker组件开发
 #### 1.基础页面制作
+
 * 标头
 * 身体
+
 #### 2.数据部分
+
 * 渲染当月日历表格
 * 用于点击时取日期值
+
 ##### 日期对象
+
 * `newDate(year,month-1,date)`
 * 月份需要-1
 * 越界自动进退位
