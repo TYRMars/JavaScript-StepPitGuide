@@ -139,7 +139,7 @@ var b = 100;
 if (b) {
   //....
 }
-var c = ''；
+var c = '';
 if (c) {
   //...
 }
@@ -239,7 +239,7 @@ JSON.parse('{"a":10."b":20}')
 * 扩展`实例和对象的区别，从定义上来讲：1、实例是类的具象化产品，2、而对象是一个具有多种属性的内容结构。`
 
 ```JavaScript
-funciton Foo(name,age){
+function Foo(name,age){
   this.name = name;
   this.age = age;
   this.class = 'class-1';
@@ -1251,13 +1251,16 @@ history.forward();
 ## 05-01
 #### 编写一个通用的事件监听函数
 #### 描述事件冒泡流程
-    * DOM树形结构
-    * 事件冒泡
-    * 阻止冒泡
-    * 冒泡的应用
-#### 对于一个无线下拉加载图片的页面，如何给每个图片绑定事件
-    * 使用代理
-    * 知道代理的有点
+
+* DOM树形结构
+* 事件冒泡
+* 阻止冒泡
+* 冒泡的应用
+
+#### 对于一个无限下拉加载图片的页面，如何给每个图片绑定事件
+
+* 使用代理
+* 知道代理的有点
 
 ##### 通用事件绑定
 
@@ -1362,8 +1365,10 @@ function bindEvent(elem,type,selector,fn) {
 
 ## 05-02
 ### Ajax-XMLHttpRequest
+
 * 手动编写一个ajax，不依赖第三方库
 * 跨域的几种实现方式
+
 #### 知识点
 ##### XMLHttpRequest
 
@@ -1381,9 +1386,9 @@ xhr.onreadystatechange = function () {
 xhr.send(null);
 ```
 
-    * IE低版本使用ActiveXObject，和W3C标准不一样
-    * IE低版本使用量已经非常少，很多网站早已不支持IE低版本
-    * 建议对IE低版本的兼容性：了解即可，无需深究
+* IE低版本使用ActiveXObject，和W3C标准不一样
+* IE低版本使用量已经非常少，很多网站早已不支持IE低版本
+* 建议对IE低版本的兼容性：了解即可，无需深究
 
 ##### 状态码
 ```JavaScript
@@ -1407,6 +1412,7 @@ xhr.onreadystatechange = function () {
     * 3XX-需要重定向，浏览器直接跳转
     * 4XX-客户端请求错误，如404
     * 5XX-服务端错误
+
 ##### 跨域
 * 什么时跨域
     * 浏览器有同源策略，不允许ajax访问其他域接口
@@ -1424,15 +1430,17 @@ xhr.onreadystatechange = function () {
     * 跨域注意事项
         * 所有的跨域请求都必须经过信息提供方允许
         * 如果未经允许即可获得，那是浏览器同源策略出现漏洞
+
 * JSONP
     * 加载 http://coding.m.imooc.com/classindex.html
     * 不一定服务器端真正有一个`classindex.html`文件
     * 服务器可以根据请求，动态生成一个文件，返回
-    * 同理与<script src="http://coding.m.imooc.com/api.js">
+    * 同理与<script src="http://coding.kejiganhuo.com/api.js">
 
-    * 假如你的网站要跨域访问慕课网的一个接口
-    * 给你一个地址http://coding.m.imooc.com/api.js
+    * 假如你的网站要跨域访问网站的一个接口
+    * 给你一个地址http://coding.kejiganhuo.com/api.js
     * 返回内容格式如callback({x:100,y:200})(可动态生成)
+    
 ```html
 <script>
 window.callback = function (data) {
@@ -1440,13 +1448,15 @@ window.callback = function (data) {
   console.log(data);
 }
 </script>
-<script src="http://coding.m.imooc.com/api.js"></script>
+<script src="http://coding.kejiganhuo.com/api.js"></script>
 <!-- 以上将返回 callback({x:100,y:200}) -->
 ```
+
 * 服务器端设置http header
     * 另外一个解决跨域的简洁方法，需要服务器来做
     * 但是作为交互方，我们必须知道这个方法
     * 是将来解决跨域问题的一个趋势
+
 ```JavaScript
 //注意：不同后端语言的写法可能不一样
 
@@ -1461,38 +1471,51 @@ response.setHeader("Access-Control-Allow-Credentials","true");
 
 ## 05-03
 ### 存储
+
 * 请描述一下`cookie`,`sessionStorage`和`localStorage`的区别？
+
 #### cookie
+
 * 本身用于客户端和服务端通信
 * 但是它有本地存储的功能，于是就被`借用`
 * 使用document.cookie = ... 获取和修改即可
+
 ##### cookie用于存储的缺点
+
 * 存储量小，只有4kb
 * 所有http请求都带着，会影响获取资源的效率
 * API简单，需要封装才能用document.cookie = ...
+
 #### localStorage和sessionStorage
+
 * HTML5专门为存储设计，最大容量5M
 * API简答易用：
 * localStorage.setItem(key,value);localStorage.getItem(key);
 * sessionStorage关闭浏览器会清理
 * iOS safari 隐藏模式下，localStorage.getItem会报错
 * 建议统一使用try-catch封装
+
 #### cookie sessionStorage localStorage 的区别
+
 * 容量
 * 是否会携带到ajax中
 * API易用性
 
 ## 06-01
 ### 模块化
+
 * 不使用模块化
 * 使用模块化
 * AMD
 * CommonJS
+
 #### 不使用模块化
+
 * `util getFormatDate函数`
 * `a-util.js aGetFormatDate函数 使用getFormatDate`
 * `a.js aGetFormatDate`
 * 定义
+
 ```JavaScript
 //util.js
 function getFormatDate(date,type) {
@@ -1509,6 +1532,7 @@ function aGetFormatDate(data) {
 var dt = new Date()
 console.log(aGetFormatDate(dt));
 ```
+
 * 使用
 
 ```html
@@ -1544,8 +1568,10 @@ console.log(aGetFormatDate(dt));
 //直接‘<script src="a.js"></script>’,其他的根据依赖关系自动引用
 //那两个函数，没必要做成全局变量，不会带来污染和覆盖
 ```
+
 ## 06-02
 ### AMD
+
 * require.js `requirejs.org/`
 * 全局define函数
 * 全局require函数
@@ -1590,6 +1616,7 @@ require('[./a.js]',function (a) {
   a.printDate(date);
 });
 ```
+
 * 使用
 
 ```html
@@ -1635,43 +1662,57 @@ module.exports = {
 ```
 
 #### AMD和CommonJS的使用场景
+
 * 需要异步加载JS，使用AMD
 * 使用了npm之后建议使用CommonJS
 
 ## 06-04
 ### Git
 #### 常用命令
+
 * `git init`git初始化
 * `git add .`文件新增
 * `git checkout XXX`出错还原
 * `git commit -m "XXX"`commit提交到本地仓库 后面为注释
 * `git push origin master` 代码上传
 * `git pull origin master` 代码下载
+
 ##### 多人开发
+
 * `git branch`看当前分支
 * `git checkout -b xxx/git checkout xxx`创建一个分支/切换分支
 * `git merge xxx`分支更改的东西提交到master或者分支
 
 ## 07-01
 ### 上线回滚-上线回滚流程
+
 * 上线和回滚的基本流程
 * linux基本命令
+
 #### 上线回滚流程
+
 * 重要的开发环节
+
 #### 上线流程要点
+
 * 将测试完的代码提交到git版本库的master分支
 * 将当前服务器的代码全部打包并记录版本号，备份
 * 将master分支的代码提交覆盖到线上服务器，生成新的版本号
+
 #### 回滚流程要点
+
 * 将当前服务器的代码打包并记录版本号，备份
 * 将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号
+
 #### Linux基本命令
+
 * 服务器使用Linux居多，server版，只有命令行
 * 测试环境要匹配线上环境，因此也是Linux
 * 经常需要登陆测试机来自己配置、获取数据
 
 ## 08-01
 ### JavaScript算法测试函数
+
 * SetData()函数生成了存储在数组中的随机数字。Math类的random()函数会生成[0,1)区间内的随机数字。换句话说，random()函数生成的随机数字大于等于0，但不会等于1。最后在用Math类的floor()函数确定最终结果。
 * 如下这个公式可以成功生成1~100的随机数字集合。
 
@@ -1780,9 +1821,7 @@ console.log(mynums.toString);
 ### JavaScript算法-选择排序
 
 * 选择排序
-
 * 选择排序从数组的开头开始，将第一个元素和其他元素进行比较。检查完所有元素后，最小的元素会被放到数组的第一个位置，然后算法会从第二个位置继续。这个过程一直进行，当进行到数组的倒数第二个位置时，所有的数据便完成了排序。
-
 * 选择排序会用到嵌套循环。外循环从数组的第一个元素一定到倒数第二个元素；内循环从第二个数组元素移动到最后一个元素，查找比当前外循环
 
 <p align="center"><img src="http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144584.gif" /></p>
