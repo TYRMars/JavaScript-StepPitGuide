@@ -1792,7 +1792,6 @@ console.log(myNums.toString());
 <p align="center"><img src="http://oe51jhwvd.bkt.clouddn.com/2.gif" /></p>
 
 ```JavaScript
-
 function bubbleSort() {
   var numElements = this.dataStore.length; //获取数组长度
   var temp;// 定义临时对象
