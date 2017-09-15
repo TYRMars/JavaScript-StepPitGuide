@@ -70,6 +70,7 @@
 * [08-07](https://github.com/TYRMars/JSlearn#08-07) `JavaScript算法-快速排序`
 
 #### 09 JavaScrpit-函数应用
+
 * [09-01](https://github.com/TYRMars/JSlearn#09-01) `函数应用`
 
 #### add JavaScrpit-JS插件
