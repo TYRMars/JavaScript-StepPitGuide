@@ -68,10 +68,15 @@
 * [08-05](https://github.com/TYRMars/JSlearn#08-05) `JavaScript算法-希尔排序`
 * [08-06](https://github.com/TYRMars/JSlearn#08-06) `JavaScript算法-归并排序`
 * [08-07](https://github.com/TYRMars/JSlearn#08-07) `JavaScript算法-快速排序`
+* [08-08](https://github.com/TYRMars/JSlearn#08-08) `JavaScript算法-高级算法-动态规划`
 
 #### 09 JavaScrpit-函数应用
 
 * [09-01](https://github.com/TYRMars/JSlearn#09-01) `函数应用`
+
+#### 10 JavaScript-性能优化
+
+* [10-01](https://github.com/TYRMars/JSlearn#09-01) `函数应用`
 
 #### add JavaScrpit-JS插件
 * JSDemo
@@ -1993,6 +1998,9 @@ function qSort(list) {
   return qSort(lesser).concat(pivot,qSort(greater));
 }
 ```
+
+## 08-08
+### JavaScript算法-高级算法-动态规划
 
 ## 09-01
 ### JS基本应用-函数
