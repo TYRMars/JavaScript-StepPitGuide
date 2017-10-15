@@ -2193,7 +2193,14 @@ function qSort(list) {
 11. 定时器
 
 ```JavaScript
-
+function set_loop() {
+  var i =1;
+  setTimeout(function () {
+    i = i + 1;
+    console.log(i);
+    set_loop()
+  },5000);
+}
 ```
 
 ##
