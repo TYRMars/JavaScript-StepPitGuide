@@ -1296,6 +1296,50 @@ bindEvent(a,'click',function(e){
     * 建议对IE低版本的兼容性：了解即可，无需深究
     * 如果遇到对IE低版本要求苛刻的面试，果断放弃
 
+#### 冒泡与捕获
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+  #div1{
+    width: 300px;
+    height: 100px;
+    background: red;
+    color: #fff;
+    text-align: center;
+  }
+  </style>
+  <body>
+    <div id="div1" >
+      目标元素
+    </div>
+    <script type="text/javascript">
+      var ev =document.getElementById('div1');
+      window.addEventListener('click',function () {
+        console.log("window click");
+      },true);
+      document.addEventListener('click',function () {
+        console.log('document click');
+      },true);
+      document.documentElement.addEventListener('click',function () {
+        console.log('html click');
+      },true);
+      document.body.addEventListener("click",function () {
+        console.log('body click');
+      },true);
+      ev.addEventListener('click',function () {
+        console.log('ev click');
+      })
+    </script>
+  </body>
+</html>
+```
+
 #### 事件冒泡
 
 ```html
