@@ -1030,17 +1030,23 @@ function forEach(obj,fn) {
 
 ## 04-01
 ### 从基础知识到JS-Web-API
+
 * 变量类型和计算
 * 原型和原型链
 * 闭包和作用域
 * 异步和单线程
 * 其他（如日期、Math、各种常用API）
+
+
 #### 特点
+
 * 特点：表面上来看不能用于工作中开发代码
 * 内置函数：`Object Array Boolean String ......`
 * 内置对象：`Math JSON ...`
 * 我们连在网页弹出一句`Hello World`都不能实现
+
 #### JS-Web-API
+
 * JS基础知识：ECMA 262标准
 * JS-Web-API：W3C标准
 * W3C标准中关于JS的规定有：
@@ -1049,7 +1055,10 @@ function forEach(obj,fn) {
     * 事件绑定
     * ajax请求(包含http协议)
     * 存储
+
+
 #### 基本操作
+
 * 页面弹框是`windows.alert(123)`，浏览器需要做：
     * 定义一个`windows`全局变量，对象类型；
     * 给它定义一个`alert`属性，属性值是一个函数；
@@ -1074,6 +1083,8 @@ function forEach(obj,fn) {
 * DOM是哪种基本的数据结构
 * DOM操作的常用API有哪些
 * DOM节点的attr和property有和区别
+
+
 #### DOM的本质
 * XML
 ```XML
@@ -1835,6 +1846,26 @@ console.log(myNums.toString());
 * In-place: 占用常数内存，不占用额外内存
 * Out-place: 占用额外内存
 * 稳定性：排序后2个相等键值的顺序和排序之前它们的顺序相同
+
+##### 用一个`for`遍历数组排序
+
+```JavaScript
+var a = [12,13,65,54,86,21,37,1,95,4];
+var l = a.length;
+console.log(a);
+for (var i = 0; i < l; i++) {
+  if (a[i] > a[i + 1]) {
+    var temp = a[i];
+    a[i] = a[i + 1];
+    a[i + 1] = temp;
+  }
+  if (i == l-1) {
+    i = -1;
+    l--;
+  }
+}
+console.log(a);
+```
 
 ## 08-02
 ### JavaScript算法-冒泡排序
