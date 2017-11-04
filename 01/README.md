@@ -1,13 +1,13 @@
 # 01 JavaScrpit-变量与原型
 
-* [01-01](https://github.com/TYRMars/JSlearn#01-01) `变量类型和计算（1）`
-* [01-02](https://github.com/TYRMars/JSlearn#01-02) `变量类型和计算（2）`
-* [01-03](https://github.com/TYRMars/JSlearn#01-03) `变量类型和计算（3）-JSON的理解`
-* [01-04](https://github.com/TYRMars/JSlearn#01-04) `原型与原型链-构造函数`
-* [01-05](https://github.com/TYRMars/JSlearn#01-05) `原型规则和示例`
-* [01-06](https://github.com/TYRMars/JSlearn#01-06) `原型链`
-* [01-07](https://github.com/TYRMars/JSlearn#01-07) `instanceof`
-* [01-08](https://github.com/TYRMars/JSlearn#01-08) `知识点小结 & 解决问题`
+* [01-01](https://github.com/TYRMars/JSLearn/tree/master/01#01-01) `变量类型和计算（1）`
+* [01-02](https://github.com/TYRMars/JSLearn/tree/master/01#01-02) `变量类型和计算（2）`
+* [01-03](https://github.com/TYRMars/JSLearn/tree/master/01#01-03) `变量类型和计算（3）-JSON的理解`
+* [01-04](https://github.com/TYRMars/JSLearn/tree/master/01#01-04) `原型与原型链-构造函数`
+* [01-05](https://github.com/TYRMars/JSLearn/tree/master/01#01-05) `原型规则和示例`
+* [01-06](https://github.com/TYRMars/JSLearn/tree/master/01#01-06) `原型链`
+* [01-07](https://github.com/TYRMars/JSLearn/tree/master/01#01-07) `instanceof`
+* [01-08](https://github.com/TYRMars/JSLearn/tree/master/01#01-08) `知识点小结 & 解决问题`
 
 ## 01-01
 ### 变量类型和计算（1）
