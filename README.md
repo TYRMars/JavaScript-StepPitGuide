@@ -29,9 +29,3 @@
 * [10](https://github.com/TYRMars/JSLearn/tree/master/10)`JavaScript-性能优化`
 
 * [add](https://github.com/TYRMars/JSLearn/tree/master/MyIDEA)`JavaScrpit-JS插件`
-
-#### add JavaScrpit-JS插件
-* JSDemo
-* JDMenu 京东无延迟菜单
-* DatePicker组件开发
-* 手风琴效果开发
