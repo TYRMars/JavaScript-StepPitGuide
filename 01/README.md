@@ -8,6 +8,7 @@
 * [01-06](https://github.com/TYRMars/JSLearn/tree/master/01#01-06) `原型链`
 * [01-07](https://github.com/TYRMars/JSLearn/tree/master/01#01-07) `instanceof`
 * [01-08](https://github.com/TYRMars/JSLearn/tree/master/01#01-08) `知识点小结 & 解决问题`
+* [01-09](https://github.com/TYRMars/JSLearn/tree/master/01#01-09) `变量作用域`
 
 ## 01-01
 ### 变量类型和计算（1）
@@ -412,3 +413,108 @@ div1.on('click',function () {
   alert('click')
 })
 ```
+
+## 01-09
+### 变量作用域
+
+```JavaScript
+var x=10;
+function foo() {
+  alert(x);
+}
+function bar() {
+  var x=20;
+  foo();
+}
+bar();
+```
+
+* 生命周期
+* 作用范围
+
+## 变量作用域
+
+* 静态作用域
+* 动态作用域
+
+### 静态作用域
+
+* 被称为词法作用域
+* 由程序定义位置决定
+
+```JavaScript
+var x=10;
+function foo() {
+  alert(x);
+}
+function bar() {
+  var x=20;
+  foo();
+}
+bar();
+```
+
+---
+
+| 全局作用域 |
+| :------------- | :------------- |
+| x   | 10   |
+| foo   | <funciton> |
+| bar   | <funciton> |
+
+---
+
+| foo作用域 |
+| :------------- | :------------- |
+|  |   |
+
+---
+
+| bar作用域 |
+| :------------- | :------------- |
+| x | 20 |
+
+---
+
+### 动态作用域
+
+* 程序运行时刻
+* 栈操作
+
+---
+
+| x:20 |
+| :------------- |
+| bar:<funciton> |
+| foo:<funciton> |
+
+---
+
+# JS变量作用域
+
+* JS使用静态作用域
+* JS没有块级作用域(全局作用域、函数作用域)
+* ES5中使用词法环境管理静态作用域
+
+```JavaScript
+var x = 10;
+function foo() {
+  var z = 30;
+  function bar(q) {
+    return x + y + q;
+  }
+  return bar;
+}
+var bar = foo(20);
+bar(40);
+```
+
+* 环境记录
+  - 形式参数
+  - 函数声明
+  - 变量
+* 对外部词法环境的引用（outer）
+
+---
+
+---
