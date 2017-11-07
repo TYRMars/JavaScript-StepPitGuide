@@ -199,6 +199,8 @@ addEvent(elem,'click',clickHandler,false);
 * MouseEvent : click|dbclick|mousedown|mouseenter|mouseleave|mousemove|mouseout|mouseover|mouseup
 * WheelEvent : wheel
 
+![](event)
+
 ### Event
 
 | 事件类型 | 是否冒泡 | 元素 | 默认事件 | 元素例子 |
@@ -317,7 +319,7 @@ function bindEvent(elem,type,selector,fn) {
 }
 ```
 
-## 05-02
+## 05-03
 ### Ajax-XMLHttpRequest
 
 * 手动编写一个ajax，不依赖第三方库
@@ -423,7 +425,7 @@ response.setHeader("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS")
 response.setHeader("Access-Control-Allow-Credentials","true");
 ```
 
-## 05-03
+## 05-07
 ### 存储
 
 * 请描述一下`cookie`,`sessionStorage`和`localStorage`的区别？

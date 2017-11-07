@@ -381,8 +381,6 @@ var f = new Foo('zhangsan',20);
 //var f1 = new Foo('list',22) //创建多个对象
 ```
 
-#### zepto(或其他框架)源码中如何使用原型链
-* 。。。。。。
 
 #### 贴近实际开发原型链继承的例子
 ```JavaScript
@@ -412,3 +410,5 @@ div1.on('click',function () {
   alert('click')
 })
 ```
+
+# 继承
