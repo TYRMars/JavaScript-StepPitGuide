@@ -153,146 +153,6 @@ console.log('global',a);
 fn();
 ```
 
-* 作用域链
-
-```JavaScript
-var a = 100;
-function fn() {
-  var b = 200;
-
-  //但钱作用域没有定义变量，即“自由变量”
-  console.log(a);
-  console.log(b);
-}
-fn();
-
-var a = 100;
-function F1() {
-  var b = 200;
-  function F2() {
-    var c = 300;
-    console.log(a);//a是自由变量。形成一个链式结构，向父级去查找
-    console.log(b);//b是自由变量
-    console.log(c);//
-  }
-}
-```
-
-## 02-04
-### 作用域和闭包-闭包
-
-* 函数作为返回值
-
-```JavaScript
-function F1() {
-  var a = 100;
-  //返回一个函数（函数作为返回值）
-  return function () {
-    console.log(a);//自由变量，父作用域中查找
-  }
-}
-//f1得到一个函数
-var f1 = F1();
-var a = 200;
-f1();
-```
-* 函数作为参数传递
-```JavaScript
-function F1() {
-  var a = 100;
-  return function () {
-    console.log(a);  //自由变量，父作用域中查找
-  }
-}
-var f1 = F1();
-function F2(fn) {
-  var a = 200;
-  fn();
-}
-F2(f1);
-```
-
-## 02-05
-### 知识点小结 & 解决问题
-#### 对变量提升的理解
-
-* 变量定义
-* 函数声明（注意和函数表达式的区别）
-
-#### this几种不停的使用场景
-
-* 作为构造函数执行
-* 作为对象属性执行
-* 作为普通函数执行
-* call apply bind
-
-```JavaScript
-function Foo(name){
-  this.name = name;
-}
-var f = new Foo('zhangsan');
-
-var obj = {
-  name:'A',
-  printName:function(){
-    console.log(this.name);
-  }
-}
-obj.printName()
-
-function fn(){
-  console.log(this);
-}
-fn()
-
-// call apply bind
-function fn1(name) {
-  alert(name);
-  console.log(this);
-}
-fn1.call({x:100},'zhangsan',20);
-// bind
-var fn2 = function fn2(name) {
-  alert(name);
-  console.log(this);
-}.bind({y:200});
-fn2('zhangsan',20);
-```
-#### 创建10个<a>标签 点击的时候弹出来对应的序号
-* 错误写法
-```JavaScript
-//这是一个错误的写法！！！
-var i,a;
-for (var i = 0; i < 10; i++) {
-  a = document.createElement('a');
-  a.innerHTML = i + '<br>';
-  a.addEventListener('click',function (e) {
-    e.preventDefault();
-    alert(i)
-  })
-  document.body.appendChild(a);
-}
-//输出为如下： <a>"9"<br></a>
-```
-
-* 正确写法
-
-```JavaScript
-//这是一个正确写法！！！
-var i;
-for (i = 0; i < 10; i++) {
-  (function(i){
-    var a = document.createElement('a');
-    a.innerHTML = i + '<br>';
-    a.addEventListener('click',function (e) {
-      e.preventDefault();
-      alert(i);
-    })
-    document.body.appendChild(a);
-  })(i)
-}
-```
-
 #### 如何理解作用域
 
 * 自由变量
@@ -400,7 +260,78 @@ bar(40);
 
 ---
 
+* 初始化
+
+<p align="center"><img src="https://github.com/TYRMars/JSLearn/blob/master/02/img/chushihua01.png" /></p>
+
 ---
+
+* 执行
+
+<p align="center"><img src="https://github.com/TYRMars/JSLearn/blob/master/02/img/environment_02.png" /></p>
+
+---
+
+* 作用域链
+
+```JavaScript
+var a = 100;
+function fn() {
+  var b = 200;
+
+  //但钱作用域没有定义变量，即“自由变量”
+  console.log(a);
+  console.log(b);
+}
+fn();
+
+var a = 100;
+function F1() {
+  var b = 200;
+  function F2() {
+    var c = 300;
+    console.log(a);//a是自由变量。形成一个链式结构，向父级去查找
+    console.log(b);//b是自由变量
+    console.log(c);//
+  }
+}
+```
+
+## 02-04
+### 作用域和闭包-闭包
+
+* 函数作为返回值
+
+```JavaScript
+function F1() {
+  var a = 100;
+  //返回一个函数（函数作为返回值）
+  return function () {
+    console.log(a);//自由变量，父作用域中查找
+  }
+}
+//f1得到一个函数
+var f1 = F1();
+var a = 200;
+f1();
+```
+
+* 函数作为参数传递
+
+```JavaScript
+function F1() {
+  var a = 100;
+  return function () {
+    console.log(a);  //自由变量，父作用域中查找
+  }
+}
+var f1 = F1();
+function F2(fn) {
+  var a = 200;
+  fn();
+}
+F2(f1);
+```
 
 #### 实际开发中闭包的应用
 ```JavaScript
@@ -422,4 +353,87 @@ var firstLoad = isFirstLoad()
 firstLoad(10) // true
 firstLoad(10) // false;
 firstLoad(20) // true
+```
+
+## 02-05
+### 知识点小结 & 解决问题
+#### 对变量提升的理解
+
+* 变量定义
+* 函数声明（注意和函数表达式的区别）
+
+#### this几种不停的使用场景
+
+* 作为构造函数执行
+* 作为对象属性执行
+* 作为普通函数执行
+* call apply bind
+
+```JavaScript
+function Foo(name){
+  this.name = name;
+}
+var f = new Foo('zhangsan');
+
+var obj = {
+  name:'A',
+  printName:function(){
+    console.log(this.name);
+  }
+}
+
+obj.printName()
+
+function fn(){
+  console.log(this);
+}
+fn()
+
+// call apply bind
+function fn1(name) {
+  alert(name);
+  console.log(this);
+}
+fn1.call({x:100},'zhangsan',20);
+// bind
+var fn2 = function fn2(name) {
+  alert(name);
+  console.log(this);
+}.bind({y:200});
+fn2('zhangsan',20);
+```
+
+#### 创建10个<a>标签 点击的时候弹出来对应的序号
+* 错误写法
+```JavaScript
+//这是一个错误的写法！！！
+var i,a;
+for (var i = 0; i < 10; i++) {
+  a = document.createElement('a');
+  a.innerHTML = i + '<br>';
+  a.addEventListener('click',function (e) {
+    e.preventDefault();
+    alert(i)
+  })
+  document.body.appendChild(a);
+}
+//输出为如下： <a>"9"<br></a>
+```
+
+* 正确写法
+
+```JavaScript
+//这是一个正确写法！！！
+var i;
+for (i = 0; i < 10; i++) {
+  (function(i){
+    var a = document.createElement('a');
+    a.innerHTML = i + '<br>';
+    a.addEventListener('click',function (e) {
+      e.preventDefault();
+      alert(i);
+    })
+    document.body.appendChild(a);
+  })(i)
+}
 ```

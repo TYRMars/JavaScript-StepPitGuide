@@ -17,14 +17,75 @@
   // var f = add();
   // f();
   // f();
-  function add() {
-    var i = 0;
-    return ()=>{
-      alert(i++)
+
+  // function add() {
+  //   var i = 0;
+  //   return ()=>{
+  //     alert(i++)
+  //   }
+  // }
+  // var f = add();
+  // f();
+  // f();
+
+  {
+    let name = "the";
+    let obj = {
+      name:"My Object",
+      getNameFun:function () {
+        return this.name;
+      }
     }
+    console.log(obj.getNameFun());
   }
-  var f = add();
-  f();
-  f();
+  {
+    let name = "the";
+    let obj = {
+      name:"My Object",
+      getNameFun:function () {
+        var that = this;
+        return function () {
+          return that.name
+        };
+      }
+    }
+    console.log(obj.getNameFun()());
+  }
+  {
+    let name = "the";
+    let obj = {
+      name:"My Object",
+      getNameFun:function () {
+        return function () {
+          return this.name
+        };
+      }
+    }
+    console.log(obj.getNameFun()());
+  }
+  {
+    let name = "the";
+    let obj = {
+      name:"My Object",
+      getNameFun:function () {
+        return () =>{
+          return this.name
+        };
+      }
+    }
+    console.log(obj.getNameFun()());
+  }
+  {
+    let name = "the";
+    let obj = {
+      name:"My Object",
+      getNameFun:function () {
+        return (function () {
+          return this.name
+        }).bind(this);
+      }
+    }
+    console.log(obj.getNameFun()());
+  }
   </script>
 </html>
