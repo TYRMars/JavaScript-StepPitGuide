@@ -6,27 +6,32 @@
 * [JSLearn-ES6](https://github.com/TYRMars/JSLearn-ES6) 'ES6语法学习'
 
 ---
+
 ## JavaScript基础知识剖析
 
-* [01](https://github.com/TYRMars/JSLearn/tree/master/01)`JavaScrpit-变量与原型`
+* [01](https://github.com/TYRMars/JSLearn/tree/master/01)`JavaScrpit-变量、作用域`
 
-* [02](https://github.com/TYRMars/JSLearn/tree/master/02)`JavaScrpit-作用域与闭包`
+* [02](https://github.com/TYRMars/JSLearn/tree/master/02)`JavaScrpit-引用类型`
 
-* [03](https://github.com/TYRMars/JSLearn/tree/master/03)`JavaScrpit-异步与单线程`
+* [03](https://github.com/TYRMars/JSLearn/tree/master/03)`JavaScrpit-面向对象程序设计`
 
-* [04](https://github.com/TYRMars/JSLearn/tree/master/04)`JavaScrpit-WebAPI基础 [DOM节点操作、BOM]`
+* [04](https://github.com/TYRMars/JSLearn/tree/master/04)`JavaScrpit-函数表达式`
 
-* [05](https://github.com/TYRMars/JSLearn/tree/master/05)`JavaScrpit-WebAPI扩展 [DOM事件、Ajax、storage]`
+* [05](https://github.com/TYRMars/JSLearn/tree/master/05)`JavaScrpit-BOM`
 
-* [06](https://github.com/TYRMars/JSLearn/tree/master/06)`JavaScrpit-模块化`
+* [06](https://github.com/TYRMars/JSLearn/tree/master/06)`JavaScrpit-DOM`
 
-* [07](https://github.com/TYRMars/JSLearn/tree/master/07)`JavaScrpit-工程化`
+* [07](https://github.com/TYRMars/JSLearn/tree/master/07)`JavaScrpit-事件`
 
-* [08](https://github.com/TYRMars/JSLearn/tree/master/08)`JavaScrpit-算法`
+* [08](https://github.com/TYRMars/JSLearn/tree/master/08)`JavaScrpit-算法应用`
 
-* [09](https://github.com/TYRMars/JSLearn/tree/master/09)`JavaScrpit-函数应用`
+* [09](https://github.com/TYRMars/JSLearn/tree/master/09)`JavaScrpit-Ajax、跨域`
 
-* [10](https://github.com/TYRMars/JSLearn/tree/master/10)`JavaScript-性能优化`
+* [10](https://github.com/TYRMars/JSLearn/tree/master/10)`JavaScrpit-高级技巧`
+
+* [11](https://github.com/TYRMars/JSLearn/tree/master/11)`JavaScrpit-模块化`
+
+* [12](https://github.com/TYRMars/JSLearn/tree/master/12)`JavaScript-性能优化`
 
 * [add](https://github.com/TYRMars/JSLearn/tree/master/MyIDEA)`JavaScrpit-JS插件`
 

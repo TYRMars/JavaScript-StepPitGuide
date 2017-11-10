@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链</title>
+  </head>
+  <body>
+      <script type="text/javascript">
+        //
+        var o1 = {name:'o1'};
+        var o2 = new Object({name:'o2'});
+        //
+        var M = function (name) {
+          this.name = name;
+        }
+        var o3 = new M('o3');
+        //
+        var p={name:'p'};
+        var o4 = Object.create(p);
+      </script>
+  </body>
+</html>

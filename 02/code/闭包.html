@@ -8,26 +8,24 @@
 
   </body>
   <script>
-  // function add() {
-  //   var i = 0;
-  //   return function () {
-  //     alert(i++);
-  //   }
-  // }
-  // var f = add();
-  // f();
-  // f();
-
-  // function add() {
-  //   var i = 0;
-  //   return ()=>{
-  //     alert(i++)
-  //   }
-  // }
-  // var f = add();
-  // f();
-  // f();
-
+  function add() {
+    var i = 0;
+    return function () {
+      alert(i++);
+    }
+  }
+  var f = add();
+  f();
+  f();
+  function add() {
+    var i = 0;
+    return ()=>{
+      alert(i++)
+    }
+  }
+  var f = add();
+  f();
+  f();
   {
     let name = "the";
     let obj = {
