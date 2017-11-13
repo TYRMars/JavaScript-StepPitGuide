@@ -9,8 +9,10 @@
 
 * [03-01](https://github.com/TYRMars/JSLearn/tree/master/03#03-01)`理解对象`
 * [03-02](https://github.com/TYRMars/JSLearn/tree/master/03#03-02)`创建对象`
-* [03-03](https://github.com/TYRMars/JSLearn/tree/master/03#03-03)`原型链`
-* [03-04](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`继承`
+* [03-03](https://github.com/TYRMars/JSLearn/tree/master/03#03-03)`构造函数`
+* [03-04](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`原型规则和示例`
+* [03-05](https://github.com/TYRMars/JSLearn/tree/master/03#03-05)`原型链`
+* [03-06](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`原型规则和示例`
 
 # 03-01
 ## 理解对象
@@ -44,9 +46,8 @@ var p = {name:'o3'};
 var o3 = Object.Create(P);
 ```
 
-
-## 01-04
-### 原型与原型链-构造函数
+## 03-03
+### 构造函数
 
 * 如何准确判断一个变量数组类型
 * 写一个原型链继承的例子
@@ -87,7 +88,7 @@ var f = new Foo('zhangsan',20); //实例化对象
 * 使用 `instanceof` 判断一个函数是否是一个变量的构造函数
   - 如果想判断一个变量是否为“数组”：变量 `instanceof Array`
 
-## 01-05
+## 03-04
 ### 原型规则和示例
 
 * 5条原型规则
@@ -175,7 +176,7 @@ for (item in f) {
 }
 ```
 
-## 01-06
+## 03-05
 ### 原型链
 ```JavaScript
 //构造函数
@@ -198,14 +199,14 @@ f.toString(); // 要去f.__proto__.__proto__中查找
 #### 原型链视图
 ![原型链图](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
 
-## 01-07
+## 03-06
 ### instanceof
 * 用于判断`引用类型`属于哪个`构造函数`的方法
 * `f instanceof Foo` 的判断逻辑是：
 * `f`的`__proto__`一层一层往上走，是否能对应到`Foo.prototype`
 * 再试着判断f instanceof Object
 
-## 01-08
+## 03-07
 ### 知识点小结 & 解决问题
 #### 如何准确判断一个变量是数组类型
 ```JavaScript
@@ -278,5 +279,3 @@ div1.on('click',function () {
   alert('click')
 })
 ```
-
-# 继承
