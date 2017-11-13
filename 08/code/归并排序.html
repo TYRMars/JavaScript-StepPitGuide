@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>归并排序</title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+    var list = [9,8,7,6,5,4,3,2,1]
+
+    function mergeSort(r,s,t) {
+      let m,r1=[],s1=s,t1=t;
+      console.log(r1);
+      if (s1==t1) {
+        return console.log(r1);
+      }
+      else {
+        m = (s1+t1)/2;
+        console.log(s1);
+        mergeSort(r,s1,m);
+        mergeSort(r,m+1,t1);
+        merge(r,r1,s1,m,t1);
+        for (var i = 0; i < t1; i++) {
+          r[i]=r1[i];
+        }
+        console.log(r);
+      }
+    }
+    function merge(r,r1,s,m,t) {
+      let i=s,j=m+1,k=s;
+      console.log(i,j,k);
+      while (i<=m && j<=t) {
+        if (r[i]<=r[j]) {
+          r1[k++]=r[i++]
+        }else {
+          r1[k++]=r[j++]
+        }
+      }
+      while (i<=m) {
+        r1[k++]=r[i++];
+      }
+      while (j<=t) {
+        r1[k++]=r[j++];
+      }
+    }
+    mergeSort(list,0,8);
+  </script>
+</html>
