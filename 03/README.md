@@ -12,7 +12,8 @@
 * [03-03](https://github.com/TYRMars/JSLearn/tree/master/03#03-03)`构造函数`
 * [03-04](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`原型规则和示例`
 * [03-05](https://github.com/TYRMars/JSLearn/tree/master/03#03-05)`原型链`
-* [03-06](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`原型规则和示例`
+* [03-06](https://github.com/TYRMars/JSLearn/tree/master/03#03-06)`原型规则和示例`
+* [03-07](https://github.com/TYRMars/JSLearn/tree/master/03#03-07)`原型继承`
 
 # 03-01
 ## 理解对象
@@ -207,6 +208,103 @@ f.toString(); // 要去f.__proto__.__proto__中查找
 * 再试着判断f instanceof Object
 
 ## 03-07
+## 原型继承
+
+* 类与实例
+  - 类的声明
+  - 生成实例
+* 类与继承
+  - 如何实现继承
+  - 继承的几种方式
+
+### 类的声明
+
+* 类声明 构造函数
+
+```Javascript
+function Animal1() {
+  this.name = 'animal';
+}
+```
+
+* ES6中class的声明
+
+```Javascript
+class Animal2 {
+  constructor() {
+    this.name = 'animal';
+  }
+}
+```
+
+### 类的继承方式
+
+#### 1. 构造函数方式进行继承
+
+```JavaScript
+function Parent1() {
+  this.name = 'parent1';
+}
+function Child1() {
+  Parent1.call(this);
+  this.type = 'child1';
+}
+console.log(new Child1());
+```
+
+* 但是如果要继承原型对象上的方法是没办法继承的
+
+```JavaScript
+// 借助构造函数
+function Parent1() {
+  this.name = 'parent1';
+}
+//
+Parent1.prototype.say = function () {
+  console.log('say');
+}
+//但是如果要继承原型对象上的方法是没办法继承的
+function Child1() {
+  Parent1.call(this);
+  this.type = 'Child1';
+}
+console.log(new Child1());
+```
+
+#### 2. 借助原型链实现继承
+
+```JavaScript
+function Parent2() {
+  this.name = 'parent2';
+}
+function Child2() {
+  this.type = 'child2';
+}
+Child2.prototype = new Parent2();//让child2的原型赋值为Parent2的实例
+console.log(new Child2());
+```
+
+* s1与s2之间不相互隔离
+* 原型链中共用
+
+```JavaScript
+function Parent2() {
+  this.name = 'parent2';
+  this.num = [1,2,3];
+}
+function Child2() {
+  this.type = 'child2';
+}
+Child2.prototype = new Parent2();//让child2的原型赋值为Parent2的实例
+var s1 = new Child2();
+var s2 = new Child2();
+console.log(s1.play,s2.play);
+```
+
+#### 3.组合方式
+
+
+
 ### 知识点小结 & 解决问题
 #### 如何准确判断一个变量是数组类型
 ```JavaScript
@@ -233,7 +331,12 @@ Dog.prototype = new Animal();
 var hashiqi = new Dog();
 //如果要真正写，就要写更贴近实战的原型链
 ```
-  * 推荐 阮一峰老师👨‍🏫的两篇文章：[Javascript 面向对象编程（一）：封装](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)、[Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
+
+* 推荐 阮一峰老师👨‍🏫的两篇文章：
+
+[Javascript 面向对象编程（一）：封装](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)
+
+[Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
 
 #### 描述new一个对象的过程
 * 创建一个新对象

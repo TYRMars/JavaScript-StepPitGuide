@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //类声明 构造函数
+      function Animal() {
+        this.name = 'Animal';
+      }
+      // ES6中class的声明
+      class Animal2 {
+        constructor() {
+          this.name = 'Animal2';
+        }
+      }
+      // 实例化
+      console.log(new Animal(), new Animal2());
+      // 借助构造函数
+      function Parent1() {
+        this.name = 'parent1';
+      }
+      //
+      Parent1.prototype.say = function () {
+        console.log('say');
+      }
+      //但是如果要继承原型对象上的方法是没办法继承的
+      function Child1() {
+        Parent1.call(this);
+        this.type = 'Child1';
+      }
+      console.log(new Child1());
+      // 借助原型链实现继承
+      function Parent2() {
+        this.name = 'parent2';
+      }
+      function Child2() {
+        this.type = 'Child2';
+      }
+      Child2.prototype = new Parent2();//让child2的原型赋值为Parent2的实例
+      console.log(new Child2());
+      //组合方式
+      function Parent3() {
+        this.name = 'parent3';
+        this.play = [1,2,3]
+      }
+      function Child3() {
+        Parent3.call(this);
+        this.type = 'child3';
+      }
+      Child3.prototype = new Parent3();
+      var s3 = new Child3();
+      var s4 = new Child3();
+      s3.play.push(4);
+      console.log(s3,s4);
+      //组合继承优化
+      function Parent4() {
+        this.name = 'parent3';
+        this.play = [1,2,3];
+      }
+      function Child4() {
+        Parent4.call(this);
+        this.type = 'child4';
+      }
+      Child4.prototype = Parent4.prototype;
+      var s5 = new Child4();
+      var s6 = new Child4();
+      console.log(s5,s6);
+      //
+      //
+      function Parent() {
+        this.name = 'f1';
+      }
+      function Child2() {
+
+      }
+      fc1 = Object.create(f1.prototype,
+          {
+            list:'mu'
+          }
+      );
+    </script>
+  </body>
+</html>
