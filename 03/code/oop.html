@@ -69,18 +69,32 @@
       var s6 = new Child4();
       console.log(s5,s6);
       //
+      function Parent5() {
+        this.name = 'Parent5';
+        this.play = [1,2,3];
+      }
+      function Child5() {
+        Parent5.call(this);
+        this.type = 'Child5'
+      }
+      Child5.prototype = Object.create(Parent5.prototype);
+      console.log(new Child5);
       //
-      function Parent() {
-        this.name = 'f1';
+      function list() {
+        this.name = 'List';
+        this.play = [1,2,3];
       }
-      function Child2() {
-
-      }
-      fc1 = Object.create(f1.prototype,
-          {
-            list:'mu'
-          }
-      );
+      var my = Object.create(new list,
+        {
+          a:{value:"Grog"}
+        }
+      )
+      var you = Object.create(new list,
+        {
+          a:{value:"dog"}
+        }
+      )
+      console.log(my,you);
     </script>
   </body>
 </html>
