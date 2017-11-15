@@ -55,7 +55,7 @@
       var s4 = new Child3();
       s3.play.push(4);
       console.log(s3,s4);
-      //组合继承优化
+      //组合继承优化1
       function Parent4() {
         this.name = 'parent3';
         this.play = [1,2,3];
@@ -68,7 +68,7 @@
       var s5 = new Child4();
       var s6 = new Child4();
       console.log(s5,s6);
-      //
+      //组合继承优化2
       function Parent5() {
         this.name = 'Parent5';
         this.play = [1,2,3];
@@ -79,7 +79,49 @@
       }
       Child5.prototype = Object.create(Parent5.prototype);
       console.log(new Child5);
-      //
+      function Parent6() {
+        this.name = 'Parent5';
+        this.play = [1,2,3];
+      }
+      function Child6() {
+        Parent5.call(this);
+        this.type = 'Child5'
+      }
+      Child6.prototype = Object.create(Parent6.prototype);
+      Child6.prototype.constructor = Child5;
+      console.log(new Child6);
+      //原型式继承
+      function object_oop(o) {
+        function F() {
+        }
+        F.prototype = o;
+        return new F();
+      }
+      var person = {
+        name:"zhangjianan",
+        friends:["chuang","red"]
+      };
+      var OnePerson = object_oop(person);
+      console.log(OnePerson);
+      OnePerson.name = "Goge";
+      console.log(OnePerson);
+      var TwoPerson = object_oop(person);
+      TwoPerson.friends.push("red");
+      console.log(OnePerson,TwoPerson);
+      //ES5原型式继承
+      var ThreePerson = Object.create(person,{
+        name: {
+          value:"XIXI"
+        }
+      })
+      console.log(ThreePerson);
+      var FourPerson = Object.create(ThreePerson,{
+        name:{
+          value:[1,2,3,4]
+        }
+      })
+      console.log(FourPerson);
+      //原型式继承-自我思想版
       function list() {
         this.name = 'List';
         this.play = [1,2,3];
@@ -89,12 +131,17 @@
           a:{value:"Grog"}
         }
       )
+      var my_count = Object.create(my,
+        {
+          num:{value:"000001"}
+        }
+      )
       var you = Object.create(new list,
         {
           a:{value:"dog"}
         }
       )
-      console.log(my,you);
+      console.log(my,you,my_count);
     </script>
   </body>
 </html>

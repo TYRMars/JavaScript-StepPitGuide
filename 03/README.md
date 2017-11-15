@@ -303,7 +303,29 @@ console.log(s1.play,s2.play);
 
 #### 3.组合方式
 
+```JavaScript
+function Parent3() {
+  this.name = 'Parent3';
+  this.play = [1,2,3];
+}
+function Child3() {
+  Parent3.call(this);
+  this.type = 'child3';
+}
+Child3.prototype = new Parent3();//Child3的原型对象指向Parent3的实例
+console.log(new child3);
+```
 
+* 父类构造函数执行了多次，没有必要的重复执行
+
+#### 4.组合方式改进1
+
+```JavaScript
+function Parent4() {
+  this.name = 'parent4';
+}
+
+```
 
 ### 知识点小结 & 解决问题
 #### 如何准确判断一个变量是数组类型
