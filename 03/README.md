@@ -365,6 +365,7 @@ var hashiqi = new Dog();
 * this指向这个新对象
 * 执行代码，即对this赋值
 * 返回this 🔙
+
 ```JavaScript
 function Foo(name,age){
   this.name = name ;
@@ -373,6 +374,14 @@ function Foo(name,age){
 }
 var f = new Foo('zhangsan',20);
 //var f1 = new Foo('list',22) //创建多个对象
+```
+
+* new运算符
+
+```JavaScript
+var new2 = function (func) {
+
+}
 ```
 
 
