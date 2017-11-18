@@ -329,12 +329,15 @@ function Parent4() {
 
 ### 知识点小结 & 解决问题
 #### 如何准确判断一个变量是数组类型
+
 ```JavaScript
 var arr = [];
 arr instanceof Array; //true
 typeof arr //object  typeof是无法判断是否是数组
 ```
+
 #### 写一个原型链继承的例子
+
 ```JavaScript
 //动物
 function Animal(){
@@ -383,7 +386,6 @@ var new2 = function (func) {
 
 }
 ```
-
 
 #### 贴近实际开发原型链继承的例子
 ```JavaScript
