@@ -1,4 +1,4 @@
-# 04 JavaScrpit-WebAPI基础
+# 04 JavaScrpit-函数表达式
 
 * [04-01](https://github.com/TYRMars/JSLearn/tree/master/04#04-01) `从基础知识到JS-Web-API`
 * [04-02](https://github.com/TYRMars/JSLearn/tree/master/04#04-02) `DOM本质`
@@ -51,6 +51,7 @@
 * 之前ECMA的
 * 比如 window document
 * 所有未定义的全局变量，如`navigator.userAgent`
+
 #### 总结
 * 常说的JS(浏览器执行的JS)包含两个部分：
 * JS基础知识(ECMA262标准)；

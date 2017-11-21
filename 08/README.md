@@ -1,4 +1,4 @@
-#### 08 JavaScrpit-算法
+#### 08 JavaScrpit-算法应用
 
 * [08-01](https://github.com/TYRMars/JSLearn/tree/master/08#08-01) `JavaScript算法测试函数`
 * [08-02](https://github.com/TYRMars/JSLearn/tree/master/08#08-02) `JavaScript算法-冒泡排序`

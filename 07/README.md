@@ -1,4 +1,4 @@
-# 07 JavaScrpit-工程化
+# 07 JavaScrpit-事件
 
 * [07-01](https://github.com/TYRMars/JSLearn/tree/master/07#07-01) `Git常用命令`
 * [07-02](https://github.com/TYRMars/JSLearn/tree/master/07#07-02) `上线回滚-上线回滚流程`

@@ -7,6 +7,8 @@
 
 ---
 
+## 知识从新整理，补充细节整理中
+
 ## JavaScript基础知识剖析
 
 * [01](https://github.com/TYRMars/JSLearn/tree/master/01)`JavaScrpit-变量、作用域`

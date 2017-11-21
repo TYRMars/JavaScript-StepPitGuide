@@ -1,4 +1,4 @@
-# 05 JavaScrpit-WebAPI扩展
+# 05 JavaScrpit-BOM
 
 * [05-01](https://github.com/TYRMars/JSLearn/tree/master/05#05-01) `DOM事件-事件流`
 * [05-02](https://github.com/TYRMars/JSLearn/tree/master/05#05-02) `DOM事件-事件注册与触发`

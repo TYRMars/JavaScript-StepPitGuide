@@ -1,5 +1,4 @@
-# 03
-## 面向对象程序设计
+# 03 面向对象程序设计
 
 <p align="center"><img src="http://img.tvmao.com/stills/movie/190/310/b/L7KsW7OtLR=.jpg" /></p>
 
@@ -12,7 +11,7 @@
 * [03-03](https://github.com/TYRMars/JSLearn/tree/master/03#03-03)`构造函数`
 * [03-04](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`原型规则和示例`
 * [03-05](https://github.com/TYRMars/JSLearn/tree/master/03#03-05)`原型链`
-* [03-06](https://github.com/TYRMars/JSLearn/tree/master/03#03-06)`原型规则和示例`
+* [03-06](https://github.com/TYRMars/JSLearn/tree/master/03#03-06)`instanceof`
 * [03-07](https://github.com/TYRMars/JSLearn/tree/master/03#03-07)`原型继承`
 
 # 03-01
@@ -88,6 +87,14 @@ var f = new Foo('zhangsan',20); //实例化对象
 * `function Foo(){...}`其实是 `var Foo = new Function(...)`
 * 使用 `instanceof` 判断一个函数是否是一个变量的构造函数
   - 如果想判断一个变量是否为“数组”：变量 `instanceof Array`
+
+#### 如何准确判断一个变量是数组类型
+
+```JavaScript
+var arr = [];
+arr instanceof Array; //true
+typeof arr //object  typeof是无法判断是否是数组
+```
 
 ## 03-04
 ### 原型规则和示例
@@ -197,11 +204,13 @@ f.printName();
 f.alertName();
 f.toString(); // 要去f.__proto__.__proto__中查找
 ```
+
 #### 原型链视图
 ![原型链图](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
 
 ## 03-06
 ### instanceof
+
 * 用于判断`引用类型`属于哪个`构造函数`的方法
 * `f instanceof Foo` 的判断逻辑是：
 * `f`的`__proto__`一层一层往上走，是否能对应到`Foo.prototype`
@@ -376,17 +385,75 @@ console.log('组合继承改进2-constructor',new Child6);
 #### 6.原型式继承
 
 ```JavaScript
-
+//原型式继承
+function object_oop(o) {
+  function F() {
+  }
+  F.prototype = o;
+  return new F();
+}
+var person = {
+  name:"zhangjianan",
+  friends:["yueyue","red"]
+};
+var OnePerson = object_oop(person);
+console.log('原型式继承',OnePerson);
+OnePerson.name = "Goge";
+console.log('原型式继承',OnePerson);
+var TwoPerson = object_oop(person);
+TwoPerson.friends.push("red");
+console.log('原型式继承',OnePerson,TwoPerson);
+//ES5原型式继承
+var ThreePerson = Object.create(person,{
+  name: {
+    value:"XIXI"
+  }
+})
+console.log(ThreePerson);
+var FourPerson = Object.create(ThreePerson,{
+  name:{
+    value:[1,2,3,4]
+  }
+})
+console.log('原型式继承',FourPerson);
 ```
 
-### 知识点小结 & 解决问题
-#### 如何准确判断一个变量是数组类型
+* ES5中主要使用Object.create()去创建对象
+*
+
+#### 贴近实际开发原型链继承的例子
 
 ```JavaScript
-var arr = [];
-arr instanceof Array; //true
-typeof arr //object  typeof是无法判断是否是数组
+function Elem(id) {
+  this.elem = document.getElementById(id);
+}
+
+Elem.prototype.html = function (val) {
+  var elem = this.elem;
+  if (val) {
+    elem.innerHTML = val;
+    return this; // 链式操作
+  }else {
+    return elem.innerHTML;
+  }
+}
+
+Elem.prototype.on = function (type, fn) {
+  var elem = this.elem ;
+  elem.addEventListener(type, fn) ;
+}
+
+var div1 = new Elem('div1');
+//console.log(div1.html());
+div1.html('<p>hello imooc</p>')
+div1.on('click',function () {
+  alert('click')
+})
 ```
+
+
+### 知识点小结 & 解决问题
+
 
 #### 写一个原型链继承的例子
 
@@ -421,6 +488,21 @@ var hashiqi = new Dog();
 * 执行代码，即对this赋值
 * 返回this 🔙
 
+
+* new运算符使用
+
+```JavaScript
+function Foo(name,age){
+  this.name = name ;
+  this.age = age ;
+  //return this //默认有这一行
+}
+var f = new Foo('zhangsan',20);
+//var f1 = new Foo('list',22) //创建多个对象
+```
+
+* 自制new运算符
+
 ```JavaScript
 var new2 = function (func) {
   var o = Object.create(func.prototype);
@@ -438,51 +520,4 @@ function new_todo() {
 
 var o6 =new2(new_todo);
 console.log(o6)
-```
-
-```JavaScript
-function Foo(name,age){
-  this.name = name ;
-  this.age = age ;
-  //return this //默认有这一行
-}
-var f = new Foo('zhangsan',20);
-//var f1 = new Foo('list',22) //创建多个对象
-```
-
-* new运算符
-
-```JavaScript
-var new2 = function (func) {
-
-}
-```
-
-#### 贴近实际开发原型链继承的例子
-```JavaScript
-function Elem(id) {
-  this.elem = document.getElementById(id);
-}
-
-Elem.prototype.html = function (val) {
-  var elem = this.elem;
-  if (val) {
-    elem.innerHTML = val;
-    return this; // 链式操作
-  }else {
-    return elem.innerHTML;
-  }
-}
-
-Elem.prototype.on = function (type, fn) {
-  var elem = this.elem ;
-  elem.addEventListener(type, fn) ;
-}
-
-var div1 = new Elem('div1');
-//console.log(div1.html());
-div1.html('<p>hello imooc</p>')
-div1.on('click',function () {
-  alert('click')
-})
 ```

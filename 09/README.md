@@ -1,4 +1,4 @@
-# 09 JavaScrpit-函数应用
+# 09 JavaScrpit-Ajax、跨域
 
 * [09-01](https://github.com/TYRMars/JSLearn/tree/master/09#09-01) `函数应用`
 
