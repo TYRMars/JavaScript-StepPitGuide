@@ -324,6 +324,58 @@ console.log(new child3);
 function Parent4() {
   this.name = 'parent4';
 }
+function Child4() {
+  Parent4.call(this);
+  this.type = 'child4';
+}
+Child4.prototype = Parent4.prototype;
+var s5 = new Child4();
+var s6 = new Child4();
+console.log(s5,s6);
+```
+
+* `instanceof`和`constructor`
+
+```JavaScript
+console.log(s5 instanceof Child4,s5 instanceof Parent4);
+```
+
+* 如何区分是子类实例化的还是父类实例化的
+
+#### 5.组合方式改进2
+
+* 主要是在继承的时候让 子类的原型对象 = `Object.Create(父类构造函数的原型对象)`
+* 再通过改变子类的原型对象的constructor，因为此时的constructor的指向是父类原型对象的构造函数
+
+```JavaScript
+function Parent5() {
+  this.name = 'Parent5';
+  this.play = [1,2,3];
+}
+function Child5() {
+  Parent5.call(this);
+  this.type = 'Child5'
+}
+Child5.prototype = Object.create(Parent5.prototype);
+//通过Object.create()创建一个新的对象，传入的原型对象是Parent.prototype
+console.log('组合继承改进2',new Child5);
+//改变constructor的指向
+function Parent6() {
+  this.name = 'Parent6';
+  this.play = [1,2,3];
+}
+function Child6() {
+  Parent6.call(this);
+  this.type = 'Child6'
+}
+Child6.prototype = Object.create(Parent6.prototype);
+Child6.prototype.constructor = Child6;
+console.log('组合继承改进2-constructor',new Child6);
+```
+
+#### 6.原型式继承
+
+```JavaScript
 
 ```
 
@@ -368,6 +420,25 @@ var hashiqi = new Dog();
 * this指向这个新对象
 * 执行代码，即对this赋值
 * 返回this 🔙
+
+```JavaScript
+var new2 = function (func) {
+  var o = Object.create(func.prototype);
+  var k = func.call(o);
+  if (typeof k === 'object') {
+    return k
+  }else{
+    return o
+  }
+}
+
+function new_todo() {
+  this.name = 'zhang';
+}
+
+var o6 =new2(new_todo);
+console.log(o6)
+```
 
 ```JavaScript
 function Foo(name,age){

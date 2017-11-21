@@ -17,7 +17,7 @@
         }
       }
       // 实例化
-      console.log(new Animal(), new Animal2());
+      console.log('实例化',new Animal(), new Animal2());
       // 借助构造函数
       function Parent1() {
         this.name = 'parent1';
@@ -31,7 +31,7 @@
         Parent1.call(this);
         this.type = 'Child1';
       }
-      console.log(new Child1());
+      console.log('借助构造函数',new Child1());
       // 借助原型链实现继承
       function Parent2() {
         this.name = 'parent2';
@@ -40,7 +40,7 @@
         this.type = 'Child2';
       }
       Child2.prototype = new Parent2();//让child2的原型赋值为Parent2的实例
-      console.log(new Child2());
+      console.log('借助原型链',new Child2());
       //组合方式
       function Parent3() {
         this.name = 'parent3';
@@ -54,7 +54,7 @@
       var s3 = new Child3();
       var s4 = new Child3();
       s3.play.push(4);
-      console.log(s3,s4);
+      console.log('组合式继承',s3,s4);
       //组合继承优化1
       function Parent4() {
         this.name = 'parent3';
@@ -64,10 +64,12 @@
         Parent4.call(this);
         this.type = 'child4';
       }
-      Child4.prototype = Parent4.prototype;
+      Child4.prototype = Parent4.prototype;//做出了原型替换，相关的constructor也会改变
       var s5 = new Child4();
       var s6 = new Child4();
-      console.log(s5,s6);
+      console.log('组合式改进1',s5,s6);
+      console.log('s5是否是Child4的子类',s5 instanceof Child4,'s5是否是Parent4的子类',s5 instanceof Parent4);
+      console.log('s5的constructor',s5.constructor);
       //组合继承优化2
       function Parent5() {
         this.name = 'Parent5';
@@ -78,18 +80,20 @@
         this.type = 'Child5'
       }
       Child5.prototype = Object.create(Parent5.prototype);
-      console.log(new Child5);
+      //通过Object.create()创建一个新的对象，传入的原型对象是Parent.prototype
+      console.log('组合继承改进2',new Child5);
+      //改变constructor的指向
       function Parent6() {
-        this.name = 'Parent5';
+        this.name = 'Parent6';
         this.play = [1,2,3];
       }
       function Child6() {
-        Parent5.call(this);
-        this.type = 'Child5'
+        Parent6.call(this);
+        this.type = 'Child6'
       }
       Child6.prototype = Object.create(Parent6.prototype);
-      Child6.prototype.constructor = Child5;
-      console.log(new Child6);
+      Child6.prototype.constructor = Child6;
+      console.log('组合继承改进2-constructor',new Child6);
       //原型式继承
       function object_oop(o) {
         function F() {
@@ -99,15 +103,15 @@
       }
       var person = {
         name:"zhangjianan",
-        friends:["chuang","red"]
+        friends:["yueyue","red"]
       };
       var OnePerson = object_oop(person);
-      console.log(OnePerson);
+      console.log('原型式继承',OnePerson);
       OnePerson.name = "Goge";
-      console.log(OnePerson);
+      console.log('原型式继承',OnePerson);
       var TwoPerson = object_oop(person);
       TwoPerson.friends.push("red");
-      console.log(OnePerson,TwoPerson);
+      console.log('原型式继承',OnePerson,TwoPerson);
       //ES5原型式继承
       var ThreePerson = Object.create(person,{
         name: {
@@ -120,7 +124,7 @@
           value:[1,2,3,4]
         }
       })
-      console.log(FourPerson);
+      console.log('原型式继承',FourPerson);
       //原型式继承-自我思想版
       function list() {
         this.name = 'List';
@@ -141,7 +145,7 @@
           a:{value:"dog"}
         }
       )
-      console.log(my,you,my_count);
+      console.log('自己想的原型式继承',my,you,my_count);
       //new
       var new2 = function (func) {
         var o = Object.create(func.prototype);
@@ -156,9 +160,9 @@
       function new_todo() {
         this.name = 'zhang';
       }
+      var o6 = new2(new_todo);
 
-      var o6 =new2(new_todo);
-      console.log(o6)
+      console.log('自己制造new',o6)
     </script>
   </body>
 </html>
