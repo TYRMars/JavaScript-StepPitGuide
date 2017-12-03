@@ -17,7 +17,7 @@
 
 * [03](https://github.com/TYRMars/JSLearn/tree/master/03)`JavaScrpit-面向对象程序设计`
 
-* [04](https://github.com/TYRMars/JSLearn/tree/master/04)`JavaScrpit-函数表达式`
+* [04](https://github.com/TYRMars/JSLearn/tree/master/04)`JavaScrpit-函数表达式与函数式编程`
 
 * [05](https://github.com/TYRMars/JSLearn/tree/master/05)`JavaScrpit-BOM`
 
