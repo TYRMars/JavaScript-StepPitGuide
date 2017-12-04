@@ -34,5 +34,15 @@
 * io.on 监听事件
 * io.emit 触发事件
 
+## Socket.io合并HTTP
+
+```js
+const express = require('express')
+const app = express()
+//work with express
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
+```
+
 
 

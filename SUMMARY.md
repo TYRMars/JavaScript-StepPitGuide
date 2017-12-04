@@ -45,11 +45,9 @@
   * [Ajax](09/ajax.md)
   * [Promise](09/promise.md)
 * [10-JavaScrpit-跨域](10/README.md)
-  * [跨域](10-javascrpitkua-yu/kua-yu.md)
-  * [跨域方法](10-javascrpitkua-yu/kua-yu-fang-fa.md)
-    * [hash](10-javascrpitkua-yu/kua-yu-fang-fa/hash.md)
-    * [JSONP](10-javascrpitkua-yu/kua-yu-fang-fa/jsonp.md)
-    * [Web Sockets](10-javascrpitkua-yu/kua-yu-fang-fa/web-sockets.md)
+  * [跨域](10/kua-yu.md)
+  * [跨域方法](10/kua-yu-fang-fa.md)
+    * Hash
 * [11-JavaScrpit-模块化](11/README.md)
   * [AMD](11/amd.md)
   * [CMD](11/cmd.md)
@@ -57,6 +55,6 @@
 * [12-JavaScrpit-Web安全🔐](12/README.md)
   * [XSS](12/xss.md)
   * [CSRF](12/csrf.md)
-* 13-JavaScrpit-应用
-  * [Socket.io库](socketio.md)
+* [13-JavaScrpit-应用](13/README.md)
+  * [Socket.io库](13/socketio.md)
 
