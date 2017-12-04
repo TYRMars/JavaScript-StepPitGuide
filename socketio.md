@@ -26,5 +26,13 @@
 * io.on 监听事件
 * io.emit 触发事件
 
+## Socket.io前端API
+
+##### 配合 express
+
+* import io from 'socket.io-client'
+* io.on 监听事件
+* io.emit 触发事件
+
 
 
