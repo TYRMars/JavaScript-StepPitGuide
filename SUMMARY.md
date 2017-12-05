@@ -47,14 +47,14 @@
   * [事件分类](07/shi-jian-fen-lei.md)
 * [08-JavaScrpit-算法应用](08/README.md)
   * [基本排序算法](08/ji-ben-pai-xu-suan-fa.md)
-    * 冒泡排序
+    * [冒泡排序](08/ji-ben-pai-xu-suan-fa/mao-pao-pai-xu.md)
 * [09-JavaScrpit-异步请求](09/README.md)
   * [Ajax](09/ajax.md)
   * [Promise](09/promise.md)
 * [10-JavaScrpit-跨域](10/README.md)
   * [跨域](10/kua-yu.md)
   * [跨域方法](10/kua-yu-fang-fa.md)
-    * Hash
+    * [Hash](10/kua-yu-fang-fa/hash.md)
 * [11-JavaScrpit-模块化](11/README.md)
   * [AMD](11/amd.md)
   * [CommonJS](11/cmd.md)
