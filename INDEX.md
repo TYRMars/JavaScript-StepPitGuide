@@ -1,5 +1,4 @@
-<h1 align="center">JavaScript学习</h1>
-<p align="center"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498542774866&di=ed28b6b90c4be001acda441377113f2e&imgtype=0&src=http%3A%2F%2F7xkvof.com2.z0.glb.qiniucdn.com%2Farticle%2F79tvzE5PHyLClhki4Gbv.jpg" /></p>
+* 首页像素图片引用自[站酷-作品版权由曹吉吉](http://www.zcool.com.cn/work/ZMTMxMDU0NTI=.html)
 
 ---
 
