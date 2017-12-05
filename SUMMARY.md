@@ -30,6 +30,7 @@
   * [纯度、不变性和更改政策](04/chun-du-3001-bu-bian-xing-he-geng-gai-zheng-ce.md)
   * [基于流的编程](04/ji-yu-liu-de-bian-cheng.md)
   * [无类编程](04/wu-lei-bian-cheng.md)
+  * [函数基本应用](04/han-shu-ji-ben-ying-yong.md)
 * [05-JavaScrpit-BOM](05/README.md)
   * [window对象](05/windowdui-xiang.md)
   * [location对象](05/locationdui-xiang.md)
@@ -37,6 +38,8 @@
   * [screen对象](05/screendui-xiang.md)
   * [history对象](05/historydui-xiang.md)
 * [06-JavaScript-DOM](06/README.md)
+  * [DOM节点操作](06/domjie-dian-cao-zuo.md)
+  * [DOM结构操作](06/domjie-gou-cao-zuo.md)
 * [07-JavaScrpit-事件](07/README.md)
   * [事件流](07/shi-jian-liu.md)
   * [事件注册与触发](07/shi-jian-zhu-ce-yu-hong-fa.md)
@@ -46,7 +49,6 @@
   * [基本排序算法](08/ji-ben-pai-xu-suan-fa.md)
     * 冒泡排序
 * [09-JavaScrpit-异步请求](09/README.md)
-  * [XMLHttpRequest](09/xmlhttprequest.md)
   * [Ajax](09/ajax.md)
   * [Promise](09/promise.md)
 * [10-JavaScrpit-跨域](10/README.md)
@@ -55,7 +57,7 @@
     * Hash
 * [11-JavaScrpit-模块化](11/README.md)
   * [AMD](11/amd.md)
-  * [CMD](11/cmd.md)
+  * [CommonJS](11/cmd.md)
   * [ES6模块化](11/es6mo-kuai-hua.md)
 * [12-JavaScrpit-Web安全🔐](12/README.md)
   * [XSS](12/xss.md)

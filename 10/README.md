@@ -1,1 +1,4 @@
-# 10 JavaScrpit-高级技巧
+# 10-JavaScrpit-跨域
+
+
+

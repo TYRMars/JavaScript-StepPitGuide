@@ -1,4 +1,4 @@
-# 11 JavaScrpit-模块化
+# 11-JavaScrpit-模块化
 
 ### 模块化
 
@@ -6,6 +6,7 @@
 * 使用模块化
 * AMD
 * CommonJS
+* ES6
 
 #### 不使用模块化
 
