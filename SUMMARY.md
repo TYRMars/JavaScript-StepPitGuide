@@ -1,7 +1,7 @@
 # Summary
 
 * [主页](README.md)
-* [GitHub原文目录](INDEX.md)
+* [目录](INDEX.md)
 * [01-JavaScrpit-变量、作用域](01/README.md)
   * [变量声明](01/bian-liang-sheng-ming.md)
   * [变量类型和计算](01/bian-liang-lei-xing-he-ji-suan.md)
