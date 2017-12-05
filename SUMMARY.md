@@ -44,6 +44,7 @@
   * [事件分类](07/shi-jian-fen-lei.md)
 * [08-JavaScrpit-算法应用](08/README.md)
   * [基本排序算法](08/ji-ben-pai-xu-suan-fa.md)
+    * 冒泡排序
 * [09-JavaScrpit-异步请求](09/README.md)
   * [XMLHttpRequest](09/xmlhttprequest.md)
   * [Ajax](09/ajax.md)

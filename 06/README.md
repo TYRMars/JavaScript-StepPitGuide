@@ -4,76 +4,10 @@
 * [06-02](https://github.com/TYRMars/JSLearn/tree/master/06#06-02) `模块化-AMD`
 * [06-03](https://github.com/TYRMars/JSLearn/tree/master/06#06-03) `模块化-CommonJS`
 
-
 ## 06-01
-### 模块化
 
-* 不使用模块化
-* 使用模块化
-* AMD
-* CommonJS
+### 06-02
 
-#### 不使用模块化
-
-* `util getFormatDate函数`
-* `a-util.js aGetFormatDate函数 使用getFormatDate`
-* `a.js aGetFormatDate`
-* 定义
-
-```JavaScript
-//util.js
-function getFormatDate(date,type) {
-  //type === 1返回 2017-06-15
-  //type === 2返回 2017年6月15日 格式
-  //...
-}
-//a-util.js
-function aGetFormatDate(data) {
-  //返回
-  return getFormatDate(date,2);
-}
-// a.js
-var dt = new Date()
-console.log(aGetFormatDate(dt));
-```
-
-* 使用
-
-```html
-<script src="util.js"></script>
-<script src="a-util.js"></script>
-<script src="a.js"></script>
-<!-- 1.这些代码中的函数必须是全局变量，才能暴露给使用方。全局变量污染 -->
-<!-- 2. a.js 知道要引用 a-util.js ,但是他知道还需要依赖于util.js吗？ -->
-```
-#### 使用模块化
-
-```JavaScript
-//util.js
-export{
-  getFormatDate:function (data,type) {
-    //type === 1 返回 2017-06-15
-    //type === 2 返回 2017年6月15日 格式
-  }
-}
-//a-util.js
-var getFormatDate = require('util.js');
-export{
-  aGetFormatDate:function (date) {
-    //要求返回 2017年6月15日 格式
-    return getFormatDate(date,2);
-  }
-}
-// a.js
-var aGetFormatDate = require('a-util.js')
-var dt = new Date();
-console.log(aGetFormatDate(dt));
-
-//直接‘<script src="a.js"></script>’,其他的根据依赖关系自动引用
-//那两个函数，没必要做成全局变量，不会带来污染和覆盖
-```
-
-## 06-02
 ### AMD
 
 * require.js `requirejs.org/`
@@ -138,34 +72,180 @@ require('[./a.js]',function (a) {
 ```
 
 ## 06-03
-### CommonJS
-* nodejs模块化规范，现在被大量用于前端，原因：
-    * 前端开发依赖的插件和库，都可以从npm中获取
-    * 构建工具的高度自动化，是的使用npm的成本非常低
-    * CommonJS不会异步加载JS，而是同步一次性加载出来
 
-```JavaScript
-module.exports = {
-  getFormatDate:function (data,type) {
-    if (type === 1) {
-      return '2017-06-15';
-    }
-    if (type === 2) {
-      return '2017年6月15日';
-    }
-  }
-}
+### 
 
-// a-util.js
-var util = require('util.js')
-module.exports = {
-  aGetFormatDate:function (data) {
-    return util.getFormatDate(data,2);
-  }
-}
+### DOM操作
+
+* Document Object Model
+* DOM是哪种基本的数据结构
+* DOM操作的常用API有哪些
+* DOM节点的attr和property有和区别
+
+#### DOM的本质
+
+* XML
+
+  ```XML
+  <?xml version="1.0" encoding="UTF-8"?>
+  <note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Dont forget me this weekend</body>
+  <other>
+  <a></a>
+  <b></b>
+  </other>
+  </note>
+  ```
+
+* HTML
+
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <p>this is p</p>
+  </div>
+</body>
+</html>
 ```
 
-#### AMD和CommonJS的使用场景
+## 04-03
 
-* 需要异步加载JS，使用AMD
-* 使用了npm之后建议使用CommonJS
+### DOM节点操作
+
+* 获取DOM节点
+* prototype,获取JS对象上的属性
+* Attribute,获取DOM标签上的属性
+
+  #### 获取DOM节点
+
+  \`\`\`JavaScript  
+  var div1 = document.getElementById\('div1'\); //元素  
+  var divList = document.getElementByTagName\('div'\); //集合  
+  console.log\(divList.length\);  
+  console.log\(divList\[0\]\);
+
+var containerList = document.getElementByClassName\('.container'\); //集合  
+var pList = document.querySelectorAll\('p'\); //集合
+
+    #### property
+
+    ```JavaScript
+    var pList = document.querySelectorAll('p');
+    var p = pList[0];
+    console.log(p.style.width); // 获取样式
+    p.style.width = '100px' // 修改样式
+    console.log(p.className);//获取class
+    p.className = 'p1' //修改class
+
+    // 获取 nodeName 和 ndoeType
+    console.log(p.nodeName);
+    console.log(p.nodeType);
+
+#### Attribute
+
+```JavaScript
+var pList = document.querySelectorAll('p');
+var p = pList[0];
+p.getAttribute('data-name');
+p.getAttribute('data-name','imooc');
+p.getAttribute('style');
+p.setAttribute('style','font-size:30px;');
+```
+
+## 04-04
+
+### DOM结构操作
+
+* 新增节点
+
+```JavaScript
+var div1 = document.getElementById('div1');
+//添加新节点
+var p1 = document.createElement('p');
+p1.innerHTML = 'this is p1';
+div1.appendChild(p1); //添加新创建的元素
+//移除已有节点
+var p2 = document.getElementById('p2');
+div1.appendChild(p2);
+```
+
+* 获取父元素-获取子节点
+
+```JavaScript
+var div1 = document.getElementById('div1');
+var parent = div1.parentElement;
+```
+
+* 删除节点
+
+```JavaScript
+var div1 = document.getElementById('div1');
+var child = div1.childNodes;
+div1.removeChild(child[0]);
+```
+
+#### 举个栗子\(例子：example\)！！！
+
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div id="div1">
+    <p id="p1">this is p1</p>
+    <p id="p2">this is p2</p>
+  </div>
+  <div id="div2">
+    <p id="p3">this is p3</p>
+    <p id="p4">this is p4</p>
+  </div>
+  <script type="text/javascript">
+  // 1.
+  // var p = document.createElement('p');
+  // p.innerHTML = 'new p';
+  // var div1 = document.getElementById('div1');
+  // div1.appendChild(p);
+  // 2.移动P4到div1中
+  var p4 = document.getElementById('p4');
+  var div1 = document.getElementById('div1');
+  div1.appendChild(p4);
+  console.log(p4.parentElement);
+  console.log(div1.parentElement);
+  console.log(div1.childNodes);
+  console.log(div1.childNodes[0].nodeType); //text 3
+  console.log(div1.childNodes[1].nodeType); //p    1
+  </script>
+</body>
+</html>
+```
+
+## 04-05
+
+### DOM知识解答
+
+* DOM是哪种基本的数据结构?
+  * 树
+* DOM操作的常用API有哪些
+  * 获取DOM节点，以及节点的`property`和`Attribute`
+  * 获取父节点，获取子节点
+  * 新增节点，删除节点
+* `DOM节点`的`Attribute`和`property`有何区别
+  * `property`只是一个`JS对象`的属性的修改
+  * `Attribute`是对`html标签`属性的修改
+* 重点总结
+  * DOM本质
+  * DOM节点的操作
+  * DOM结构操作
+
+
+
