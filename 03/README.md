@@ -3,17 +3,6 @@
 <p align="center"><img src="http://img.tvmao.com/stills/movie/190/310/b/L7KsW7OtLR=.jpg" /></p>
 
 
-
-## 目录
-
-* [03-01](https://github.com/TYRMars/JSLearn/tree/master/03#03-01)`理解对象`
-* [03-02](https://github.com/TYRMars/JSLearn/tree/master/03#03-02)`创建对象`
-* [03-03](https://github.com/TYRMars/JSLearn/tree/master/03#03-03)`构造函数`
-* [03-04](https://github.com/TYRMars/JSLearn/tree/master/03#03-04)`原型规则和示例`
-* [03-05](https://github.com/TYRMars/JSLearn/tree/master/03#03-05)`原型链`
-* [03-06](https://github.com/TYRMars/JSLearn/tree/master/03#03-06)`instanceof`
-* [03-07](https://github.com/TYRMars/JSLearn/tree/master/03#03-07)`原型继承`
-
 # 03-01
 ## 理解对象
 
@@ -206,6 +195,7 @@ f.toString(); // 要去f.__proto__.__proto__中查找
 ```
 
 #### 原型链视图
+
 ![原型链图](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
 
 ## 03-06
@@ -450,10 +440,6 @@ div1.on('click',function () {
   alert('click')
 })
 ```
-
-
-### 知识点小结 & 解决问题
-
 
 #### 写一个原型链继承的例子
 

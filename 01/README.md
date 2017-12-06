@@ -1,14 +1,5 @@
 # 01 JavaScrpit-变量与原型
 
-* [01-01](https://github.com/TYRMars/JSLearn/tree/master/01#01-01) `变量类型和计算（1）`
-* [01-02](https://github.com/TYRMars/JSLearn/tree/master/01#01-02) `变量类型和计算（2）`
-* [01-03](https://github.com/TYRMars/JSLearn/tree/master/01#01-03) `变量类型和计算（3）-JSON的理解`
-* [01-04](https://github.com/TYRMars/JSLearn/tree/master/01#01-04) `原型与原型链-构造函数`
-* [01-05](https://github.com/TYRMars/JSLearn/tree/master/01#01-05) `原型规则和示例`
-* [01-06](https://github.com/TYRMars/JSLearn/tree/master/01#01-06) `原型链`
-* [01-07](https://github.com/TYRMars/JSLearn/tree/master/01#01-07) `instanceof`
-* [01-08](https://github.com/TYRMars/JSLearn/tree/master/01#01-08) `知识点小结 & 解决问题`
-
 ## 01-01
 ### 变量类型和计算（1）
 
@@ -104,6 +95,7 @@ console.log(!!a);//true
 ## 01-02
 ### 变量类型和计算（2）
 #### JS中使用typeof能得到的类型
+
 ```JavaScript
 //问题：JS中使用typeof能得到哪些类型
 typeof undefined //undefined
@@ -177,11 +169,6 @@ JSON.stringify({a:10,b:20});
 JSON.parse('{"a":10."b":20}')
 ```
 
-* [02-01](https://github.com/TYRMars/JSLearn/tree/master/02#02-01) `作用域和闭包-执行上下文`
-* [02-02](https://github.com/TYRMars/JSLearn/tree/master/02#02-02) `作用域和闭包-this`
-* [02-03](https://github.com/TYRMars/JSLearn/tree/master/02#02-03) `作用域和闭包-作用域`
-* [02-04](https://github.com/TYRMars/JSLearn/tree/master/02#02-04) `作用域和闭包-闭包`
-* [02-05](https://github.com/TYRMars/JSLearn/tree/master/02#02-05) `知识点小结 & 解决问题`
 
 ## 02-01
 ### 作用域和闭包-执行上下文
@@ -511,6 +498,7 @@ F2(f1);
 ```
 
 #### 实际开发中闭包的应用
+
 ```JavaScript
 //闭包实际应用中主要作用于封装变量，收取权限
 function isFirstLoad() {
@@ -581,7 +569,9 @@ fn2('zhangsan',20);
 ```
 
 #### 创建10个<a>标签 点击的时候弹出来对应的序号
+
 * 错误写法
+
 ```JavaScript
 //这是一个错误的写法！！！
 var i,a;
