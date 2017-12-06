@@ -1,4 +1,4 @@
-# [![](/assets/JS.png)](https://tyrmars.gitbooks.io/javascript-steppitguide/content/)
+# [![](/assets/JavaScript.png)](https://tyrmars.gitbooks.io/javascript-steppitguide/content/)
 
 
 
