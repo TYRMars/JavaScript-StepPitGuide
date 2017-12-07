@@ -2,7 +2,7 @@
 
 ---
 
-* 首页像素图片引用自[站酷-作品版权由曹吉吉](http://www.zcool.com.cn/work/ZMTMxMDU0NTI=.html)
+* 图片来自日本像素画家
 
 ---
 
