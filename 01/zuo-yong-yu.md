@@ -1,8 +1,8 @@
-### 作用域 {#作用域}
+# 作用域 {#作用域}
 
 #### 执行上下文
 
-```
+```js
 console.log(a);  // undefined
 var a = 100;
 
@@ -19,7 +19,7 @@ function fn(name) {
 * 函数：变量定义、函数声明、this、arguments
 * 注意⚠️“函数声明”和“函数表达式”的区别
 
-```
+```js
 fn()
 function fn() {
   //声明
@@ -56,7 +56,7 @@ function fn(name) {
 * 没有块级作用域
 * 只有函数和全局作用域
 
-```
+```js
 //无块级作用域
 if(true){
   var name = 'zhangsan';
@@ -79,7 +79,7 @@ fn();
 * 作用域链，即自由变量的查找
 * 闭包的两个场景
 
-```
+```js
 var x=10;
 function foo() {
   alert(x);
@@ -94,6 +94,8 @@ bar();
 * 生命周期
 * 作用范围
 
+---
+
 ## 变量作用域
 
 * 静态作用域
@@ -104,7 +106,7 @@ bar();
 * 被称为词法作用域
 * 由程序定义位置决定
 
-```
+```js
 var x=10;
 function foo() {
   alert(x);
@@ -158,7 +160,7 @@ bar();
 * JS没有**块级作用域\(全局作用域、函数作用域\)\(ES5\)**
 * ES5中使用词法环境管理静态作用域
 
-```
+```js
 var x = 10;
 function foo() {
   var z = 30;
@@ -193,7 +195,7 @@ bar(40);
 
 ## 作用域链
 
-```
+```js
 var a = 100;
 function fn() {
   var b = 200;
