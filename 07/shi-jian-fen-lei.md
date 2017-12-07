@@ -8,7 +8,7 @@
 * MouseEvent : click\|dbclick\|mousedown\|mouseenter\|mouseleave\|mousemove\|mouseout\|mouseover\|mouseup
 * WheelEvent : wheel
 
-![](event)
+![](/05/img/event_all.jpg)
 
 ### Event
 
