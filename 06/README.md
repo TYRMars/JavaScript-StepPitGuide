@@ -11,19 +11,19 @@
 
 * XML
 
-  ```XML
-  <?xml version="1.0" encoding="UTF-8"?>
-  <note>
-  <to>Tove</to>
-  <from>Jani</from>
-  <heading>Reminder</heading>
-  <body>Dont forget me this weekend</body>
-  <other>
-  <a></a>
-  <b></b>
-  </other>
-  </note>
-  ```
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+ <to>Tove</to>
+ <from>Jani</from>
+ <heading>Reminder</heading>
+ <body>Dont forget me this weekend</body>
+ <other>
+ <a></a>
+ <b></b>
+ </other>
+</note>
+```
 
 * HTML
 

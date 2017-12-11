@@ -1,6 +1,6 @@
 # Summary
 
-* [主页](README.md)
+* [封面](README.md)
 * [前言](INDEX.md)
 * [01-JavaScrpit-变量、作用域](01/README.md)
   * [变量声明](01/bian-liang-sheng-ming.md)
