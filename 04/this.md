@@ -2,7 +2,7 @@
 
 * this 要在执行时才能确认值，定义时无法确认值
 
-```
+```js
 var a = {
   name:'A',
   fn:function(){
@@ -20,7 +20,7 @@ fn1() //this === window
 * 作为普通函数执行
 * call apply bind
 
-```
+```js
 function Foo(name){
   this.name = name;
 }

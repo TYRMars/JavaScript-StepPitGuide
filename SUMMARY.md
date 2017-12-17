@@ -63,4 +63,5 @@
   * [CSRF](12/csrf.md)
 * [13-JavaScrpit-应用](13/README.md)
   * [Socket.io库](13/socketio.md)
+* 14-JavaScript-设计模式
 
