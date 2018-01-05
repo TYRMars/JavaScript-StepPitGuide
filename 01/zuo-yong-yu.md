@@ -218,5 +218,47 @@ function F1() {
 }
 ```
 
+#### 对变量提升的理解
+
+* 变量定义
+* 函数声明（注意和函数表达式的区别）
+
+#### 创建10个`<a>`标签 点击的时候弹出来对应的序号
+
+* 错误写法
+
+```JavaScript
+//这是一个错误的写法！！！
+var i,a;
+for (var i = 0; i < 10; i++) {
+  a = document.createElement('a');
+  a.innerHTML = i + '<br>';
+  a.addEventListener('click',function (e) {
+    e.preventDefault();
+    alert(i)
+  })
+  document.body.appendChild(a);
+}
+//输出为如下： <a>"9"<br></a>
+```
+
+* 正确写法
+
+```JavaScript
+//这是一个正确写法！！！
+var i;
+for (i = 0; i < 10; i++) {
+  (function(i){
+    var a = document.createElement('a');
+    a.innerHTML = i + '<br>';
+    a.addEventListener('click',function (e) {
+      e.preventDefault();
+      alert(i);
+    })
+    document.body.appendChild(a);
+  })(i)
+}
+```
+
 
 
