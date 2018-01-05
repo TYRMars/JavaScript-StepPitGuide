@@ -63,5 +63,6 @@
   * [CSRF](12/csrf.md)
 * [13-JavaScrpit-应用](13/README.md)
   * [Socket.io库](13/socketio.md)
+  * [async+await异步调用](13/async+awaityi-bu-diao-yong.md)
 * 14-JavaScript-设计模式
 
