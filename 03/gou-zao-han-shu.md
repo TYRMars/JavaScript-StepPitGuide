@@ -21,7 +21,7 @@
 * 扩展
   `实例和对象的区别，从定义上来讲：1、实例是类的具象化产品，2、而对象是一个具有多种属性的内容结构。`
 
-```
+```js
 function Foo(name,age){
   this.name = name;
   this.age = age;

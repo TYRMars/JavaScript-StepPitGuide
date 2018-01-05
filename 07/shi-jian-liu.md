@@ -5,7 +5,7 @@
   * 然后触发相应事件
   * 从当前触发事件的节点的父节点开始向上冒泡，冒泡到顶层的window对象
 
-![Graphical representation of an event dispatched in a DOM tree using the DOM event flow](https://www.w3.org/TR/uievents/images/eventflow.svg)
+![](/assets/屏幕快照 2017-12-07 下午4.28.13.png)
 
 1. capture phase 捕获过程
 2. target phase 触发过程

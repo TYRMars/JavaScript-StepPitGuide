@@ -11,7 +11,7 @@
 
 * 类声明 构造函数
 
-```
+```js
 function Animal1() {
   this.name = 'animal';
 }
@@ -19,7 +19,7 @@ function Animal1() {
 
 * ES6中class的声明
 
-```
+```js
 class Animal2 {
   constructor() {
     this.name = 'animal';
@@ -29,7 +29,7 @@ class Animal2 {
 
 #### 1.构造函数方式进行继承
 
-```
+```js
 function Parent1() {
   this.name = 'parent1';
 }
@@ -42,7 +42,7 @@ console.log(new Child1());
 
 * 但是如果要继承原型对象上的方法是没办法继承的
 
-```
+```js
 // 借助构造函数
 function Parent1() {
   this.name = 'parent1';
@@ -61,7 +61,7 @@ console.log(new Child1());
 
 #### 2.借助原型链实现继承
 
-```
+```js
 function Parent2() {
   this.name = 'parent2';
 }
@@ -75,7 +75,7 @@ console.log(new Child2());
 * s1与s2之间不相互隔离
 * 原型链中共用
 
-```
+```js
 function Parent2() {
   this.name = 'parent2';
   this.num = [1,2,3];
@@ -91,7 +91,7 @@ console.log(s1.play,s2.play);
 
 #### 3.组合方式
 
-```
+```js
 function Parent3() {
   this.name = 'Parent3';
   this.play = [1,2,3];
@@ -108,7 +108,7 @@ console.log(new child3);
 
 #### 4.组合方式改进1
 
-```
+```js
 function Parent4() {
   this.name = 'parent4';
 }
@@ -136,7 +136,7 @@ console.log(s5 instanceof Child4,s5 instanceof Parent4);
   `Object.Create(父类构造函数的原型对象)`
 * 再通过改变子类的原型对象的constructor，因为此时的constructor的指向是父类原型对象的构造函数
 
-```
+```js
 function Parent5() {
   this.name = 'Parent5';
   this.play = [1,2,3];
@@ -164,7 +164,7 @@ console.log('组合继承改进2-constructor',new Child6);
 
 #### 6.原型式继承
 
-```
+```js
 //原型式继承
 function object_oop(o) {
   function F() {
@@ -202,7 +202,7 @@ console.log('原型式继承',FourPerson);
 
 #### 贴近实际开发原型链继承的例子
 
-```
+```js
 function Elem(id) {
   this.elem = document.getElementById(id);
 }
@@ -224,14 +224,7 @@ Elem.prototype.on = function (type, fn) {
 
 var div1 = new Elem('div1');
 //console.log(div1.html());
-div1.html('
-<
-p
->
-hello imooc
-<
-/p
->
+div1.html('<p>tyrmars</p>
 ')
 div1.on('click',function () {
   alert('click')
@@ -240,7 +233,7 @@ div1.on('click',function () {
 
 #### 写一个原型链继承的例子
 
-```
+```js
 //动物
 function Animal(){
   this.eat = function () {
@@ -264,7 +257,4 @@ var hashiqi = new Dog();
 [Javascript 面向对象编程（一）：封装](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html)
 
 [Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
-
-  
-
 

@@ -60,7 +60,7 @@
 
 * `navigator & screen`
 
-```JavaScript
+```js
 //navigator
 var ua = navigator.userAgent;
 var isChrome = ua.indexOf('Chrome');
@@ -71,17 +71,18 @@ console.log(screen.height);
 ```
 
 * `location & history`
-  ```JavaScript
-  //location
-  console.log(location.href);
-  console.log(location.protocel);
-  console.log(location.pathname);
-  console.log(location.search);
-  console.log(location.hash);
-  //history
-  history.back();
-  history.forward();
-  ```
+
+```js
+//location
+console.log(location.href);
+console.log(location.protocel);
+console.log(location.pathname);
+console.log(location.search);
+console.log(location.hash);
+//history
+history.back();
+history.forward();
+```
 
 
 

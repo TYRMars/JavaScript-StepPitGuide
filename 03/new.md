@@ -8,7 +8,7 @@
 
 * new运算符使用
 
-```
+```js
 function Foo(name,age){
   this.name = name ;
   this.age = age ;
@@ -20,7 +20,7 @@ var f = new Foo('zhangsan',20);
 
 * 自制new运算符
 
-```
+```js
 var new2 = function (func) {
   var o = Object.create(func.prototype);
   var k = func.call(o);

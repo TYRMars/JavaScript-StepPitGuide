@@ -7,11 +7,7 @@
 * 输入框输入内容
 * 页面加载完成
 
-![](/assets/屏幕快照 2017-12-07 下午4.28.13.png)
-
-# 05-04
-
-## 编写一个通用的事件监听函数
+# 编写一个通用的事件监听函数
 
 #### 描述事件冒泡流程
 
@@ -27,7 +23,7 @@
 
 ##### 通用事件绑定
 
-```JavaScript
+```js
 var btn = document.getElementById('btn1');
 btn.addEventListener('click',function (event) {
   console.log('clicked');
