@@ -3,7 +3,7 @@
 * SetData\(\)函数生成了存储在数组中的随机数字。Math类的random\(\)函数会生成\[0,1\)区间内的随机数字。换句话说，random\(\)函数生成的随机数字大于等于0，但不会等于1。最后在用Math类的floor\(\)函数确定最终结果。
 * 如下这个公式可以成功生成1~100的随机数字集合。
 
-```
+```js
 function CArray(numElements) {
   this.dataStore = [];
   this.pos = 0;
@@ -13,9 +13,7 @@ function CArray(numElements) {
   this.clear = clear;
   this.setData = setData;
   this.swap = swap;
-  for (var i = 0; i 
-<
- numElements; ++i) {
+  for (var i = 0; i < numElements; ++i) {
     this.dataStore[i] = i;
   }
 }
@@ -42,15 +40,9 @@ function insert(element) {
 
 function toString() {
   var restr = "";
-  for (var i = 0; i 
-<
- this.dataStore.length; ++i) {
+  for (var i = 0; i < this.dataStore.length; ++i) {
     restr += this.dataStore[i] + " ";
-    if (i 
->
- 0 
-&
- i % 10 == 0) {
+    if (i > 0 & i % 10 == 0) {
       restr += "\n";
     }
   }
@@ -80,16 +72,12 @@ console.log(myNums.toString());
 
 ##### 用一个`for`遍历数组排序
 
-```
+```js
 var a = [12,13,65,54,86,21,37,1,95,4];
 var l = a.length;
 console.log(a);
-for (var i = 0; i 
-<
- l; i++) {
-  if (a[i] 
->
- a[i + 1]) {
+for (var i = 0; i < l; i++) {
+  if (a[i] > a[i + 1]) {
     var temp = a[i];
     a[i] = a[i + 1];
     a[i + 1] = temp;
@@ -100,10 +88,7 @@ for (var i = 0; i
   }
 }
 console.log(a);
-
 ```
-
-
 
 
 

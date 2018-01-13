@@ -8,7 +8,7 @@
 * .对这两个子序列分别采用归并排序；
 * .将两个排序好的子序列合并成一个最终的排序序列。
 
-```
+```js
 function mergeSort(arr) {  //采用自上而下的递归方法
     var len = arr.length;
     if(len <2) {
