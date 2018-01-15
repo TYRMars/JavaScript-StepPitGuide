@@ -13,6 +13,7 @@
     * Number
     * String
     * Symbol
+  * [类型转换](01/lei-xing-zhuan-huan.md)
 * [02-JavaScrpit-引用类型](02/README.md)
   * [Object类型](02/objectlei-xing.md)
   * [Array类型](02/arraylei-xing.md)
