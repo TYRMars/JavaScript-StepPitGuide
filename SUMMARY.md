@@ -2,7 +2,7 @@
 
 * [封面](README.md)
 * [前言](INDEX.md)
-* [01-JavaScrpit-变量、作用域、基本数据类型](01/README.md)
+* [01-JavaScrpit-基础知识](01/README.md)
   * [变量声明](01/bian-liang-sheng-ming.md)
   * [变量类型和计算](01/bian-liang-lei-xing-he-ji-suan.md)
   * [作用域](01/zuo-yong-yu.md)
@@ -77,6 +77,7 @@
 * [13-JavaScrpit-应用](13/README.md)
   * [Socket.io库](13/socketio.md)
   * [async+await异步调用](13/async+awaityi-bu-diao-yong.md)
+  * axios
 * [14-JavaScript-设计模式](14/README.md)
 * [15-JavaScript-正则表达式](15/README.md)
 
