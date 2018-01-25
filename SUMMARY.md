@@ -77,7 +77,7 @@
 * [13-JavaScrpit-应用](13/README.md)
   * [Socket.io库](13/socketio.md)
   * [async+await异步调用](13/async+awaityi-bu-diao-yong.md)
-  * axios
+  * [axios](13/axios.md)
 * [14-JavaScript-设计模式](14/README.md)
 * [15-JavaScript-正则表达式](15/README.md)
 
