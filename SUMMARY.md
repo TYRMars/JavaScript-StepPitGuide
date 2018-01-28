@@ -67,6 +67,7 @@
   * [跨域](10/kua-yu.md)
   * [跨域方法](10/kua-yu-fang-fa.md)
     * [Hash](10/kua-yu-fang-fa/hash.md)
+    * [JSONP](10/kua-yu-fang-fa/jsonp.md)
 * [11-JavaScrpit-模块化](11/README.md)
   * [AMD](11/amd.md)
   * [CommonJS](11/cmd.md)
