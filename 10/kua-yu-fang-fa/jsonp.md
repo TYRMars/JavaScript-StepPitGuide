@@ -52,7 +52,7 @@ util.jsonp =function(url,onsuccess,onerror,charset){
 <script>
 jsonp({
   data:{
-  	<!-- 全局函数接受回掉信息 -->
+      <!-- 全局函数接受回掉信息 -->
   }
 })
 </script>
