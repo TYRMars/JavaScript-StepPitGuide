@@ -17,6 +17,7 @@
 * [02-JavaScrpit-引用类型](02/README.md)
   * [Object类型](02/objectlei-xing.md)
   * [Array类型](02/arraylei-xing.md)
+    * [检测数组](02/arraylei-xing/jian-ce-shu-zu.md)
   * [Date类型](02/datelei-xing.md)
   * [RexExp类型](02/rexexplei-xing.md)
   * [Function类型](02/functionlei-xing.md)
