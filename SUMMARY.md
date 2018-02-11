@@ -18,6 +18,14 @@
   * [Object类型](02/objectlei-xing.md)
   * [Array类型](02/arraylei-xing.md)
     * [检测数组](02/arraylei-xing/jian-ce-shu-zu.md)
+    * [转换方法](02/arraylei-xing/zhuan-huan-fang-fa.md)
+    * 栈方法
+    * 队列方法
+    * 重排序方法
+    * 操作方法
+    * 位置方法
+    * 迭代方法
+    * 归并方法
   * [Date类型](02/datelei-xing.md)
   * [RexExp类型](02/rexexplei-xing.md)
   * [Function类型](02/functionlei-xing.md)
