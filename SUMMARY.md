@@ -20,7 +20,7 @@
     * [检测数组](02/arraylei-xing/jian-ce-shu-zu.md)
     * [转换方法](02/arraylei-xing/zhuan-huan-fang-fa.md)
     * [栈方法](02/arraylei-xing/zhan-fang-fa.md)
-    * 队列方法
+    * [队列方法](02/arraylei-xing/dui-lie-fang-fa.md)
     * 重排序方法
     * 操作方法
     * 位置方法
