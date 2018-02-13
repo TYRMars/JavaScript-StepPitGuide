@@ -8,7 +8,7 @@
 {
   let arrays = [1,2,3,4,5];
   arrays.push(5,6);
-  
+  arrays.shift();
 }
 ```
 
