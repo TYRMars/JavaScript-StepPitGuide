@@ -22,7 +22,7 @@
     * [栈方法](02/arraylei-xing/zhan-fang-fa.md)
     * [队列方法](02/arraylei-xing/dui-lie-fang-fa.md)
     * [重排序方法](02/arraylei-xing/zhong-pai-xu-fang-fa.md)
-    * 操作方法
+    * [操作方法](02/arraylei-xing/cao-zuo-fang-fa.md)
     * 位置方法
     * 迭代方法
     * 归并方法
