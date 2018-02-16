@@ -23,9 +23,9 @@
     * [队列方法](02/arraylei-xing/dui-lie-fang-fa.md)
     * [重排序方法](02/arraylei-xing/zhong-pai-xu-fang-fa.md)
     * [操作方法](02/arraylei-xing/cao-zuo-fang-fa.md)
-    * 位置方法
-    * 迭代方法
-    * 归并方法
+    * [位置方法](02/arraylei-xing/wei-zhi-fang-fa.md)
+    * [迭代方法](02/arraylei-xing/die-dai-fang-fa.md)
+    * [归并方法](02/arraylei-xing/gui-bing-fang-fa.md)
   * [Date类型](02/datelei-xing.md)
   * [RexExp类型](02/rexexplei-xing.md)
   * [Function类型](02/functionlei-xing.md)
