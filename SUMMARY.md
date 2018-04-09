@@ -94,4 +94,6 @@
 * [15-JavaScript-正则表达式](15/README.md)
 * [16-JavaScript-性能优化](16/README.md)
 * [17-JavaScript-错误监控](17/README.md)
+* [18-JavaScript-语法规则](18/README.md)
+  * [ESlint](18/eslint.md)
 
