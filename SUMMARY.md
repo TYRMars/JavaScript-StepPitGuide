@@ -77,8 +77,8 @@
   * [跨域方法](10/kua-yu-fang-fa.md)
     * [Hash](10/kua-yu-fang-fa/hash.md)
     * [JSONP](10/kua-yu-fang-fa/jsonp.md)
-    * CORS
-    * XDomainRequest
+    * [CORS](10/kua-yu-fang-fa/cors.md)
+    * [XDomainRequest](10/kua-yu-fang-fa/xdomainrequest.md)
 * [11-JavaScrpit-模块化](11/README.md)
   * [AMD](11/amd.md)
   * [CommonJS](11/cmd.md)
