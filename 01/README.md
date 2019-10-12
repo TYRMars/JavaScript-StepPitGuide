@@ -1,4 +1,10 @@
-# 01-JavaScrpit-变量、作用域、基本数据类型
+# 01-JavaScrpit介绍
+
+
+
+![](/assets/import2.png)
+
+![](/assets/import.png)
 
 
 
