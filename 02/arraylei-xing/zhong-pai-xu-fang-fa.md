@@ -2,22 +2,22 @@
 
 重排序方法：`reverse()`和`sort()`。
 
-#### reverse
+## reverse
 
 对数组进行反转操作
 
-```js
+```javascript
 {
   let array = [1,2,3,4];
   array.reverse()//array = [4,3,2,1]
 }
 ```
 
-#### sort
+## sort
 
 对数组进行排序
 
-```js
+```javascript
 {
   let array = [1,2,5,10];
   array.sort()
@@ -25,7 +25,5 @@
 }
 ```
 
-![](/assets/sort.png)
-
-
+![](../../.gitbook/assets/sort.png)
 

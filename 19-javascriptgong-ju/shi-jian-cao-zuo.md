@@ -1,14 +1,14 @@
-# 时间操作相关
+# 时间操作
 
-### 时间内整天数据筛选
+## 时间内整天数据筛选
+
+```text
 
 ```
 
-```
+## 获取时间内整天
 
-### 获取时间内整天
-
-```ts
+```typescript
 /**
  * getXAxis（）方法作用：获取开始日期和结束日期之间（包含开始日期和结束日期）的日期数组，可作为时间轴坐标等
  * @param  filters: {tab:0/1/2, startTime:开始日期, endTime:结束日期}
@@ -26,6 +26,4 @@ export function getXAxis(startTime: number, endTime: number): any {
   return xAxis;
 }
 ```
-
-
 

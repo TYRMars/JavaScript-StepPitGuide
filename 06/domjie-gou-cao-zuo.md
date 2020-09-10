@@ -1,8 +1,8 @@
-### DOM结构操作
+# DOM结构操作
 
 * 新增节点
 
-```js
+```javascript
 var div1 = document.getElementById('div1');
 //添加新节点
 var p1 = document.createElement('p');
@@ -15,22 +15,22 @@ div1.appendChild(p2);
 
 * 获取父元素-获取子节点
 
-```js
+```javascript
 var div1 = document.getElementById('div1');
 var parent = div1.parentElement;
 ```
 
 * 删除节点
 
-```js
+```javascript
 var div1 = document.getElementById('div1');
 var child = div1.childNodes;
 div1.removeChild(child[0]);
 ```
 
-#### 举个栗子\(例子：example\)！！！
+## 举个栗子\(例子：example\)！！！
 
-```HTML
+```markup
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,8 +63,4 @@ div1.removeChild(child[0]);
 </body>
 </html>
 ```
-
-## 
-
-
 

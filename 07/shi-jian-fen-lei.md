@@ -1,4 +1,4 @@
-## 事件分类
+# 事件分类
 
 * Event : load\|unload\|error\|select\|abort
 * UIEvent : resize\|scroll
@@ -8,9 +8,9 @@
 * MouseEvent : click\|dbclick\|mousedown\|mouseenter\|mouseleave\|mousemove\|mouseout\|mouseover\|mouseup
 * WheelEvent : wheel
 
-![](/05/img/event_all.jpg)
+![](../.gitbook/assets/event_all.jpg)
 
-### Event
+## Event
 
 | 事件类型 | 是否冒泡 | 元素 | 默认事件 | 元素例子 |
 | :--- | :--- | :--- | :--- | :--- |
@@ -20,7 +20,5 @@
 | select | NO | Element | None | input,textarea |
 | abort | NO | Window,Element | None | window,image |
 
-### 未完待续 。。。
-
-
+## 未完待续 。。。
 

@@ -1,5 +1,7 @@
 # 07-JavaScrpit-事件
 
+## 07-JavaScrpit-事件
+
 ### DOM事件介绍
 
 * 点击一个DOM元素
@@ -7,7 +9,7 @@
 * 输入框输入内容
 * 页面加载完成
 
-# 编写一个通用的事件监听函数
+## 编写一个通用的事件监听函数
 
 #### 描述事件冒泡流程
 
@@ -21,9 +23,9 @@
 * 使用代理
 * 知道代理的有点
 
-##### 通用事件绑定
+**通用事件绑定**
 
-```js
+```javascript
 var btn = document.getElementById('btn1');
 btn.addEventListener('click',function (event) {
   console.log('clicked');
@@ -41,7 +43,7 @@ bindEvent(a,'click',function(e){
 
 #### 事件冒泡
 
-```html
+```markup
 <body>
   <div id="div1">
     <p id="p1">激活</p>
@@ -56,7 +58,7 @@ bindEvent(a,'click',function(e){
 </body>
 ```
 
-```JavaScript
+```javascript
 var p1 = document.getElementById('p1');
 var body = document.body;
 bindEvent(p1,'click',function (e) {
@@ -70,7 +72,7 @@ bindEvent(body,'click',function(e){
 
 #### 代理
 
-```html
+```markup
 <div id="div1">
   <a href="#">a1</a>
   <a href="#">a2</a>
@@ -80,7 +82,7 @@ bindEvent(body,'click',function(e){
 </div>
 ```
 
-```JavaScript
+```javascript
 var div1 = document.getElementById('div1');
 div1.addEventListener('click',function (e) {
   var target = e.target;
@@ -92,7 +94,7 @@ div1.addEventListener('click',function (e) {
 
 #### 完善通用绑定事件的函数
 
-```JavaScript
+```javascript
 //使用代理
 var div1 = document.getElementById('div1');
 bindEvent(div1,'click','a',function (e) {
@@ -100,7 +102,7 @@ bindEvent(div1,'click','a',function (e) {
 })
 ```
 
-```JavaScript
+```javascript
 function bindEvent(elem,type,selector,fn) {
   if (fn == null) {
     fn = selector;
@@ -118,6 +120,4 @@ function bindEvent(elem,type,selector,fn) {
   })
 }
 ```
-
-
 

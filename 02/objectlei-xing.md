@@ -4,18 +4,16 @@ Object创建实例的方式有两种
 
 第一种
 
-```js
+```javascript
 var person = new Object();
 person.name = "TYRMars";
 ```
 
 第二种
 
-```js
+```javascript
 var person = {
   name:"TYRMars"
 }
 ```
-
-
 

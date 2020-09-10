@@ -1,4 +1,4 @@
-# JavaScript算法-归并排序
+# 归并排序
 
 ![](http://www.2cto.com/uploadfile/Collfiles/20160918/20160918092144591.gif)
 
@@ -8,7 +8,7 @@
 * .对这两个子序列分别采用归并排序；
 * .将两个排序好的子序列合并成一个最终的排序序列。
 
-```js
+```javascript
 function mergeSort(arr) {  //采用自上而下的递归方法
     var len = arr.length;
     if(len <2) {
@@ -57,6 +57,4 @@ console.log(mergeSort(arr));
 // 归并排序耗时: 0.002685546875ms
 //[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]
 ```
-
-
 

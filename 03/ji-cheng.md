@@ -1,4 +1,4 @@
-## 原型继承
+# 继承
 
 * 类与实例
   * 类的声明
@@ -7,11 +7,11 @@
   * 如何实现继承
   * 继承的几种方式
 
-### 类的声明
+## 类的声明
 
 * 类声明 构造函数
 
-```js
+```javascript
 function Animal1() {
   this.name = 'animal';
 }
@@ -19,7 +19,7 @@ function Animal1() {
 
 * ES6中class的声明
 
-```js
+```javascript
 class Animal2 {
   constructor() {
     this.name = 'animal';
@@ -27,9 +27,9 @@ class Animal2 {
 }
 ```
 
-#### 1.构造函数方式进行继承
+### 1.构造函数方式进行继承
 
-```js
+```javascript
 function Parent1() {
   this.name = 'parent1';
 }
@@ -42,7 +42,7 @@ console.log(new Child1());
 
 * 但是如果要继承原型对象上的方法是没办法继承的
 
-```js
+```javascript
 // 借助构造函数
 function Parent1() {
   this.name = 'parent1';
@@ -59,9 +59,9 @@ function Child1() {
 console.log(new Child1());
 ```
 
-#### 2.借助原型链实现继承
+### 2.借助原型链实现继承
 
-```js
+```javascript
 function Parent2() {
   this.name = 'parent2';
 }
@@ -75,7 +75,7 @@ console.log(new Child2());
 * s1与s2之间不相互隔离
 * 原型链中共用
 
-```js
+```javascript
 function Parent2() {
   this.name = 'parent2';
   this.num = [1,2,3];
@@ -89,9 +89,9 @@ var s2 = new Child2();
 console.log(s1.play,s2.play);
 ```
 
-#### 3.组合方式
+### 3.组合方式
 
-```js
+```javascript
 function Parent3() {
   this.name = 'Parent3';
   this.play = [1,2,3];
@@ -106,9 +106,9 @@ console.log(new child3);
 
 * 父类构造函数执行了多次，没有必要的重复执行
 
-#### 4.组合方式改进1
+### 4.组合方式改进1
 
-```js
+```javascript
 function Parent4() {
   this.name = 'parent4';
 }
@@ -124,19 +124,21 @@ console.log(s5,s6);
 
 * `instanceof`和`constructor`
 
-```
+```text
 console.log(s5 instanceof Child4,s5 instanceof Parent4);
 ```
 
 * 如何区分是子类实例化的还是父类实例化的
 
-#### 5.组合方式改进2
+### 5.组合方式改进2
 
 * 主要是在继承的时候让 子类的原型对象 =
+
   `Object.Create(父类构造函数的原型对象)`
+
 * 再通过改变子类的原型对象的constructor，因为此时的constructor的指向是父类原型对象的构造函数
 
-```js
+```javascript
 function Parent5() {
   this.name = 'Parent5';
   this.play = [1,2,3];
@@ -162,9 +164,9 @@ Child6.prototype.constructor = Child6;
 console.log('组合继承改进2-constructor',new Child6);
 ```
 
-#### 6.原型式继承
+### 6.原型式继承
 
-```js
+```javascript
 //原型式继承
 function object_oop(o) {
   function F() {
@@ -198,11 +200,11 @@ var FourPerson = Object.create(ThreePerson,{
 console.log('原型式继承',FourPerson);
 ```
 
-* ** ES5中主要使用Object.create\(\)去创建对象**
+*  **ES5中主要使用Object.create\(\)去创建对象**
 
-#### 贴近实际开发原型链继承的例子
+### 贴近实际开发原型链继承的例子
 
-```js
+```javascript
 function Elem(id) {
   this.elem = document.getElementById(id);
 }
@@ -231,9 +233,9 @@ div1.on('click',function () {
 })
 ```
 
-#### 写一个原型链继承的例子
+### 写一个原型链继承的例子
 
-```js
+```javascript
 //动物
 function Animal(){
   this.eat = function () {

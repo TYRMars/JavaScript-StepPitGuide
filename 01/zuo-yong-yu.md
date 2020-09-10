@@ -1,8 +1,10 @@
-# 作用域 {#作用域}
+# 作用域
 
-#### 执行上下文
+## 作用域 <a id="&#x4F5C;&#x7528;&#x57DF;"></a>
 
-```js
+**执行上下文**
+
+```javascript
 console.log(a);  // undefined
 var a = 100;
 
@@ -19,7 +21,7 @@ function fn(name) {
 * 函数：变量定义、函数声明、this、arguments
 * 注意⚠️“函数声明”和“函数表达式”的区别
 
-```js
+```javascript
 fn()
 function fn() {
   //声明
@@ -51,12 +53,12 @@ function fn(name) {
 }
 ```
 
-#### 作用域
+**作用域**
 
 * 没有块级作用域
 * 只有函数和全局作用域
 
-```js
+```javascript
 //无块级作用域
 if(true){
   var name = 'zhangsan';
@@ -73,13 +75,13 @@ console.log('global',a);
 fn();
 ```
 
-#### 如何理解作用域
+**如何理解作用域**
 
 * 自由变量
 * 作用域链，即自由变量的查找
 * 闭包的两个场景
 
-```js
+```javascript
 var x=10;
 function foo() {
   alert(x);
@@ -94,19 +96,17 @@ bar();
 * 生命周期
 * 作用范围
 
----
-
-## 变量作用域
+### 变量作用域
 
 * 静态作用域
 * 动态作用域
 
-### 静态作用域
+#### 静态作用域
 
 * 被称为词法作用域
 * 由程序定义位置决定
 
-```js
+```javascript
 var x=10;
 function foo() {
   alert(x);
@@ -118,49 +118,37 @@ function bar() {
 bar();
 ```
 
----
-
 |  | 全局作用域 |
 | :--- | :--- |
 | x | 10 |
 | foo |  |
 | bar |  |
 
----
-
 |  | foo作用域 |
 | :--- | :--- |
 | - | - |
-
----
 
 |  | bar作用域 |
 | :--- | :--- |
 | x | 20 |
 
----
-
-### 动态作用域
+#### 动态作用域
 
 * 程序运行时刻
 * 栈操作
-
----
 
 | x:20 |
 | :--- |
 | bar: |
 | foo: |
 
----
-
-# JS变量作用域
+## JS变量作用域
 
 * JS使用**静态作用域**
 * JS没有**块级作用域\(全局作用域、函数作用域\)\(ES5\)**
 * ES5中使用词法环境管理静态作用域
 
-```js
+```javascript
 var x = 10;
 function foo() {
   var z = 30;
@@ -178,24 +166,17 @@ bar(40);
   * 函数声明
   * 变量
 * 对外部词法环境的引用（outer）
-
----
-
 * 初始化
 
 [![](https://github.com/TYRMars/JSLearn/raw/master/02/img/chushihua01.png)](https://github.com/TYRMars/JSLearn/blob/master/02/img/chushihua01.png)
-
----
 
 * 执行
 
 [![](https://github.com/TYRMars/JSLearn/raw/master/02/img/environment_02.png)](https://github.com/TYRMars/JSLearn/blob/master/02/img/environment_02.png)
 
----
+### 作用域链
 
-## 作用域链
-
-```js
+```javascript
 var a = 100;
 function fn() {
   var b = 200;
@@ -218,16 +199,16 @@ function F1() {
 }
 ```
 
-#### 对变量提升的理解
+**对变量提升的理解**
 
 * 变量定义
 * 函数声明（注意和函数表达式的区别）
 
-#### 创建10个`<a>`标签 点击的时候弹出来对应的序号
+**创建10个&lt;a&gt;标签 点击的时候弹出来对应的序号**
 
 * 错误写法
 
-```JavaScript
+```javascript
 //这是一个错误的写法！！！
 var i,a;
 for (var i = 0; i < 10; i++) {
@@ -244,7 +225,7 @@ for (var i = 0; i < 10; i++) {
 
 * 正确写法
 
-```JavaScript
+```javascript
 //这是一个正确写法！！！
 var i;
 for (i = 0; i < 10; i++) {
@@ -259,6 +240,4 @@ for (i = 0; i < 10; i++) {
   })(i)
 }
 ```
-
-
 

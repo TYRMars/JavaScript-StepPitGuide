@@ -1,2 +1,4 @@
-[![](/assets/JavaScript.png)](https://tyrmars.gitbooks.io/javascript-steppitguide/content/ "javascript-steppitguide")
+# 封面
+
+![](.gitbook/assets/JavaScript.png)
 

@@ -1,17 +1,17 @@
-# 06-JavaScrpit-DOM
+# 06-JavaScript-DOM
 
-### DOM操作
+## DOM操作
 
 * Document Object Model
 * DOM是哪种基本的数据结构
 * DOM操作的常用API有哪些
 * DOM节点的attr和property有和区别
 
-#### DOM的本质
+### DOM的本质
 
 * XML
 
-```xml
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <note>
  <to>Tove</to>
@@ -27,7 +27,7 @@
 
 * HTML
 
-```HTML
+```markup
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@
 </html>
 ```
 
-### DOM知识解答
+## DOM知识解答
 
 * DOM是哪种基本的数据结构?
   * 树
@@ -57,6 +57,4 @@
   * DOM本质
   * DOM节点的操作
   * DOM结构操作
-
-
 

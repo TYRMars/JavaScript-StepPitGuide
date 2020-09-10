@@ -1,22 +1,22 @@
-# Summary
+# Table of contents
 
 * [封面](README.md)
-* [前言](INDEX.md)
+* [前言](index.md)
 * [01-JavaScrpit-基础知识](01/README.md)
   * [变量声明](01/bian-liang-sheng-ming.md)
   * [变量类型和计算](01/bian-liang-lei-xing-he-ji-suan.md)
   * [作用域](01/zuo-yong-yu.md)
-  * [基本数据类型](01/shu-ju-lei-xing.md)
-    * Undefined
-    * Null
-    * Boolean
-    * Number
-    * String
-    * Symbol
+  * [基本数据类型](01/shu-ju-lei-xing/README.md)
+    * [Undefined](01/shu-ju-lei-xing/undefined.md)
+    * [Null](01/shu-ju-lei-xing/null.md)
+    * [Boolean](01/shu-ju-lei-xing/boolean.md)
+    * [Number](01/shu-ju-lei-xing/number.md)
+    * [String](01/shu-ju-lei-xing/string.md)
+    * [Symbol](01/shu-ju-lei-xing/symbol.md)
   * [类型转换](01/lei-xing-zhuan-huan.md)
 * [02-JavaScrpit-引用类型](02/README.md)
   * [Object类型](02/objectlei-xing.md)
-  * [Array类型](02/arraylei-xing.md)
+  * [Array类型](02/arraylei-xing/README.md)
     * [检测数组](02/arraylei-xing/jian-ce-shu-zu.md)
     * [转换方法](02/arraylei-xing/zhuan-huan-fang-fa.md)
     * [栈方法](02/arraylei-xing/zhan-fang-fa.md)
@@ -62,7 +62,7 @@
   * [事件对象](07/shi-jian-dui-xiang.md)
   * [事件分类](07/shi-jian-fen-lei.md)
 * [08-JavaScrpit-算法应用](08/README.md)
-  * [基本排序算法](08/ji-ben-pai-xu-suan-fa.md)
+  * [基本排序算法](08/ji-ben-pai-xu-suan-fa/README.md)
     * [冒泡排序](08/ji-ben-pai-xu-suan-fa/mao-pao-pai-xu.md)
     * [选择排序](08/ji-ben-pai-xu-suan-fa/xuan-ze-pai-xu.md)
     * [插入排序](08/ji-ben-pai-xu-suan-fa/cha-ru-pai-xu.md)
@@ -74,7 +74,7 @@
   * [Promise](09/promise.md)
 * [10-JavaScrpit-跨域](10/README.md)
   * [跨域](10/kua-yu.md)
-  * [跨域方法](10/kua-yu-fang-fa.md)
+  * [跨域方法](10/kua-yu-fang-fa/README.md)
     * [Hash](10/kua-yu-fang-fa/hash.md)
     * [JSONP](10/kua-yu-fang-fa/jsonp.md)
     * [CORS](10/kua-yu-fang-fa/cors.md)
@@ -90,12 +90,12 @@
   * [Socket.io库](13/socketio.md)
   * [async+await异步调用](13/async+awaityi-bu-diao-yong.md)
   * [axios](13/axios.md)
-* [14-JavaScript-设计模式](14/README.md)
-* [15-JavaScript-正则表达式](15/README.md)
-* [16-JavaScript-性能优化](16/README.md)
-* [17-JavaScript-错误监控](17/README.md)
+* [14-JavaScript-设计模式](14.md)
+* [15-JavaScript-正则表达式](15.md)
+* [16-JavaScript-性能优化](16.md)
+* [17-JavaScript-错误监控](17.md)
 * [18-JavaScript-语法规则](18/README.md)
   * [ESlint](18/eslint.md)
-* [19-JavaScript-工具](19-javascriptgong-ju.md)
+* [19-JavaScript-工具](19-javascriptgong-ju/README.md)
   * [时间操作](19-javascriptgong-ju/shi-jian-cao-zuo.md)
 

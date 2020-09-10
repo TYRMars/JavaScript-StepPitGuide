@@ -1,6 +1,6 @@
-### 原型链
+# 原型链
 
-```js
+```javascript
 //构造函数
 function Foo(name,age){
   this.name = name;
@@ -19,7 +19,7 @@ f.alertName();
 f.toString(); // 要去f.__proto__.__proto__中查找
 ```
 
-#### 原型链视图
+## 原型链视图
 
 ![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
 

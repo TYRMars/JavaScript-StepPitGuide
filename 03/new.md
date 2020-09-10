@@ -5,10 +5,9 @@
 * this指向这个新对象
 * 执行代码，即对this赋值
 * 返回this 🔙
-
 * new运算符使用
 
-```js
+```javascript
 function Foo(name,age){
   this.name = name ;
   this.age = age ;
@@ -20,7 +19,7 @@ var f = new Foo('zhangsan',20);
 
 * 自制new运算符
 
-```js
+```javascript
 var new2 = function (func) {
   var o = Object.create(func.prototype);
   var k = func.call(o);
@@ -38,6 +37,4 @@ function new_todo() {
 var o6 =new2(new_todo);
 console.log(o6)
 ```
-
-
 

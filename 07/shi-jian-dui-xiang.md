@@ -1,6 +1,8 @@
 # 事件对象
 
-```js
+## 事件对象
+
+```javascript
 var elem = document.getElementById('div1');
 var clickHandler = function(event){
   // TO DO
@@ -8,9 +10,9 @@ var clickHandler = function(event){
 elem.addEventListener('click',clickHandler,false);
 ```
 
-# `event对象包含很多信息`
+## `event对象包含很多信息`
 
-```js
+```javascript
 var elem = document.getElementById('div1');
 var clickHandler = function event() {
   event = event || window.event;
@@ -18,7 +20,7 @@ var clickHandler = function event() {
 addEvent(elem,'click',clickHandler,false);
 ```
 
-# 事件对象
+## 事件对象
 
 * 属性
   * type
@@ -41,6 +43,4 @@ addEvent(elem,'click',clickHandler,false);
 * `event.preventDefault() (W3C)`
   * 阻止默认行为
   * `Event.returnValue = false`\(IE\)
-
-
 

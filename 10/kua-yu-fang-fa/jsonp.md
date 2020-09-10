@@ -4,7 +4,7 @@
 
 以下是JS中的代码
 
-```js
+```javascript
 var util = {};
 
 /*[function 在页面注入脚本]*/
@@ -47,7 +47,7 @@ util.jsonp =function(url,onsuccess,onerror,charset){
 
 通过它可以创建如下
 
-```html
+```markup
 <script src="http://www.abc.com/?data=name&callback=jsonp" charset="utf-8"></script>
 <script>
 jsonp({
@@ -57,6 +57,4 @@ jsonp({
 })
 </script>
 ```
-
-
 

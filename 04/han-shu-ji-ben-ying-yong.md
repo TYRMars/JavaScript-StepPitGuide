@@ -1,8 +1,8 @@
-### JS基本应用-函数
+# 函数基本应用
 
 * 函数声明与函数表达式、对象实例化的区别
 
-```js
+```javascript
  add1(1,1);
  add2(1,2);
  add3(1,3);
@@ -17,7 +17,7 @@
 
 * 对象实例化与函数声明与函数表达式的区别
 
-```js
+```javascript
  (function(){
    var i = 10;
    function add(j) {
@@ -36,7 +36,7 @@
 
 * bind的使用
 
-```js
+```javascript
  function Point(x, y){
      this.x = x;
      this.y = y;
@@ -53,7 +53,7 @@
 
 * 构造函数
 
-```js
+```javascript
  function Car(type,color){
    this.type = type;
    this.color = color;
@@ -77,7 +77,7 @@
 
 * 函数调用模式
 
-```js
+```javascript
  function add(i, j){
    return i+j;
  }
@@ -94,7 +94,7 @@
 
 * arguments转数组
 
-```js
+```javascript
  function add(i, j) {
    var args = Array.prototype.slice.apply(arguments);
    args.forEach(function(item){
@@ -106,7 +106,7 @@
 
 * arguments.callee使用
 
-```js
+```javascript
  console.log(
    (function(i){
      if (i==0) {
@@ -119,7 +119,7 @@
 
 * 递归
 
-```js
+```javascript
  function factorial(i){
    if (i==0) {
      return 1;
@@ -130,7 +130,7 @@
 
 * 普通递归函数跟记忆函数调用次数对比
 
-```js
+```javascript
  var factorial = (function(){
    var count = 0;
    var fac = function(i){
@@ -172,7 +172,7 @@
 * curry 函数柯里化
   * 把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术
 
-```js
+```javascript
  function add(value){
     var helper = function(next){
        value = typeof(value)==="undefined"?next:value+next;
@@ -187,7 +187,7 @@
 
 * 定时器
 
-```js
+```javascript
 function set_loop() {
   var i =1;
   setTimeout(function () {
@@ -197,6 +197,4 @@ function set_loop() {
   },5000);
 }
 ```
-
-
 

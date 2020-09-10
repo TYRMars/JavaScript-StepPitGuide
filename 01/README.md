@@ -1,10 +1,6 @@
-# 01-JavaScrpit介绍
+# 01-JavaScrpit-基础知识
 
+![](../.gitbook/assets/import2.png)
 
-
-![](/assets/import2.png)
-
-![](/assets/import.png)
-
-
+![](../.gitbook/assets/import.png)
 

@@ -1,11 +1,11 @@
-### AMD
+# AMD
 
 * require.js `requirejs.org/`
 * 全局define函数
 * 全局require函数
 * 依赖JS会自动、异步加载
 
-```JavaScript
+```javascript
 //util.js
 define(function () {
   return{
@@ -47,7 +47,7 @@ require('[./a.js]',function (a) {
 
 * 使用
 
-```html
+```markup
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,6 +60,4 @@ require('[./a.js]',function (a) {
 </body>
 </html>
 ```
-
-
 

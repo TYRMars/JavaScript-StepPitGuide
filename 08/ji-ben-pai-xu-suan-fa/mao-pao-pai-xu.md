@@ -1,10 +1,10 @@
-### JavaScript算法-冒泡排序
+# 冒泡排序
 
 * 冒泡排序
 * 最慢的排序算法之一
 * 冒泡排序，之所以这么叫是因为使用这种排序算法排序时，数据值就会像气泡一样从数组的一端漂浮到另一端。假设正在将一组数字按照升序排列，较大的值会浮动到数组的右侧，而较小的值会浮动到数组的左侧。之所以会产生这种现象是因为算法会多次在数组中移动，比较相邻的数据，当左侧值大于右侧值时将它们进行互换。
 
-```js
+```javascript
 function bubbleSort() {
   var numElements = this.dataStore.length; //获取数组长度
   var temp;// 定义临时对象
@@ -20,7 +20,7 @@ function bubbleSort() {
 
 * 使用bubbleSort\(\)对10个数字排序
 
-```js
+```javascript
 var numElements = 10;
 var mynums = new CArray(numElements);
 mynums.setData();
@@ -28,8 +28,4 @@ console.log(mynums.toString());
 mynums.bubbleSort();
 console.log(mynums.toString);
 ```
-
----
-
-
 

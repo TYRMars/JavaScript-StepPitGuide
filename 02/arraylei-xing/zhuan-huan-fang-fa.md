@@ -1,6 +1,6 @@
 # 转换方法
 
-```js
+```javascript
 {
   let color = ['red','blue','green'];
   console.info(color.toString());
@@ -11,7 +11,5 @@
 
 通过试验可以看到
 
-![](/assets/array_todo.png)
-
-
+![](../../.gitbook/assets/array_todo.png)
 

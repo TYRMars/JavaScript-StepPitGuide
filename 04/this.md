@@ -2,7 +2,7 @@
 
 * this 要在执行时才能确认值，定义时无法确认值
 
-```js
+```javascript
 var a = {
   name:'A',
   fn:function(){
@@ -20,7 +20,7 @@ fn1() //this === window
 * 作为普通函数执行
 * call apply bind
 
-```js
+```javascript
 function Foo(name){
   this.name = name;
 }
@@ -53,14 +53,14 @@ var fn2 = function fn2(name) {
 fn2('zhangsan',20);
 ```
 
-#### this几种不停的使用场景
+## this几种不停的使用场景
 
 * 作为构造函数执行
 * 作为对象属性执行
 * 作为普通函数执行
 * call apply bind
 
-```
+```text
 function Foo(name){
   this.name = name;
 }
@@ -93,6 +93,4 @@ var fn2 = function fn2(name) {
 }.bind({y:200});
 fn2('zhangsan',20);
 ```
-
-
 

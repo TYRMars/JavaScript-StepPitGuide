@@ -1,8 +1,8 @@
-# async+await
+# async+await异步调用
 
 最早的的使用异步操作的时候，我们一般会用setTimeout，会出现回掉地狱的情况
 
-```js
+```javascript
 setTimeout(()=>{
   setTimeout(()=>{
     setTimeout(()=>{
@@ -14,7 +14,7 @@ setTimeout(()=>{
 
 ES6中Promise
 
-```js
+```javascript
 //promise
 ()=>{
   axios.post('/user/readmsg',{from})
@@ -29,7 +29,7 @@ ES6中Promise
 
 ES7 async+await
 
-```js
+```javascript
 async ()=>{
   const res = await axios.post('/user/readmsg',{from})
   const userid = getState().user._id
@@ -38,6 +38,4 @@ async ()=>{
   }
 }
 ```
-
-
 

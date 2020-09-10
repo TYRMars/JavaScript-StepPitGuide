@@ -1,6 +1,2 @@
-# 12-JavaScript-Web安全🔐
-
-
-
-
+# 12-JavaScrpit-Web安全🔐
 

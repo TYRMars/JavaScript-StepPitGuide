@@ -1,6 +1,6 @@
 # 11-JavaScrpit-模块化
 
-### 模块化
+## 模块化
 
 * 不使用模块化
 * 使用模块化
@@ -8,14 +8,14 @@
 * CommonJS
 * ES6
 
-#### 不使用模块化
+### 不使用模块化
 
 * `util getFormatDate函数`
 * `a-util.js aGetFormatDate函数 使用getFormatDate`
 * `a.js aGetFormatDate`
 * 定义
 
-```JavaScript
+```javascript
 //util.js
 function getFormatDate(date,type) {
   //type === 1返回 2017-06-15
@@ -34,7 +34,7 @@ console.log(aGetFormatDate(dt));
 
 * 使用
 
-```html
+```markup
 <script src="util.js"></script>
 <script src="a-util.js"></script>
 <script src="a.js"></script>
@@ -42,9 +42,9 @@ console.log(aGetFormatDate(dt));
 <!-- 2. a.js 知道要引用 a-util.js ,但是他知道还需要依赖于util.js吗？ -->
 ```
 
-#### 使用模块化
+### 使用模块化
 
-```JavaScript
+```javascript
 //util.js
 export{
   getFormatDate:function (data,type) {
@@ -68,8 +68,4 @@ console.log(aGetFormatDate(dt));
 //直接‘<script src="a.js"></script>’,其他的根据依赖关系自动引用
 //那两个函数，没必要做成全局变量，不会带来污染和覆盖
 ```
-
-## 
-
-
 

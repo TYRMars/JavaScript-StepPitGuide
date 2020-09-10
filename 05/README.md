@@ -1,6 +1,6 @@
-# 05-JavaScript-BOM
+# 05-JavaScrpit-BOM
 
-### 从基础知识到JS-Web-API
+## 从基础知识到JS-Web-API
 
 * 变量类型和计算
 * 原型和原型链
@@ -8,14 +8,14 @@
 * 异步和单线程
 * 其他（如日期、Math、各种常用API）
 
-#### 特点
+### 特点
 
 * 特点：表面上来看不能用于工作中开发代码
 * 内置函数：`Object Array Boolean String ......`
 * 内置对象：`Math JSON ...`
 * 我们连在网页弹出一句`Hello World`都不能实现
 
-#### JS-Web-API
+### JS-Web-API
 
 * JS基础知识：ECMA 262标准
 * JS-Web-API：W3C标准
@@ -26,7 +26,7 @@
   * ajax请求\(包含http协议\)
   * 存储
 
-#### 基本操作
+### 基本操作
 
 * 页面弹框是`windows.alert(123)`，浏览器需要做：
   * 定义一个`windows`全局变量，对象类型；
@@ -42,25 +42,25 @@
 * 比如 window document
 * 所有未定义的全局变量，如`navigator.userAgent`
 
-#### 总结
+### 总结
 
 * 常说的JS\(浏览器执行的JS\)包含两个部分：
 * JS基础知识\(ECMA262标准\)；
 * JS-Web-API\(W3C标准\)；
 
-### BOM操作
+## BOM操作
 
 * Browser Object Model
 
-  #### 如何监测浏览器的类型
+  **如何监测浏览器的类型**
 
-  #### 拆解url的各部分
+  **拆解url的各部分**
 
-  #### 知识点
+  **知识点**
 
 * `navigator & screen`
 
-```js
+```javascript
 //navigator
 var ua = navigator.userAgent;
 var isChrome = ua.indexOf('Chrome');
@@ -72,7 +72,7 @@ console.log(screen.height);
 
 * `location & history`
 
-```js
+```javascript
 //location
 console.log(location.href);
 console.log(location.protocel);
@@ -83,6 +83,4 @@ console.log(location.hash);
 history.back();
 history.forward();
 ```
-
-
 
