@@ -16,12 +16,11 @@
 ## 构造函数
 
 * 自己的想法
-
-`普通的函数就像是按步骤执行的动作，而构造函数更像是可更改零件的木偶，普通函数可以直接调用，但是构造函数需要new。因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefined，此时构造函数里面的this对象等于全局this对象`
-
+* `普通的函数就像是按步骤执行的动作，而构造函数更像是可更改零件的木偶，普通函数可以直接调用，但是构造函数需要new`
+* `因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefined，此时构造函数里面的this对象等于全局this对象`
 * 扩展
 
-`实例和对象的区别，从定义上来讲：1、实例是类的具象化产品，2、而对象是一个具有多种属性的内容结构。`
+  `实例和对象的区别，从定义上来讲：1、实例是类的具象化产品，2、而对象是一个具有多种属性的内容结构。`
 
 ```javascript
 function Foo(name,age){
@@ -36,19 +35,41 @@ var f = new Foo('zhangsan',20); //实例化对象
 
 ## 构造函数-扩展
 
-`var a = {}`其实是`var a = new Object()`的语法糖
+* `var a = {}`
 
-`var a = []`其实是`var a = new Array()`的语法糖
+  其实是
 
-`function Foo(){...}`其实是`var Foo = new Function(...)`
+  `var a = new Object()`
 
-使用`instanceof`判断一个函数是否是一个变量的构造函数
+  的语法糖
 
-如果想判断一个变量是否为“数组”：变量`instanceof Array`
+* `var a = []`
+
+  其实是
+
+  `var a = new Array()`
+
+  的语法糖
+
+* `function Foo(){...}`
+
+  其实是
+
+  `var Foo = new Function(...)`
+
+* 使用
+
+  `instanceof`
+
+  判断一个函数是否是一个变量的构造函数
+
+  * 如果想判断一个变量是否为“数组”：变量
+
+    `instanceof Array`
 
 ## 如何准确判断一个变量是数组类型
 
-```javascript
+```text
 var arr = [];
 arr instanceof Array; //true
 typeof arr //object  typeof是无法判断是否是数组
