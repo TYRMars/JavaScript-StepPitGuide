@@ -70,7 +70,7 @@
     * [希尔排序](08/ji-ben-pai-xu-suan-fa/xi-er-pai-xu.md)
     * [归并排序](08/ji-ben-pai-xu-suan-fa/gui-bing-pai-xu.md)
     * [快速排序](08/ji-ben-pai-xu-suan-fa/kuai-su-pai-xu.md)
-* [09-JavaScrpit-异步请求](09/README.md)
+* [09-JavaScrpit-异步](09/README.md)
   * [Ajax](09/ajax.md)
   * [Promise](09/promise.md)
 * [10-JavaScrpit-跨域](10/README.md)
