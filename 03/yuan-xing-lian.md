@@ -21,5 +21,5 @@ f.toString(); // 要去f.__proto__.__proto__中查找
 
 ## 原型链视图
 
-![](http://www.kejiganhuo.tech/wp-content/uploads/2017/06/屏幕快照-2017-06-29-上午9.00.57.png)
+![](../.gitbook/assets/727989-20161118220935607-577282845.jpg)
 

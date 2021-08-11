@@ -36,6 +36,7 @@
   * [原型链](03/yuan-xing-lian.md)
   * [继承](03/ji-cheng.md)
   * [New](03/new.md)
+  * [Object.create](03/object.create.md)
 * [04-JavaScrpit-函数表达式与函数式编程](04/README.md)
   * [递归](04/di-gui.md)
   * [闭包](04/bi-bao.md)

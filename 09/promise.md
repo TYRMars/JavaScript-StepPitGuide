@@ -22,14 +22,22 @@ const myFirstPromise = new Promise((resolve, reject) => {
  promise.finally\(\) 要注意浏览器兼容性
 {% endhint %}
 
-## Promise原型
+## Promise实现
 
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
+{% code title="promise" %}
+```javascript
+// 基本状态
+
+
+class MyPromise(fn) {
+    static PENGDING = 'pending';
+    static RESOLVED = 'resolved'; // fulfilled
+    static REJECTED = 'rejected';
+    
+    constructor(callBackFun) {
+        this.
+    }
+}
 ```
 {% endcode %}
-
-
 
