@@ -1,4 +1,4 @@
-# JavaScrpit-事件
+# 事件
 
 ## DOM事件介绍
 

@@ -1,2 +1,2 @@
-# JavaScrpit-异步
+# 异步
 

@@ -1,2 +1,2 @@
-# JavaScrpit-跨域
+# 跨域
 

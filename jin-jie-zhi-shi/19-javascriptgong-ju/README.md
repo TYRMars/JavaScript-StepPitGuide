@@ -1,2 +1,2 @@
-# JavaScript-工具
+# 工具
 

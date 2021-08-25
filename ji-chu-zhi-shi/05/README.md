@@ -1,4 +1,4 @@
-# JavaScrpit-BOM
+# BOM
 
 ## 从基础知识到JS-Web-API
 

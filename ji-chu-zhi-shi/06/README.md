@@ -1,4 +1,4 @@
-# JavaScript-DOM
+# DOM
 
 ## DOM操作
 
